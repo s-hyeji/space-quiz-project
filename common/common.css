@@ -3,3 +3,11 @@
 @import url(./css/popup.css);
 @import url(./css/reset.css);
 
+@font-face {
+    font-family : 'BMJA';
+    src : url(./font/BMJUA_ttf.ttf)
+  }
+
+  *{
+    font-family: BMJA;
+  }
