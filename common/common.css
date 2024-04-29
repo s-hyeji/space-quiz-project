@@ -1,1 +1,5 @@
-@import url(main.css);
+@import url(./css/main.css);
+@import url(./css/hader.css);
+@import url(./css/popup.css);
+@import url(./css/reset.css);
+
