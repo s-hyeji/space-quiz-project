@@ -30,6 +30,7 @@ html, body {
   outline: 1px dashed #000;
 }
 main.content{
+  position: relative;
   width: 100%;
   height: 100%;
 }
