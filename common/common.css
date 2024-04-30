@@ -8,4 +8,12 @@
   src: url(./font/BMJUA_ttf.ttf)
 }
 
-* {font-family: 'BMJA' !important;}
+* {font-family: 'BMJA';}
+
+#wrap{
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  color: #fff;
+  outline: 1px dashed #000;
+}

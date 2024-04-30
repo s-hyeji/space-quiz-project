@@ -1,0 +1,27 @@
+#wrap header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+    height: 70px;
+    background-color: #1C1972;
+    padding: 0 20px 
+}
+
+#wrap header .gameName{
+    position: absolute;
+    left: 50%;
+    font-size: 40px;
+    transform: translateX(-50%);
+}
+#wrap header .quizName{
+    font-size: 20px;
+}
+#wrap header .goHome a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../images/icon/icon_gohome.png) center / contain no-repeat;
+    filter: drop-shadow(2px 3px 0px #fff);;
+}
