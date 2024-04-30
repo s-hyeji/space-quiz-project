@@ -23,3 +23,19 @@ button:hover,
   height: 150px;
   background: url(../images/icon/start_02.png) center / contain no-repeat;
 }
+
+
+
+
+
+/* 캐릭터 */
+.char_01{
+  width: 2704px;
+  height: 2903px;
+  background: url(../images/char/char_01.png) center / contain no-repeat;
+}
+.char_02{
+  width: 239px;
+  height: 295px;
+  background: url(../images/char/char_02.png) center / contain no-repeat;
+}
