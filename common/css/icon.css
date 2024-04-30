@@ -1,0 +1,25 @@
+button,
+[class*="icon_"],
+[class*="btn_"] {
+  cursor: pointer;
+  transition: 0.3s;
+  vertical-align: middle;
+}
+
+
+button:hover,
+[class*="icon_"]:hover,
+[class*="btn_"]:hover {
+  transform: scale(1.05);
+}
+
+.btn_start {
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -65px;
+  width: 150px;
+  height: 150px;
+  background: url(../images/icon/start_02.png) center / contain no-repeat;
+}
