@@ -1,6 +1,33 @@
 main{
     background: url(../images/dragLine/dragLine_bg.svg)center/cover no-repeat;
 }
+main .obj1{
+    position: absolute;
+    top: 90px;
+    left: 150px;
+    width: 60px;
+    height: 58px;
+    background: url(../images/dragLine/bg01.svg);
+}
+main .obj2{
+    position: absolute;
+    top: 170px;
+    right: 60px;
+    width: 240px;
+    height: 248px;
+    background: url(../images/dragLine/bg03.svg) center/contain no-repeat;
+}
+main .obj3{
+    position: absolute;
+    top: 530px;
+    right: 250px;
+    width: 80px;
+    height: 78px;
+    background: url(../images/dragLine/bg04.svg) center/contain no-repeat;
+}
+
+/* startPage */
+
 .h1{
     position: relative;
 }
@@ -8,15 +35,46 @@ main{
     position: absolute;
     width: 410px;
     height: 260px;
-    top: 80px;
+    top: 93px;
     left: 50%;
     background: url(../images/dragLine/title.png)center/contain no-repeat;
     transform: translateX(-50%);
+    filter: drop-shadow(0px 2px 5px #0000007b);
+
 }
 
 .h1 .title_bg{
     position: absolute;
-    width: 676px;
-    height: 396px;
+    top: 26px;
+    left: 263px;
+    width: 736px;
+    height: 436px;
     background: url(../images/dragLine/bg02.svg)center/contain no-repeat;
+    filter: drop-shadow(0px 0px 30px #ffffff41);
+}
+.char{
+    position: absolute;
+    left: 99px;
+    bottom: 43px;
+    width: 166px;
+    height: 172px;
+    background: url(../../common/images/char/char_04.svg);
+}
+.char::after{
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: -29px;
+    width: 55px;
+    height: 55px;
+    background: url(../images/dragLine/char_right.svg)center/contain no-repeat;
+}
+.char::before{
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: -25px;
+    width: 55px;
+    height: 55px;
+    background: url(../images/dragLine/char_left.svg)center/contain no-repeat;
 }
