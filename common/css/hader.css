@@ -3,27 +3,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 40px);
-    height: 70px;
+    width: calc(100% - 20px);
+    height: 45px;
     background-color: #1C1972;
-    padding: 0 20px;
-    box-shadow: 0px 10px 5px #00000094;
+    padding: 0 10px;
+    box-shadow: 0px 8px 6px #00000094;
     z-index: 1;
 }
 
 #wrap header .gameName{
     position: absolute;
+    top: 13px;
     left: 50%;
-    font-size: 40px;
+    font-size: 24px;
     transform: translateX(-50%);
 }
 #wrap header .quizName{
-    font-size: 20px;
+    font-size: 14px;
 }
 #wrap header .goHome a{
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background: url(../images/icon/icon_gohome.png) center / contain no-repeat;
     filter: drop-shadow(2px 3px 0px #fff);;
 }
