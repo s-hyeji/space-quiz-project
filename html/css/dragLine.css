@@ -1,12 +1,22 @@
 main{
     background: url(../images/dragLine/dragLine_bg.svg)center/cover no-repeat;
 }
-h1{
+.h1{
+    position: relative;
+}
+.h1 .title{
     position: absolute;
-    font-size: 128px;
-    color: #53E047;
-    text-align: center;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: white;
+    width: 410px;
+    height: 260px;
+    top: 80px;
+    left: 50%;
+    background: url(../images/dragLine/title.png)center/contain no-repeat;
+    transform: translateX(-50%);
+}
 
+.h1 .title_bg{
+    position: absolute;
+    width: 676px;
+    height: 396px;
+    background: url(../images/dragLine/bg02.svg)center/contain no-repeat;
 }

@@ -6,7 +6,9 @@
     width: calc(100% - 40px);
     height: 70px;
     background-color: #1C1972;
-    padding: 0 20px 
+    padding: 0 20px;
+    box-shadow: 1px 0px 6px #ffffff7a;
+    z-index: 1;
 }
 
 #wrap header .gameName{
