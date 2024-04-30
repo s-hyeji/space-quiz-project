@@ -1,0 +1,10 @@
+
+
+
+.icon_start{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: url(../images/icon/start_02.png) center / contain no-repeat;
+}
+
