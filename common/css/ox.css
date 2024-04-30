@@ -1,15 +1,22 @@
 main.content {
   background: url(../images/ox/ox_background.png) center / cover no-repeat;
 }
+
 main ul {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
 main ul li {
   position: relative;
   width: 100%;
   height: 100%;
+  padding: 20px;
+}
+
+.start_page {
+  box-sizing: border-box;
 }
 
 .start_page .moon {
@@ -25,11 +32,58 @@ main ul li {
   position: absolute;
   bottom: 30px;
   left: 30px;
+  animation: upDown 2s ease-in-out infinite;
 }
 
 .start_page .page_bg {
-  margin: 20px auto 0;
-  width: 400px;
-  height: 400px;
-  outline: 1px solid;
+  width: 370px;
+  height: 370px;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../images/ox/start_title_bg.png) center / contain no-repeat;
+}
+
+.start_page [class*="icon_"] {
+  position: absolute;
+  display: block;
+  width: 134px;
+  height: 180px;
+  pointer-events: none;
+}
+
+.start_page .icon_o {
+  top: 20px;
+  left: 74px;
+  background: url(../images/ox/start_icon_o.svg) center / contain no-repeat;
+}
+.start_page .icon_x {
+  top: 40px;
+  left: 160px;
+  background: url(../images/ox/start_icon_x.svg) center / contain no-repeat;
+}
+.start_page p{
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  width: 150px;
+  height: 80px;
+  background: url(../images/ox/start_title_text.svg) center / contain no-repeat;
+  transform: translateX(-50%);
+}
+
+
+.start_page .bar{
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  width: 200px;
+  height: 35px;
+  padding-bottom: 2px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 35px;
+  transform: translateX(-50%);
+  background: url(../images/ox/start_bar.png) center / contain no-repeat;
 }
