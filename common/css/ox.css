@@ -26,6 +26,7 @@ main ul li {
   width: 470px;
   height: 630px;
   background: url(../images/ox/moon_01.svg) center / contain no-repeat;
+  animation: rotate 50s linear infinite;
 }
 
 .start_page .char_02 {
