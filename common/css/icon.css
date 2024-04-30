@@ -35,7 +35,7 @@ button:hover,
   background: url(../images/char/char_01.png) center / contain no-repeat;
 }
 .char_02{
-  width: 239px;
-  height: 295px;
-  background: url(../images/char/char_02.png) center / contain no-repeat;
+  width: 1000px;
+  height: 1283px;
+  background: url(../images/char/char_02.svg) center / contain no-repeat;
 }
