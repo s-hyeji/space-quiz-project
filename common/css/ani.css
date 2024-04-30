@@ -1,3 +1,4 @@
+/* 둥실둥실 */
 @keyframes upDown {
     0%, 100% {
       transform: translateY(0);
@@ -6,7 +7,7 @@
       transform: translateY(-10px);
     }
   }
-  
+  /* 회전 */
   @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -14,4 +15,21 @@
     to {
       transform: rotate(360deg);
     }
+  }
+/* 깜빡깜빡 */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* 애니매이션 종료 */
+  .aniStop{
+    animation: none !important;
   }

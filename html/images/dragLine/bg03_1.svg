@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.88 117.53">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_무제_그라디언트_13);
+      }
+
+      .cls-2 {
+        fill: url(#_무제_그라디언트_13-2);
+      }
+    </style>
+    <linearGradient id="_무제_그라디언트_13" data-name="무제 그라디언트 13" x1="-336.35" y1="368.12" x2="-343.53" y2="223.5" gradientTransform="translate(257.06 417.28) rotate(30.22) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".99" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="_무제_그라디언트_13-2" data-name="무제 그라디언트 13" x1="-373.23" y1="358.57" x2="-372.02" y2="235.81" gradientTransform="translate(268.77 440.94) rotate(30.59) scale(1 -1)" xlink:href="#_무제_그라디언트_13"/>
+  </defs>
+  <g id="_레이어_2-2" data-name=" 레이어 2">
+    <g id="OBJECTS">
+      <g>
+        <polygon class="cls-1" points="68.45 0 0 73.68 87.65 117.53 113.88 25.5 68.45 0"/>
+        <polygon class="cls-2" points="73.92 4.34 38.34 50.73 81.54 76.27 103.14 21.36 73.92 4.34"/>
+      </g>
+    </g>
+  </g>
+</svg>

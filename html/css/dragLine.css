@@ -14,9 +14,19 @@ main .obj2{
     position: absolute;
     top: 170px;
     right: 60px;
-    width: 240px;
-    height: 248px;
+    width: 160px;
+    height: 138px;
     background: url(../images/dragLine/bg03.svg) center/contain no-repeat;
+}
+main .obj2::after {
+    content: "";
+    position: absolute;
+    top: 62px;
+    left: -58px;
+    width: 160px;
+    height: 180px;
+    background: url(../images/dragLine/bg03_1.svg) center / contain no-repeat;
+    animation: blink 2.3s ease-in-out infinite;
 }
 main .obj3{
     position: absolute;
