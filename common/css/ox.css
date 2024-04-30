@@ -1,4 +1,4 @@
-main.content {background: url(../images/ox/ox_background.png) center / contain no-repeat;}
+main.content {background: url(../images/ox/ox_background.png) center / cover no-repeat;}
 
 .moon {
   position: absolute;
@@ -7,4 +7,10 @@ main.content {background: url(../images/ox/ox_background.png) center / contain n
   width: 470px;
   height: 630px;
   background: url(../images/ox/moon_01.svg) center / contain no-repeat;
+}
+
+.char_02{
+position: absolute;
+bottom: 30px;
+left: 30px;
 }

@@ -29,13 +29,23 @@ button:hover,
 
 
 /* 캐릭터 */
+
+/* 잘했어요 팝업캐릭 */
 .char_01{
   width: 2704px;
   height: 2903px;
   background: url(../images/char/char_01.png) center / contain no-repeat;
 }
+
 .char_02{
-  width: 1000px;
-  height: 1283px;
+  width: 200px;
+  height: 260px;
   background: url(../images/char/char_02.svg) center / contain no-repeat;
+}
+
+/* 문제요정 */
+.char_03{
+  width: 200px;
+  height: 245px;
+  background: url(../images/char/char_03.svg) center / contain no-repeat;
 }
