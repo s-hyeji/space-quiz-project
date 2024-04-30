@@ -2,7 +2,7 @@ button,
 [class*="icon_"],
 [class*="btn_"] {
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   vertical-align: middle;
 }
 
