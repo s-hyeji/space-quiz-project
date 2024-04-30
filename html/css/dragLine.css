@@ -8,6 +8,7 @@ main .obj1{
     width: 60px;
     height: 58px;
     background: url(../images/dragLine/bg01.svg);
+    animation: rotate 8s linear infinite;
 }
 main .obj2{
     position: absolute;
@@ -24,6 +25,7 @@ main .obj3{
     width: 80px;
     height: 78px;
     background: url(../images/dragLine/bg04.svg) center/contain no-repeat;
+    animation: rotate 8s linear infinite;
 }
 
 /* startPage */
@@ -68,6 +70,7 @@ main .obj3{
     width: 55px;
     height: 55px;
     background: url(../images/dragLine/char_right.svg)center/contain no-repeat;
+    animation: upDown 2s ease-in-out infinite;
 }
 .char::before{
     content: "";
@@ -77,4 +80,6 @@ main .obj3{
     width: 55px;
     height: 55px;
     background: url(../images/dragLine/char_left.svg)center/contain no-repeat;
+    animation: upDown 2s ease-in-out infinite;
 }
+
