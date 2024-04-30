@@ -1,6 +1,6 @@
 main.content {background: url(../images/ox/ox_background.png) center / cover no-repeat;}
 
-.moon {
+.start_page .moon {
   position: absolute;
   right: -190px;
   bottom: -330px;
@@ -9,8 +9,10 @@ main.content {background: url(../images/ox/ox_background.png) center / cover no-
   background: url(../images/ox/moon_01.svg) center / contain no-repeat;
 }
 
-.char_02{
+.start_page .char_02{
 position: absolute;
 bottom: 30px;
 left: 30px;
 }
+
+.start_page .
