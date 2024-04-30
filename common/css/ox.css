@@ -15,4 +15,9 @@ bottom: 30px;
 left: 30px;
 }
 
-.start_page .
+.start_page .page_bg{
+  margin: 0 auto;
+width: 400px;
+height: 400px;
+outline: 1px solid;
+}
