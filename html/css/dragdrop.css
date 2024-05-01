@@ -1,5 +1,15 @@
 main{
     width: 100%;
     height: 100%;
-    background: url(../images/dragLine/dragLine_bg.svg)center/cover no-repeat;
+    background: url(../images/dragdrop/dragdropBg.png)center/cover no-repeat;
+}
+
+.start_page h1{
+    position: relative;
+    top: 90px;
+    width: 491px;
+    height: 284px;
+    margin: 0 auto;
+    box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
+    background: url(../images/dragdrop/dragdropText.svg) center/ 100% no-repeat;
 }
