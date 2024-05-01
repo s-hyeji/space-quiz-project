@@ -97,3 +97,13 @@ main .obj3{
 .quizBox{
     border-color: #8cfd8cae;
 }
+.quizBox h2{
+    gap: 30px;
+    font-size: 36px;
+    margin-top: 10px;
+    user-select: none;
+}
+.quizBox h2 .char_03{
+    width: 98px;
+    height: 125px;
+}
