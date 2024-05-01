@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,20 @@
     <link rel="stylesheet" href="../common/common.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
     <div id="wrap">
         <div class="content">
             <h1>Space Quiz Project</h1>
             <div class="index_wrap">
-                <a href="#">
+                <a href="./dragdrop.html">
+                    <div class="star">
+                        <div class="starImg"></div>
+                        <div class="starText">
+                        </div>
+                    </div>
+                </a>
+                <a href="./dragLine.html">
                     <div class="star">
                         <div class="starImg"></div>
                         <div class="starText">
@@ -27,14 +36,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#">
-                    <div class="star">
-                        <div class="starImg"></div>
-                        <div class="starText">
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
+                <a href="./ox.html">
                     <div class="star">
                         <div class="starImg"></div>
                         <div class="starText">
@@ -42,8 +44,39 @@
                     </div>
                 </a>
             </div>
-            <div class="from">제작</div>
+            <div class="from"></div>
+            <div class="quizBox">
+                <div class="name">
+                    기획: 서혜지, 김현우, 윤수진 <br>
+                    제작: 서혜지, 김현우, 윤수진
+                </div>
+                <div class="source">
+                    <h4>[출처]</h4>
+                    <ul>
+                        <li>배경이미지 : freePik</li>
+                        <li>우주 캐릭터 : freePik</li>
+                        <li>아이콘 : freePik</li>
+                        <li>음원 : </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-  </body>
+    <script>
+        const from = document.querySelector(".from")
+        const quizBox = document.querySelector(".quizBox")
+
+        from.addEventListener("click", function () {            
+            if (!quizBox.classList.contains("on")) {
+                quizBox.classList.add("on")
+                this.classList.add("on")
+            } else {
+                quizBox.classList.remove("on")
+                this.classList.remove("on")
+             }
+
+        })
+    </script>
+</body>
+
 </html>
