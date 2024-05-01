@@ -17,12 +17,40 @@
 
     <main class="content">
       <ul>
-        <li class="start_page">
+        <!-- 스타트페이지 -->
+        <li class="start_page off">
           <div class="spaceship"></div>
           <div class="spaceHuman"></div>
           <h1></h1>
           <span></span>
           <button class="btn_start"></button>
+        </li>
+        <!-- 1페이지 -->
+        <li class="quiz_1 on">
+          <section class="quizBox">
+            <div class="char_03"></div>
+            <h2 class="quizText">공통점이 적혀있는 별을 들고있는 우주인에게 우주선을 끌어다 놓으세요.</h2>
+            <div class="skyBox">토끼, 호랑이, 사슴, 무당벌레, 기린 </div>
+            <div class="drag_objs">
+                <div class="spaceShip" data-drop>
+                  <div class="spaceShipAfter"></div>
+                </div>
+
+                <div class="Humans">
+                  <div class="spaceHuman" data-drag>
+                    <p>동물</p>
+                  </div>
+                  <div class="spaceHuman" data-drag>
+                    <p>곤충</p>
+                  </div>
+                  <div class="spaceHuman" data-drag>
+                    <p>사람</p>
+                  </div>
+                </div>
+  
+            </div>
+          </section>
+          
         </li>
       </ul>
     </main>
