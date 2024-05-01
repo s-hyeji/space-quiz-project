@@ -1,6 +1,6 @@
 @import url(./css/main.css);
 @import url(./css/hader.css);
-@import url(./css/popup.css);
+@import url(./css/quiz.css);
 @import url(./css/reset.css);
 @import url(./css/icon.css);
 @import url(./css/ani.css);
@@ -36,3 +36,4 @@ main.content{
   height: 100%;
   max-height: 675px;
 }
+
