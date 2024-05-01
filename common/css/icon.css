@@ -48,4 +48,5 @@ button:hover,
   width: 200px;
   height: 245px;
   background: url(../images/char/char_03.svg) center / contain no-repeat;
+  animation: upDown 2s ease-in-out infinite;
 }
