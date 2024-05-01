@@ -114,7 +114,6 @@ main .obj3{
     top: 140px;
     left: 50%;
     outline: 1px solid;
-    width: 740px;
-    height: 440px;
     transform: translateX(-53%);
 }
+
