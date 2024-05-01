@@ -1,39 +1,45 @@
-main{
+.content{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    gap: 30px;
     width: 100%;
     height: 100%;
     background: url(../../common/images/bg/wrapBg_1.png)center/cover no-repeat;
 }
 
 .content{
-    gap: 70px;
+    /* gap: 70px; */
 }
 
 h1 {
     text-align: center;
     font-size: 100px;
     font-weight: 100;
-    margin: 65px 0 0 0;
+    margin: 30px 0 0 0;
 }
 
 .index_wrap{
     display: flex;
     width: 100%;
-    height: 404px;
+    /* height: 344px; */
     justify-content: space-around;
 }
 
 .star {
-    width: 270px;
+    width: 200px;
     transition: 0.3s;
-    padding: 10px 0 0 0;
+    padding: 60px 0 0 0;
+    cursor: pointer;
 }
 .star:hover {
     width: 270px;
     transform: scale(1.05);
+}
+.star:hover .starImg {
+    animation: none !important;
 }
 
 .starImg{
@@ -43,6 +49,7 @@ h1 {
     box-shadow: rgba(213, 194, 228, 0.3) 0px 0px 17px 4px;
     /* border: 1px solid rgba(255, 255, 255, 0.5); */
     animation: upDown 3s ease-in-out infinite;
+    
 }
 
 @keyframes upDown {
@@ -98,7 +105,7 @@ h1 {
 .star:nth-child(4) .starText {
     width: 181px;
     height: 92px;
-    margin: 30px auto 0 auto;
+    margin: 50px auto 0 auto;
     background: url(../images/index/starText_4.svg) no-repeat center / 100%;
 }
 
@@ -109,3 +116,17 @@ h1 {
 .starText {
     text-align: center;
 }
+
+.from {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 89px;
+    height: 34px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 30px;
+    background: rgba(159, 151, 202, 0.5);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;}   
