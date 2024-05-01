@@ -97,3 +97,24 @@ main .obj3{
 .quizBox{
     border-color: #8cfd8cae;
 }
+.quizBox h2{
+    gap: 30px;
+    font-size: 36px;
+    margin-top: 10px;
+    transform: translateX(-60%);
+
+}
+.quizBox h2 .char_03{
+    width: 98px;
+    height: 125px;
+}
+
+.dragLine canvas{
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    outline: 1px solid;
+    width: 740px;
+    height: 440px;
+    transform: translateX(-53%);
+}

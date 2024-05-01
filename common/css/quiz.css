@@ -19,3 +19,13 @@
     background-color: #100d1eaa;
     border: 15px solid #fff;
 }
+
+.quizBox h2{
+    position: relative;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transform: translateX(-50%);
+    user-select: none;
+}
