@@ -101,7 +101,8 @@ main .obj3{
     gap: 30px;
     font-size: 36px;
     margin-top: 10px;
-    user-select: none;
+    transform: translateX(-60%);
+
 }
 .quizBox h2 .char_03{
     width: 98px;
