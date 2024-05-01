@@ -93,3 +93,7 @@ main .obj3{
     animation: upDown 2s ease-in-out infinite;
 }
 
+/* 퀴즈 */
+.quizBox{
+    border-color: #8cfd8cae;
+}
