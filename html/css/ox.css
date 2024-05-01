@@ -12,18 +12,34 @@ main ul li {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 40px;
 }
 
-.quizBox{
+
+
+.quizBox {
   top: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(16, 13, 30, 0.85);
+  border-color: #5139BE;
+}
+
+.quizBox.answer {
+  border-color: #FF4D77;
+}
+
+.quizBox.explane {
+  border: 5px solid #17A661;
 }
 
 
 
-.start_page {box-sizing: border-box;}
+/* ===============================start_page */
+
+.start_page {
+  box-sizing: border-box;
+}
 
 .start_page .moon {
   position: absolute;
@@ -65,12 +81,14 @@ main ul li {
   left: 74px;
   background: url(../images/ox/start_icon_o.svg) center / contain no-repeat;
 }
+
 .start_page .icon_x {
   top: 40px;
   left: 160px;
   background: url(../images/ox/start_icon_x.svg) center / contain no-repeat;
 }
-.start_page p{
+
+.start_page p {
   position: absolute;
   bottom: 90px;
   left: 50%;
@@ -81,7 +99,7 @@ main ul li {
 }
 
 
-.start_page .bar{
+.start_page .bar {
   position: absolute;
   bottom: 52px;
   left: 50%;
@@ -96,5 +114,55 @@ main ul li {
 }
 
 
-/* 퀴즈1 */
 
+
+
+/* h2 문제 공통영역 */
+main .quizBox h2 {
+  height: 150px;
+  font-size: 80px;
+  padding-top: 30px;
+  /* outline: 1px solid; */
+}
+
+main h2 span.char_03 {
+  position: relative;
+  top: -15px;
+  left: -10px;
+  width: 100px;
+  height: 115px;
+}
+
+.quizBox .quizText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 110px;
+  margin: 0 auto;
+  font-size: 36px;
+  text-align: center;
+  word-break: keep-all;
+  /* outline: 1px solid; */
+}
+
+.quizBox .oxBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  height: 270px;
+  /* outline: 1px solid; */
+}
+.quizBox .oxBox [class*="btn_icon"]{
+  width: 260px;
+  height: 100%;
+  /* outline: 1px solid; */
+}
+.quizBox .oxBox .btn_icon_o{background: url(../images/ox/quiz_icon_o.png) center / contain no-repeat;}
+.quizBox .oxBox .btn_icon_x{background: url(../images/ox/quiz_icon_x.png) center / contain no-repeat;}
+
+
+
+/* ===============================quiz_1 */
