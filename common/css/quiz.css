@@ -10,10 +10,10 @@
 
 .quizBox{
     position: relative;
-    top: 26px;
+    top: 27px;
     left: 50%;
-    width: 1194px;
-    height: 592px;
+    width: 1220px;
+    height: 626px;
     transform: translateX(-50% );
     border-radius: 30px;
     background-color: #100d1eaa;
