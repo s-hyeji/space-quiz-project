@@ -108,3 +108,13 @@ main .obj3{
     width: 98px;
     height: 125px;
 }
+
+.dragLine canvas{
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    outline: 1px solid;
+    width: 740px;
+    height: 440px;
+    transform: translateX(-53%);
+}
