@@ -9,14 +9,14 @@ main{
 }
 
 .content{
-    gap:50px;
+    gap: 70px;
 }
 
 h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 100;
-    margin: 30px 0 0 0;
+    margin: 65px 0 0 0;
 }
 
 .index_wrap{
@@ -28,41 +28,44 @@ h1 {
 
 .star {
     width: 270px;
-    /* height: 90%; */
-    /* margin: 44px 0 0 0; */
     transition: 0.3s;
-
+    padding: 10px 0 0 0;
 }
-
 .star:hover {
     width: 270px;
-    /* height: 90%; */
-    /* margin: 44px 0 0 0; */
     transform: scale(1.05);
 }
 
-
-
 .starImg{
-    width: 166px;
-    height: 166px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
+    box-shadow: rgba(213, 194, 228, 0.3) 0px 0px 17px 4px;
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    animation: upDown 3s ease-in-out infinite;
 }
+
+@keyframes upDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
 
 .star:nth-child(1) .starImg {
     margin: 0 auto;
     background: url(../images/index/star_1.svg) no-repeat center / 100%;
 }
 .star:nth-child(2) .starImg {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 0 auto;
-    background: url(../images/index/star_2.svg) no-repeat center / 100%;
+    width: 170px;
+    height: 170px;
+    margin: 30px auto 0 auto;
+    background: url(../images/index/star_2.svg) no-repeat center / 104%;
 }
 .star:nth-child(3) .starImg {
-    margin: 0 auto 0 auto;
+    margin: 30px auto 0 auto;
     background: url(../images/index/star_3.svg) no-repeat center / 100%;
 }
 .star:nth-child(4) .starImg {
@@ -72,30 +75,30 @@ h1 {
 
 
 .star:nth-child(1) .starText {
-    width: 139px;
-    height: 210px;
-    margin: 0px auto 0 auto;
+    width: 152px;
+    height: 91px;
+    margin: 30px auto 0 auto;
     background: url(../images/index/starText_1.svg) no-repeat center / 100%;
 }
 
 .star:nth-child(2) .starText {
-    width: 149px;
-    height: 230px;
-    margin: -63px auto 0 auto;
+    width: 142px;
+    height: 92px;
+    margin: 30px auto 0 auto;
     background: url(../images/index/starText_2.svg) no-repeat center / 100%;
 }
 
 .star:nth-child(3) .starText {
-    width: 179px;
-    height: 210px;
-    margin: -40px auto 0 auto;
+    width: 184px;
+    height: 93px;
+    margin: 30px auto 0 auto;
     background: url(../images/index/starText_3.svg) no-repeat center / 100%;
 }
 
 .star:nth-child(4) .starText {
-    width: 189px;
-    height: 210px;
-    margin: 0px auto 0 auto;
+    width: 181px;
+    height: 92px;
+    margin: 30px auto 0 auto;
     background: url(../images/index/starText_4.svg) no-repeat center / 100%;
 }
 
