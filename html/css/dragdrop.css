@@ -6,10 +6,33 @@ main{
 
 .start_page h1{
     position: relative;
-    top: 90px;
-    width: 491px;
-    height: 284px;
+    top: 82px;
+    width: 762px;
+    height: 344px;
     margin: 0 auto;
-    box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
-    background: url(../images/dragdrop/dragdropText.svg) center/ 100% no-repeat;
+    background: url(../images/dragdrop/dragdropText2.svg) center/ 100% no-repeat;
 }
+
+.spaceship {
+    position: absolute;
+    top: 127px;
+    left: 260px;
+    width: 200px;
+    height: 510px;
+    transform: rotate(35deg);
+    animation: upDown 3s ease-in-out infinite;
+    background: url(../images/dragdrop/spaceship.svg) center / 100% no-repeat;
+}
+
+@keyframes upDown {
+    0%, 100% {
+        transform: translateY(0) rotate(35deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(35deg);
+    }
+
+  50% {
+      transform: translateY(-3  0px),rotate(35deg);   
+    }
+  }
