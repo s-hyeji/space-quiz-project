@@ -15,9 +15,7 @@ main ul li {
   padding: 20px;
 }
 
-.start_page {
-  box-sizing: border-box;
-}
+.start_page {box-sizing: border-box;}
 
 .start_page .moon {
   position: absolute;
@@ -70,8 +68,8 @@ main ul li {
   left: 50%;
   width: 120px;
   height: 60px;
-  background: url(../images/ox/start_title_text.svg) center / contain no-repeat;
   transform: translateX(-50%);
+  background: url(../images/ox/start_title_text.svg) center / contain no-repeat;
 }
 
 
@@ -88,3 +86,7 @@ main ul li {
   transform: translateX(-50%);
   background: url(../images/ox/start_bar.png) center / contain no-repeat;
 }
+
+
+/* 퀴즈1 */
+
