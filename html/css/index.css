@@ -1,4 +1,4 @@
-.content{
+.content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ h1 {
     z-index: 3;
 }
 
-.index_wrap{
+.index_wrap {
     display: flex;
     width: 100%;
     /* height: 344px; */
@@ -33,47 +33,55 @@ h1 {
     padding: 60px 0 0 0;
     cursor: pointer;
 }
+
 .star:hover {
     width: 270px;
     transform: scale(1.05);
 }
+
 .star:hover .starImg {
     animation: none !important;
 }
 
-.starImg{
+.starImg {
     width: 170px;
     height: 170px;
     border-radius: 50%;
     box-shadow: rgba(213, 194, 228, 0.3) 0px 0px 17px 4px;
     /* border: 1px solid rgba(255, 255, 255, 0.5); */
     animation: upDown 3s ease-in-out infinite;
-    
+
 }
 
 @keyframes upDown {
-    0%, 100% {
-      transform: translateY(0);
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
+
     50% {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-  }
+}
 
 a:nth-child(1) .starImg {
     margin: 0 auto;
     background: url(../images/index/star_1.svg) no-repeat center / 100%;
 }
-a:nth-child(2)  .starImg {
+
+a:nth-child(2) .starImg {
     width: 170px;
     height: 170px;
     margin: 30px auto 0 auto;
     background: url(../images/index/star_2.svg) no-repeat center / 104%;
 }
+
 a:nth-child(3) .starImg {
     margin: 30px auto 0 auto;
     background: url(../images/index/star_3.svg) no-repeat center / 100%;
 }
+
 a:nth-child(4) .starImg {
     margin: 0 auto 0 auto;
     background: url(../images/index/star_4.svg) no-repeat center / 100%;
@@ -131,42 +139,51 @@ a:nth-child(4) .starText {
     background: rgba(159, 151, 202, 0.5);
     cursor: pointer;
     box-shadow: 0px 3px 1px #00000042;
-    }   
-    .from::after{
-        content: "제작";       
-            }
-    .from:hover{
-        box-shadow: none;
-        transform: translateY(3px);
-    }
-    .from.on{
-        box-shadow: inset 0px 3px 1px #00000042;
-        transform: translateY(3px); 
-    }
-    .from.on::after{
-        content: "X";       
-    }
-    .quizBox{
-        display: none;
-        position: absolute;
-        background-color: #100d1ef2;
-        padding: 196px 0 0;
-        text-align: center;
-        line-height: 1.35;
-        user-select: none;
-    }
-    .quizBox.on{
-        display: block;
-    }
-    .quizBox .name{
-        font-size: 36px;
-    }
-    .quizBox .source{
-        margin-top: 30px;
-    }
-    .quizBox h4{
-        font-weight: 100;
-        font-size: 30px;
-        margin-bottom: 3px;
-    }
-    
+}
+
+.from::after {
+    content: "제작";
+}
+
+.from:hover {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.from.on {
+    box-shadow: inset 0px 3px 1px #00000042;
+    transform: translateY(3px);
+}
+
+.from.on::after {
+    content: "X";
+}
+
+.quizBox {
+    display: none;
+    position: absolute;
+    background-color: #100d1ef2;
+    padding: 196px 0 0;
+    text-align: center;
+    line-height: 1.35;
+    user-select: none;
+}
+
+.quizBox.on {
+    display: block;
+}
+
+.quizBox .name {
+    font-size: 36px;
+}
+
+.quizBox .source {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.quizBox h4 {
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 3px;
+}

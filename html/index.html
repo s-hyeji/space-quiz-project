@@ -48,7 +48,8 @@
             <div class="quizBox">
                 <div class="name">
                     기획: 서혜지, 김현우, 윤수진 <br>
-                    제작: 서혜지, 김현우, 윤수진
+                    디자인: 서혜지, 김현우, 윤수진 <br>
+                    제작: 서혜지, 김현우, 윤수진, 김형민(멘토)
                 </div>
                 <div class="source">
                     <h4>[출처]</h4>
@@ -66,14 +67,14 @@
         const from = document.querySelector(".from")
         const quizBox = document.querySelector(".quizBox")
 
-        from.addEventListener("click", function () {            
+        from.addEventListener("click", function () {
             if (!quizBox.classList.contains("on")) {
                 quizBox.classList.add("on")
                 this.classList.add("on")
             } else {
                 quizBox.classList.remove("on")
                 this.classList.remove("on")
-             }
+            }
 
         })
     </script>

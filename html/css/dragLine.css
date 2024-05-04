@@ -1,7 +1,8 @@
-main{
+main {
     background: url(../images/dragLine/dragLine_bg.svg)center/cover no-repeat;
 }
-main .obj1{
+
+main .obj1 {
     position: absolute;
     top: 90px;
     left: 150px;
@@ -10,7 +11,8 @@ main .obj1{
     background: url(../images/dragLine/bg01.svg);
     animation: rotate 8s linear infinite;
 }
-main .obj2{
+
+main .obj2 {
     position: absolute;
     top: 170px;
     right: 60px;
@@ -18,6 +20,7 @@ main .obj2{
     height: 138px;
     background: url(../images/dragLine/bg03.svg) center/contain no-repeat;
 }
+
 main .obj2::after {
     content: "";
     position: absolute;
@@ -28,7 +31,8 @@ main .obj2::after {
     background: url(../images/dragLine/bg03_1.svg) center / contain no-repeat;
     animation: blink 2.3s ease-in-out infinite;
 }
-main .obj3{
+
+main .obj3 {
     position: absolute;
     top: 530px;
     right: 250px;
@@ -40,10 +44,11 @@ main .obj3{
 
 /* startPage */
 
-.h1{
+.h1 {
     position: relative;
 }
-.h1 .title{
+
+.h1 .title {
     position: absolute;
     width: 410px;
     height: 260px;
@@ -55,7 +60,7 @@ main .obj3{
 
 }
 
-.h1 .title_bg{
+.h1 .title_bg {
     position: absolute;
     top: 26px;
     left: 263px;
@@ -64,7 +69,8 @@ main .obj3{
     background: url(../images/dragLine/bg02.svg)center/contain no-repeat;
     filter: drop-shadow(0px 0px 30px #ffffff41);
 }
-.char{
+
+.char {
     position: absolute;
     left: 99px;
     bottom: 43px;
@@ -72,7 +78,8 @@ main .obj3{
     height: 172px;
     background: url(../../common/images/char/char_04.svg);
 }
-.char::after{
+
+.char::after {
     content: "";
     position: absolute;
     top: 27px;
@@ -82,7 +89,8 @@ main .obj3{
     background: url(../images/dragLine/char_right.svg)center/contain no-repeat;
     animation: upDown 2s ease-in-out infinite;
 }
-.char::before{
+
+.char::before {
     content: "";
     position: absolute;
     top: 24px;
@@ -94,22 +102,24 @@ main .obj3{
 }
 
 /* 퀴즈 */
-.quizBox{
+.quizBox {
     border-color: #8cfd8cae;
 }
-.quizBox h2{
+
+.quizBox h2 {
     gap: 30px;
     font-size: 36px;
     margin-top: 10px;
     transform: translateX(-60%);
-
+    font-weight: 100;
 }
-.quizBox h2 .char_03{
+
+.quizBox h2 .char_03 {
     width: 98px;
     height: 125px;
 }
 
-.dragLine canvas{
+.dragLine canvas {
     position: absolute;
     top: 140px;
     left: 50%;
@@ -117,3 +127,118 @@ main .obj3{
     transform: translateX(-53%);
 }
 
+.quizBox ul {
+    position: absolute;
+    /* outline: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 440px;
+}
+
+.quizBox ul>li {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 120px;
+    text-align: center;
+    line-height: 1.25;
+}
+
+/* 문제1 */
+.quiz_1 ul.leftEx {
+    left: 60px;
+}
+
+.quiz_1 ul.rightEx {
+    right: 170px;
+    font-size: 64px;
+}
+
+.quiz_1 .leftEx .ex01 {
+    width: 100px;
+    background: url(../images/dragLine/quiz1_01.svg)center/contain no-repeat;
+}
+
+.quiz_1 .leftEx .ex02 {
+    width: 230px;
+    background: url(../images/dragLine/quiz1_02.svg)center/contain no-repeat;
+}
+
+.quiz_1 .leftEx .ex03 {
+    width: 100px;
+    background: url(../images/dragLine/quiz1_03.svg)center/contain no-repeat;
+}
+
+/* 문제2 */
+.quiz_2 ul.leftEx {
+    left: 130px;
+}
+
+.quiz_2 ul.rightEx {
+    right: 60px;
+    font-size: 36px;
+}
+
+.quiz_2 .leftEx .ex01 {
+    width: 86px;
+    background: url(../images/dragLine/quiz2_happy.svg) center/contain no-repeat;
+}
+
+.quiz_2 .leftEx .ex02 {
+    width: 86px;
+    background: url(../images/dragLine/quiz2_sad.svg) center/contain no-repeat;
+}
+
+.quiz_2 .leftEx .ex03 {
+    width: 86px;
+    background: url(../images/dragLine/quiz2_upset.svg) center/contain no-repeat;
+}
+
+/* 문제3 */
+.quiz_3 ul.leftEx {
+    height: 450px;
+    left: 60px;
+}
+
+.quiz_3 .leftEx li {
+    width: 250px;
+    height: 140px;
+    border-radius: 20px;
+}
+
+.quiz_3 .leftEx .ex01 {
+    background: url(../images/dragLine/quiz3_01.jpg) center/cover no-repeat;
+}
+
+.quiz_3 .leftEx .ex02 {
+    background: url(../images/dragLine/quiz3_02.jpg) center/cover no-repeat;
+}
+
+.quiz_3 .leftEx .ex03 {
+    background: url(../images/dragLine/quiz3_03.jpg) center/cover no-repeat;
+}
+
+.quiz_3 ul.rightEx {
+    right: 60px;
+    height: 450px;
+}
+
+.quiz_3 .rightEx li {
+    width: 250px;
+    height: 140px;
+    border-radius: 20px;
+}
+
+.quiz_3 .rightEx .ex01 {
+    background: url(../images/dragLine/quiz3_01.jpg) center/cover no-repeat;
+}
+
+.quiz_3 .rightEx .ex02 {
+    background: url(../images/dragLine/quiz3_02.jpg) center/cover no-repeat;
+}
+
+.quiz_3 .rightEx .ex03 {
+    background: url(../images/dragLine/quiz3_03.jpg) center/cover no-repeat;
+}
