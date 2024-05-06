@@ -99,11 +99,12 @@ span {
 
 .skyBox{
   width: fit-content;
-  font-size: 45px;
+  font-size: 40px;
+  letter-spacing: 0px;
   color: #8DFFDE;
   border: 5px solid #8DFFDE;
   border-radius: 15px;
-  padding: 22px 124px;
+  padding: 22px 22px;
   margin: -30px auto 0 auto;
 }
 
@@ -161,9 +162,9 @@ span {
 .spaceHuman > p{
   position: absolute;
   width: 127px;
-  top: 58px;
+  top: 60px;
   left: 1px;
-  font-size: 40px;
+  font-size: 37px;
   z-index: 10;
   color: #1C0C29;
   font-weight: 700;
