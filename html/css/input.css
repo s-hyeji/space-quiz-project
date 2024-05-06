@@ -1,3 +1,75 @@
 main {
-    background: url(../images/dragLine/dragLine_bg.svg)center/cover no-repeat;
+    background: url(../images/input/inputMain.svg)center/cover no-repeat;
 }
+
+
+
+.titleImg{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 270px;
+    background: url(../images/input/mainTitle.svg)center/cover no-repeat;
+
+}
+
+.mainObj:nth-child(2) {
+    position: absolute;
+    top: 66px;
+    left: -82px;
+    width: 193px;
+    height: 190px;
+    animation: blink1 5.2s ease-in-out infinite;
+    background: url(../images/input/mainObj_1.svg)center/cover no-repeat;
+}
+
+.mainObj:nth-child(3) {
+    position: absolute;
+    top: 383px;
+    right: 70px;
+    width: 60px;
+    height: 58px;
+    animation: blink1 4s ease-in-out infinite;
+    background: url(../images/input/mainObj_1.svg)center/cover no-repeat;
+}
+
+@keyframes blink1 {
+    0% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+
+.mainObj:nth-child(4) {
+    position: absolute;
+    top: 100px;
+    right: 110px;
+    width: 68px;
+    height: 135px;
+    animation: upDown 4s ease-in-out infinite;
+    background: url(../images/input/mainObj_2.svg)center/100% no-repeat;
+}
+
+.mainObj:nth-child(5) {
+    position: absolute;
+    top: 413px;
+    left: 90px;
+    width: 233px;
+    height: 231px;
+    animation: upDown 4s ease-in-out infinite;
+    background: url(../images/input/mainObj_3.svg)center/100% no-repeat;
+}
+
+
+/* 퀴즈 페이지 시작 */
+
+.quizBox{
+    border-color: #E3DD3F;
+  }

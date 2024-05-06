@@ -4,175 +4,171 @@
 
 
 main{
-    width: 100%;
-    height: 100%;
-    background: url(../images/dragdrop/dragdropBg.png)center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  background: url(../images/dragdrop/dragdropBg.png)center/cover no-repeat;
 }
 
 .start_page h1{
-    position: relative;
-    top: 82px;
-    width: 762px;
-    height: 344px;
-    margin: 0 auto;
-    background: url(../images/dragdrop/dragdropText2.svg) center/ 100% no-repeat;
+  position: relative;
+  top: 82px;
+  width: 762px;
+  height: 344px;
+  margin: 0 auto;
+  background: url(../images/dragdrop/dragdropText2.svg) center/ 100% no-repeat;
 }
 
 .spaceship {
-    position: absolute;
-    top: 97px;
-    left: 180px;
-    width: 200px;
-    height: 510px;
-    transform: rotate(35deg);
-    animation: upDown1 3s ease-in-out infinite;
-    background: url(../images/dragdrop/spaceship.svg) center / 100% no-repeat;
+  position: absolute;
+  top: 97px;
+  left: 180px;
+  width: 200px;
+  height: 510px;
+  transform: rotate(35deg);
+  animation: upDown1 3s ease-in-out infinite;
+  background: url(../images/dragdrop/spaceship.svg) center / 100% no-repeat;
 }
 
 .start_page .spaceHuman {
-    position: absolute;
-    top: 30px;
-    left: 890px;
-    width: 190px;
-    height: 530px;
-    animation: upDown3 5s ease-in-out infinite;
-    background: url(
-    ../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
+  position: absolute;
+  top: 30px;
+  left: 890px;
+  width: 190px;
+  height: 530px;
+  animation: upDown3 5s ease-in-out infinite;
+  background: url(
+  ../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
 }
 
 
 span {
-    font: 500px;
+  font: 500px;
 }
 
 @keyframes upDown1 {
-    0%, 100% {
-        transform: translateY(0) rotate(35deg);
-    }
-    50% {
-        transform: translateY(-10px) rotate(35deg);
-    }
+  0%, 100% {
+      transform: translateY(0) rotate(35deg);
+  }
+  50% {
+      transform: translateY(-10px) rotate(35deg);
+  }
 
+}
+@keyframes upDown2 {
+  0%, 100% {
+      transform: translateY(0) rotate(700deg) scaleX(-1);
   }
-  @keyframes upDown2 {
-    0%, 100% {
-        transform: translateY(0) rotate(700deg) scaleX(-1);
-    }
-    50% {
-        transform: translateY(-10px) rotate(740deg) scaleX(-1);
-    }
- 
+  50% {
+      transform: translateY(-10px) rotate(740deg) scaleX(-1);
   }
-  @keyframes upDown3 {
-    0%, 100% {
-        transform: translateY(0) scaleX(-1);
-    }
-    50% {
-        transform: translateY(-10px) scaleX(-1);
-    }
- 
+
+}
+@keyframes upDown3 {
+  0%, 100% {
+      transform: translateY(0) scaleX(-1);
   }
+  50% {
+      transform: translateY(-10px) scaleX(-1);
+  }
+
+}
 /* --------------------- */
 /* 퀴즈페이지 */
 /* --------------------- */
 
-  .quizBox{
-    border-color: #BC3BB7;
+.quizBox{
+  border-color: #BC3BB7;
+}
+.quizBoxTop {
+  display: flex;
+  align-items: center;
+}
+
+.char_03 {
+  width: 117px;
+  height: 128px;
+  position: relative;
+}
+
+.quizText {
+  top: -80px;
+  font-size: 36px;
+  font-weight: 100;
+  word-break: keep-all;
+}
+
+.skyBox{
+  width: fit-content;
+  font-size: 45px;
+  color: #8DFFDE;
+  border: 5px solid #8DFFDE;
+  border-radius: 15px;
+  padding: 22px 124px;
+  margin: -30px auto 0 auto;
+}
+
+.drag_objs {
+  position: relative;
+  width: 100%;
+  height: 380px;
+
+}
+
+.spaceShip {
+  position: absolute;
+  top: -154px;
+  left: 99px;
+  width: 181px;
+  height: 330px;
+  z-index: 10;
+  transform: rotate(45deg);
+  background: url(../images/dragdrop/spaceship.svg) center / 73% no-repeat;
   }
-  .quizBoxTop {
-    display: flex;
-    align-items: center;
-  }
 
-  .char_03 {
-    width: 117px;
-    height: 128px;
-    position: relative;
-  }
-
-  .quizText {
-    top: -80px;
-    font-size: 36px;
-    font-weight: 100;
-    word-break: keep-all;
-  }
-
-  .skyBox{
-    width: fit-content;
-    font-size: 45px;
-    color: #8DFFDE;
-    border: 5px solid #8DFFDE;
-    border-radius: 15px;
-    padding: 22px 124px;
-    margin: -30px auto 0 auto;
-  }
-
-  .drag_objs {
-    position: relative;
-    width: 100%;
-    height: 380px;
-
-  }
-
-  .spaceShip {
-    position: absolute;
-    top: -154px;
-    left: 99px;
-    width: 181px;
-    height: 330px;
-    z-index: 10;
-    transform: rotate(45deg);
-    background: url(../images/dragdrop/spaceship.svg) center / 73% no-repeat;
-    }
-
-    .spaceShip>.spaceShipAfter{
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-    animation: blink 1s backwards infinite;
-    background: url(../images/dragdrop/spaceship2.svg) center / 98% no-repeat;
+  .spaceShip>.spaceShipAfter{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  animation: blink 1s backwards infinite;
+  background: url(../images/dragdrop/spaceship2.svg) center / 98% no-repeat;
 }
 
 .spaceShip>.spaceShipAfter:hover{
-    background: url(../images/dragdrop/spaceship2.svg) center / 100% no-repeat;
-    animation: none;
-    
+  background: url(../images/dragdrop/spaceship2.svg) center / 100% no-repeat;
+  animation: none;
+  
 }
 
 .Humans {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    gap: 153px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 153px;
+  width: 100%;
 }
 
 .spaceHuman {
-    position: relative;
-    width: 130px;
-    height: 312px;
-    margin: 20px 0 0 0;
-    background: url(../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
+  position: relative;
+  width: 125px;
+  height: 257px;
+  margin: 60px 0 0 0;
+  background: url(../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
 }
 
 .spaceHuman > p{
-    /* display: flex; */
-    justify-content: center ;
-    position: absolute;
-    width: 127px;
-    /* height: 104px; */
-    top: 81px;
-    left: 3px;
-    font-size: 40px;
-    z-index: 10;
-    color: #1C0C29;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-align: center;
-    /* align-items: center; */
+  position: absolute;
+  width: 127px;
+  top: 58px;
+  left: 1px;
+  font-size: 40px;
+  z-index: 10;
+  color: #1C0C29;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align  : center;
 }
 
 

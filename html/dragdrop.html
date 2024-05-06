@@ -57,4 +57,41 @@
   </div>
 </body>
 
+<script>
+
+
+let dragObj = document.querySelectorAll('.lineBox');
+       let winX = clientX();
+       let winy = clientY();
+
+      
+      //  자바스크립트 기본 드래그 막음
+       dragObj.ondragstart = function() {
+        return false;
+      };
+
+
+          dragObj.forEach(element => {
+            // 마우스 클릭했을때
+            element.addEventListener('mousedown',function() {
+              element.classList.add('draging');
+              console.log('ewqopeqwojwqeojpkweq'+element);
+              console.log('weoqkewpqokepwqo'+winX);
+              console.log('weoqkewpqokepwqo'+winY);
+            })
+
+            // 마우스뗏을때
+            element.addEventListener('mouseup',function() {
+              element.classList.remove('draging');
+              // console.log('ewqopeqwojwqeojpkweq222222'+element);
+            })
+            //마우스 아웃
+            element.addEventListener('',function() {
+              element.classList.remove('draging');
+              // console.log('ewqopeqwojwqeojpkweq3333'+element);
+            })
+          });
+
+</script>
+
 </html>
