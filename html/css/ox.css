@@ -166,7 +166,7 @@ main h2 span.char_03 {
 
 
 
-/* ★퀴즈 답 박스 */
+/* ★퀴즈 답 & 설명 박스 */
 .quizBox.answer .answerText{
   margin: 70px auto 0;
   width: max-content;
