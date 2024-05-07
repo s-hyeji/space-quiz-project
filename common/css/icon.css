@@ -50,3 +50,21 @@ button:hover,
   background: url(../images/char/char_03.svg) center / contain no-repeat;
   animation: upDown 2s ease-in-out infinite;
 }
+
+/* 다음문제 유도요정 */
+.char_05{
+  width: 200px;
+  height: 245px;
+  background: url(../images/char/char_05_1.svg) center / contain no-repeat;
+}
+.char_05::before{
+  content: "";
+  position: absolute;
+  left: -43px;
+  bottom: 42px;
+  width: 50px;
+  height: 50px;
+  background: url(../images/char/char_05_2.svg) center / contain no-repeat;
+  z-index: -1;
+  animation: blink 1.2s ease-in infinite;
+}
