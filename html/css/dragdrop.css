@@ -164,10 +164,10 @@ span {
   width: 127px;
   top: 60px;
   left: 1px;
-  font-size: 37px;
+  font-size: 29px;
   z-index: 10;
   color: #1C0C29;
-  font-weight: 700;
+  font-weight: 100;
   letter-spacing: 3px;
   text-align  : center;
 }
