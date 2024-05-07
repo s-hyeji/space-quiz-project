@@ -18,8 +18,8 @@
     </header>
 
     <main class="content">
-      <ul>
-        <li class="start_page off">
+      <ul data-quiz="ox">
+        <li class="start_page on">
           <button class="btn_start"></button>
           <div class="moon"></div>
           <div class="char_02"></div>
@@ -31,25 +31,21 @@
           </div>
 
         </li>
-        <li class="quiz_1 on">
-          <div class="quizBox off">
+        <li class="quiz_1">
+          <div class="quizBox">
             <h2><span class="char_03"></span>문제 1</h2>
-
-
             <div class="quizText">
               '이게 대체 왠일이야?' 의 맞춤법이 맞다? 틀리다?<br>
             </div>
 
             <div class="oxBox">
-              <div class="btn_icon_o"></div>
+              <div class="btn_icon_o" data-answer=""></div>
               <div class="btn_icon_x"></div>
             </div>
           </div>
 
           <div class="quizBox answer">
-            <div class="answerText">
-              답 : 웬일 (X)
-            </div>
+            <div class="answerText">답 : 웬일 (X)</div>
             <div class="description">
               <span>설명</span>
               '웬'은 '어찌 된'을 뜻해!<br>
@@ -64,9 +60,11 @@
         <li class="quiz_4"></li>
         <li class="quiz_5"></li>
       </ul>
-
     </main>
   </div>
+
+  <!-- 스크립트 -->
+  <script type="text/javascript" src="./js/ox.js"></script>
 </body>
 
 </html>
