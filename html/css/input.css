@@ -74,6 +74,9 @@ main {
 
 .quizBox {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap : 80px;
   border-color: #E3DD3F;
 }
 
@@ -108,6 +111,8 @@ input:focus {
 
 .btnBox {
   display: flex;
+  justify-content: space-around;
+  margin: 20px 0 0 0;
 }
 
 .btnBox>div {
@@ -132,16 +137,23 @@ input:focus {
 
 /* right */
 
+.rightBox {
+  position: relative;
+  top: -10px;
+}
+
 .rightBox .tit {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: flex-start; */
   width: 268px;
   height: 59px;
   font-size: 40px;
   background-repeat: no-repeat;
   background-size: contain;
+  margin: 20px 0 25px 0;
 }
+
 
 .topBox .tit {
   background-image: url(../images/input/rightTitle_1.svg);
@@ -149,6 +161,13 @@ input:focus {
 
 .botBox .tit {
   background-image: url(../images/input/rightTitle_2.svg);
+}
+
+.tit .char_03{
+  position: relative;
+  width: 70px;
+  margin: 0 -10px 0 0px;
+  left: -18px;
 }
 
 .rightBox ul li {
