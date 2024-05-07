@@ -1,75 +1,181 @@
 main {
-    background: url(../images/input/inputMain.svg)center/cover no-repeat;
+  background: url(../images/input/inputMain.svg)center/cover no-repeat;
 }
 
 
 
-.titleImg{
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 550px;
-    height: 270px;
-    background: url(../images/input/mainTitle.svg)center/cover no-repeat;
+.titleImg {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 270px;
+  background: url(../images/input/mainTitle.svg)center/cover no-repeat;
 
 }
 
 .mainObj:nth-child(2) {
-    position: absolute;
-    top: 66px;
-    left: -82px;
-    width: 193px;
-    height: 190px;
-    animation: blink1 5.2s ease-in-out infinite;
-    background: url(../images/input/mainObj_1.svg)center/cover no-repeat;
+  position: absolute;
+  top: 66px;
+  left: -82px;
+  width: 193px;
+  height: 190px;
+  animation: blink1 5.2s ease-in-out infinite;
+  background: url(../images/input/mainObj_1.svg)center/cover no-repeat;
 }
 
 .mainObj:nth-child(3) {
-    position: absolute;
-    top: 383px;
-    right: 70px;
-    width: 60px;
-    height: 58px;
-    animation: blink1 4s ease-in-out infinite;
-    background: url(../images/input/mainObj_1.svg)center/cover no-repeat;
+  position: absolute;
+  top: 383px;
+  right: 70px;
+  width: 60px;
+  height: 58px;
+  animation: blink1 4s ease-in-out infinite;
+  background: url(../images/input/mainObj_1.svg)center/cover no-repeat;
 }
 
 @keyframes blink1 {
-    0% {
-      opacity: 0.8;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 0.8;
-    }
+  0% {
+    opacity: 0.8;
   }
 
-.mainObj:nth-child(4) {
-    position: absolute;
-    top: 100px;
-    right: 110px;
-    width: 68px;
-    height: 135px;
-    animation: upDown 4s ease-in-out infinite;
-    background: url(../images/input/mainObj_2.svg)center/100% no-repeat;
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
 }
 
-.mainObj:nth-child(5) {
-    position: absolute;
-    top: 413px;
-    left: 90px;
-    width: 233px;
-    height: 231px;
-    animation: upDown 4s ease-in-out infinite;
-    background: url(../images/input/mainObj_3.svg)center/100% no-repeat;
+.mainObj:nth-child(4) {
+  position: absolute;
+  top: 100px;
+  right: 110px;
+  width: 68px;
+  height: 135px;
+  animation: upDown 4s ease-in-out infinite;
+  background: url(../images/input/mainObj_2.svg)center/100% no-repeat;
+}
+
+.start_page .mainObj {
+  position: absolute;
+  top: 413px;
+  left: 90px;
+  width: 233px;
+  height: 231px;
+  animation: upDown 4s ease-in-out infinite;
+  background: url(../images/input/mainObj_3.svg)center/100% no-repeat;
 }
 
 
 /* 퀴즈 페이지 시작 */
 
-.quizBox{
-    border-color: #E3DD3F;
-  }
+.quizBox {
+  display: flex;
+  border-color: #E3DD3F;
+}
+
+/* left */
+table {
+  width: 420px;
+  height: 420px;
+}
+
+table td {
+  padding: 4px;
+  background: url(../images/input/inputBg.svg) center/ 94% no-repeat;
+}
+
+table td:has(input) {
+  background: url(../images/input/inputBg2.svg) center / 94% no-repeat;
+}
+
+table td input {
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  color: #FF4A72;
+  font-size: 42px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btnBox {
+  display: flex;
+}
+
+.btnBox>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  font-size: 34px;
+  padding-right: 42px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.exBtn {
+  background-image: url(../images/input/leftBtn_1.svg);
+}
+
+.answerBtn {
+  background-image: url(../images/input/leftBtn_2.svg);
+}
+
+/* right */
+
+.rightBox .tit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 268px;
+  height: 59px;
+  font-size: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.topBox .tit {
+  background-image: url(../images/input/rightTitle_1.svg);
+}
+
+.botBox .tit {
+  background-image: url(../images/input/rightTitle_2.svg);
+}
+
+.rightBox ul li {
+  display: flex;
+  gap: 14px;
+  font-size: 24px;
+}
+
+.rightBox ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.rightBox ul li .num {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.rightBox .topBox .num {
+  background-color: #14B3F2;
+}
+
+.rightBox .botBox .num {
+  background-color: #31C1B7;
+}
