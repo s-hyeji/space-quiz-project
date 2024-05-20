@@ -18,7 +18,7 @@ main{
   background: url(../images/dragdrop/dragdropText2.svg) center/ 100% no-repeat;
 }
 
-.spaceship {
+.start_page .spaceship {
   position: absolute;
   top: 97px;
   left: 180px;
@@ -91,7 +91,7 @@ span {
 }
 
 .quizText {
-  top: -80px;
+  top: -94px;
   font-size: 36px;
   font-weight: 100;
   word-break: keep-all;
@@ -115,15 +115,22 @@ span {
 
 }
 
-.spaceShip {
+.quizPage .spaceShip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: -154px;
-  left: 99px;
-  width: 181px;
-  height: 330px;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 633px;
+  height: 218px;
   z-index: 10;
-  transform: rotate(45deg);
-  background: url(../images/dragdrop/spaceship.svg) center / 73% no-repeat;
+  text-shadow: -2px 0px #fff, 0px 2px #fff, 2px 0px #fff, 0px -2px #fff;
+  font-size: 30px;
+  color: #0E3750;
+  padding: 0 10px 0 0;
+  background: url(../images/dragdrop/spaceship22.svg) center / contain  no-repeat;
   }
 
   .spaceShip>.spaceShipAfter{
@@ -153,24 +160,26 @@ span {
 
 .spaceHuman {
   position: relative;
-  width: 125px;
+  width: 120px;
   height: 257px;
-  margin: 60px 0 0 0;
+  margin: 160px 0 0 0;
   background: url(../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
 }
 
 .spaceHuman > p{
   position: absolute;
-  width: 127px;
-  top: 60px;
-  left: 1px;
-  font-size: 29px;
+  width: 117px;
+  top: 63px;
+  left: 2px;
+  font-size: 31px;
   z-index: 10;
-  color: #1C0C29;
+  color: #403B00;
   font-weight: 100;
   letter-spacing: 3px;
   text-align  : center;
 }
-
+.space-grotesk {
+  margin: 0 0 0 9px;  
+}
 
 
