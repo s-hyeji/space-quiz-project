@@ -27,6 +27,9 @@ window.addEventListener('load', function () {
 
   // 정답 클릭시
   ox_answer.forEach((function (answer, i) {
+
+    console.log('정답!');
+
     answer.addEventListener('click', function () {
       quizBox[i].classList.add('off')
       answerBox[i].classList.add('dim')``
