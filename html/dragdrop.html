@@ -187,6 +187,13 @@ function size() {
         let widthZoom= wholeWidth / wrapWidth;
         let heightZoom = wholeHeight / wrapHeight;
 
+        console.log(wholeWidth+'wholeWidthwholeWidth');
+        console.log(wholeHeight+'wholeHeightwholeHeightwholeHeight');
+        console.log(wrapWidth+'wrapWidthwrapWidthwrapWidth');
+        console.log(wrapHeight+'wrapHeightwrapHeightwrapHeightwrapHeight');
+        console.log(widthZoom+'widthZoomwidthZoomwidthZoom');
+        console.log(heightZoom+'heightZoomheightZoomheightZoom');
+
 
         let zoomRate;
         if (widthZoom> heightZoom) {
@@ -196,10 +203,14 @@ function size() {
             document.querySelector("#wrap").style.transform = `scale(${widthZoom})`
             zoomRate = widthZoom;
         }
+        document.querySelector("#wrap").style.transformOrigin = '0% 0%';
+        document.querySelector("#wrap").style.MsTransformOrigin = '0% 0%';
+        document.querySelector("#wrap").style.MozTransformOrigin = '0% 0%';
+        document.querySelector("#wrap").style.WebkitTransformOrigin = '0% 0%';
 
       }
 
-          window.onload = function () {
+      window.onload = function () {
         size()
     }
     window.addEventListener('resize', function () {
