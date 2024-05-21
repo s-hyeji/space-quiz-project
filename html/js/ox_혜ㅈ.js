@@ -19,28 +19,6 @@ window.addEventListener('load', function () {
     })
 
 
-    quiz_p.forEach(function (page) {
-
-        // ▼ 팝업 영역======================================================= //
-
-        // 다음퀴즈 버튼 클릭시
-        next_btn.addEventListener('click', function () {
-            console.log("dddd");
-            popup.classList.remove('dim')
-            setTimeout(() => {
-                quizBox.forEach(this_e => { this_e.classList.remove('off') });
-                answerBox.forEach(this_e => { this_e.classList.remove('dim') });
-            }, 1000);
-
-            // 다음 퀴즈만! on
-            console.log(page)
-        })
-
-
-
-
-
-    })
 
     // ▼ OX퀴즈 영역======================================================= //
     var ox_container = this.document.querySelector('[data-quiz="ox"]')
@@ -62,6 +40,29 @@ window.addEventListener('load', function () {
 
 
     // 오답 클릭시(대기)
+
+
+
+    // ▼ 팝업 영역======================================================= //
+
+    // 다음퀴즈 버튼 클릭시
+    next_btn.addEventListener('click', function () {
+        popup.classList.remove('dim')
+        setTimeout(() => {
+            quizBox.forEach(this_e => { this_e.classList.remove('off') });
+            answerBox.forEach(this_e => { this_e.classList.remove('dim') });
+        }, 1000);
+
+        // 다음 퀴즈만! on
+
+        // 혜지추가
+        let completePage = document.querySelector("[class*='quiz_'].on")
+        completePage.classList.remove("on");
+        completePage.nextElementSibling.classList.add("on")
+        console.log("ddddddddddddd", completePage.nextElementSibling)
+    })
+
+
 
     console.log('li들', quiz_p);
 
