@@ -32,7 +32,7 @@ window.addEventListener('load', function () {
 
     answer.addEventListener('click', function () {
       quizBox[i].classList.add('off')
-      answerBox[i].classList.add('dim')``
+      answerBox[i].classList.add('dim')
       setTimeout(() => { popup.classList.add('dim') }, 3000);
     })
   }))
