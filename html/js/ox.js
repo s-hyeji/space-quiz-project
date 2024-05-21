@@ -2,21 +2,11 @@ window.addEventListener('load', function () {
 
 
   // 지역선언
-  var start_btn = this.document.querySelector('.btn_start')
-  var start_page = this.document.querySelector('.start_page')
   var quiz_p = this.document.querySelectorAll('[class*="quiz_"]')
   var quizBox = document.querySelectorAll('.quizBox')
   var answerBox = document.querySelectorAll('.quizBox.answer')
   var popup = document.querySelector('.popup_container')
   var next_btn = this.document.querySelector('.popup_container .nextBtn')
-
-
-
-  // 스타트버튼 클릭시
-  start_btn.addEventListener('click', function () {
-    quiz_p[0].classList.add('on')
-    start_page.classList.add('off')
-  })
 
 
 
