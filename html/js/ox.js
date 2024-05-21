@@ -22,30 +22,34 @@ window.addEventListener('load', function () {
 
   // ▼ OX퀴즈 영역======================================================= //
   var ox_container = this.document.querySelector('[data-quiz="ox"]')
-  var ox_answer = this.document.querySelectorAll('[data-quiz="ox"] [data-answer]')
-  let oxBox = document.querySelectorAll('[data-quiz="ox"] .oxBox')
+  var ox_btn = this.document.querySelectorAll('[data-quiz="ox"] [class*="btn_icon"]')
 
 
-  // 정답 클릭시
-  ox_answer.forEach((function (answer, i) {
-    console.log('>>>>>', oxBox[i].children)
-
-
-
-    answer.addEventListener('click', function () {
-      if (answer.attributes.length === 2) {
+  // ox버튼 클릭시
+  ox_btn.forEach((function (ox_btn, i) {
+    ox_btn.addEventListener('click', function () {
+      // 정답 클릭시
+      if (ox_btn.attributes.length === 2) {
         console.log('정답!')
-      } else {
+        ox_container.classList.add('complete')
+        this.classList.add('on')
+
+        for (let i = 0; i < quizBox.length; i++) {
+          quizBox[i].classList.add('off')
+        }
+        for (let i = 0; i < answerBox.length; i++) {
+          answerBox[i].classList.add('dim')
+          answerBox[i].classList.remove('off')
+        }
+        setTimeout(() => { popup.classList.add('dim') }, 3000);
+      }
+      
+      // 오답 클릭시(대기)
+      else {
         console.log('오답!')
       }
-      // quizBox[i].classList.add('off')
-      // answerBox[i].classList.add('dim')
-      // setTimeout(() => { popup.classList.add('dim') }, 3000);
     })
   }))
-
-
-  // 오답 클릭시(대기)
 
 
 
@@ -60,6 +64,9 @@ window.addEventListener('load', function () {
     }, 1000);
 
     // 다음 퀴즈만! on
+    let nextPage = document.querySelector('[class*="quiz_"].on')
+    nextPage.classList.remove('on')
+    nextPage.nextElementSibling.classList.add('on')
   })
 
 
