@@ -23,12 +23,12 @@ window.addEventListener('load', function () {
   // ▼ OX퀴즈 영역======================================================= //
   var ox_container = this.document.querySelector('[data-quiz="ox"]')
   var ox_answer = this.document.querySelectorAll('[data-quiz="ox"] [data-answer]')
+  let oxBox = document.querySelectorAll('[data-quiz="ox"] .oxBox')
 
 
   // 정답 클릭시
   ox_answer.forEach((function (answer, i) {
-    let oxBox = document.querySelectorAll('.oxBox')
-    console.log('>>>>>', oxBox)
+    console.log('>>>>>', oxBox[i].children)
 
 
 
