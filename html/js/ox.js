@@ -42,7 +42,7 @@ window.addEventListener('load', function () {
         }
         setTimeout(() => { popup.classList.add('dim') }, 3000);
       }
-      
+
       // 오답 클릭시(대기)
       else {
         console.log('오답!')
@@ -56,16 +56,10 @@ window.addEventListener('load', function () {
 
   // 다음퀴즈 버튼 클릭시
   next_btn.addEventListener('click', function () {
-    popup.classList.remove('dim')
     setTimeout(() => {
-      quizBox.forEach(this_e => { this_e.classList.remove('off') });
       answerBox.forEach(this_e => { this_e.classList.remove('dim') });
     }, 1000);
 
-    // 다음 퀴즈만! on
-    let nextPage = document.querySelector('[class*="quiz_"].on')
-    nextPage.classList.remove('on')
-    nextPage.nextElementSibling.classList.add('on')
   })
 
 
