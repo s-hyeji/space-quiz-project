@@ -27,14 +27,20 @@ window.addEventListener('load', function () {
 
   // 정답 클릭시
   ox_answer.forEach((function (answer, i) {
+    let oxBox = document.querySelectorAll('.oxBox')
+    console.log('>>>>>', oxBox)
 
-    console.log('정답!')
 
 
     answer.addEventListener('click', function () {
-      quizBox[i].classList.add('off')
-      answerBox[i].classList.add('dim')
-      setTimeout(() => { popup.classList.add('dim') }, 3000);
+      if (answer.attributes.length === 2) {
+        console.log('정답!')
+      } else {
+        console.log('오답!')
+      }
+      // quizBox[i].classList.add('off')
+      // answerBox[i].classList.add('dim')
+      // setTimeout(() => { popup.classList.add('dim') }, 3000);
     })
   }))
 
@@ -58,6 +64,6 @@ window.addEventListener('load', function () {
 
 
 
-    console.log('li들',quiz_p);
+  // console.log('li들', quiz_p);
 
 })
