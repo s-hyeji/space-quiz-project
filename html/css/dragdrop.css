@@ -115,7 +115,7 @@ span {
 
 }
 
-.quizPage .spaceShip {
+[class*="quiz_"] .spaceShip {
   display: flex;
   align-items: center;
   justify-content: center;
