@@ -19,50 +19,58 @@ window.addEventListener('load', function () {
   })
 
 
-  quiz_p.forEach(function (page) {
-
-    // ▼ 팝업 영역======================================================= //
-
-    // 다음퀴즈 버튼 클릭시
-    next_btn.addEventListener('click', function () {
-      console.log("dddd");
-      popup.classList.remove('dim')
-      setTimeout(() => {
-        quizBox.forEach(this_e => { this_e.classList.remove('off') });
-        answerBox.forEach(this_e => { this_e.classList.remove('dim') });
-      }, 1000);
-
-      // 다음 퀴즈만! on
-      console.log(page)
-    })
-
-
-
-
-
-  })
 
   // ▼ OX퀴즈 영역======================================================= //
   var ox_container = this.document.querySelector('[data-quiz="ox"]')
-  var ox_answer = this.document.querySelectorAll('[data-quiz="ox"] [data-answer]')
+  var ox_btn = this.document.querySelectorAll('[data-quiz="ox"] [class*="btn_icon"]')
 
 
-  // 정답 클릭시
-  ox_answer.forEach((function (answer, i) {
+  // ox버튼 클릭시
+  ox_btn.forEach((function (ox_btn, i) {
+    ox_btn.addEventListener('click', function () {
+      // 정답 클릭시
+      if (ox_btn.attributes.length === 2) {
+        console.log('정답!')
+        ox_container.classList.add('complete')
+        this.classList.add('on')
 
-    console.log('정답!')
-
-
-    answer.addEventListener('click', function () {
-      quizBox[i].classList.add('off')
-      answerBox[i].classList.add('dim')
-      setTimeout(() => { popup.classList.add('dim') }, 3000);
+        for (let i = 0; i < quizBox.length; i++) {
+          quizBox[i].classList.add('off')
+        }
+        for (let i = 0; i < answerBox.length; i++) {
+          answerBox[i].classList.add('dim')
+          answerBox[i].classList.remove('off')
+        }
+        setTimeout(() => { popup.classList.add('dim') }, 3000);
+      }
+      
+      // 오답 클릭시(대기)
+      else {
+        console.log('오답!')
+      }
     })
   }))
 
 
-  // 오답 클릭시(대기)
 
-  console.log('li들', quiz_p);
+  // ▼ 팝업 영역======================================================= //
+
+  // 다음퀴즈 버튼 클릭시
+  next_btn.addEventListener('click', function () {
+    popup.classList.remove('dim')
+    setTimeout(() => {
+      quizBox.forEach(this_e => { this_e.classList.remove('off') });
+      answerBox.forEach(this_e => { this_e.classList.remove('dim') });
+    }, 1000);
+
+    // 다음 퀴즈만! on
+    let nextPage = document.querySelector('[class*="quiz_"].on')
+    nextPage.classList.remove('on')
+    nextPage.nextElementSibling.classList.add('on')
+  })
+
+
+
+  // console.log('li들', quiz_p);
 
 })
