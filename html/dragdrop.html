@@ -174,38 +174,76 @@
 
 <script>
 
+function size() {
+        //전체화면 크기를 불러온다
+        // innerWidth : 브라우저창의 내부 너비 반환 (스크롤바 포함)
+        let wholeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        let wholeHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        //줄어들어야되는 요소 크기를 불러온다
+        let wrapWidth = document.querySelector("#wrap").clientWidth;
+        let wrapHeight = document.querySelector("#wrap").clientHeight;
 
-let dragObj = document.querySelectorAll('.lineBox');
-       let winX = clientX();
-       let winy = clientY();
+        //두개를 나눠서 비율을 뽑는다 -> transform scale
+        let widthZoom= wholeWidth / wrapWidth;
+        let heightZoom = wholeHeight / wrapHeight;
+
+        console.log(wholeWidth+'wholeWidthwholeWidth');
+        console.log(wholeHeight+'wholeHeightwholeHeightwholeHeight');
+        console.log(wrapWidth+'wrapWidthwrapWidthwrapWidth');
+        console.log(wrapHeight+'wrapHeightwrapHeightwrapHeightwrapHeight');
+        console.log(widthZoom+'widthZoomwidthZoomwidthZoom');
+        console.log(heightZoom+'heightZoomheightZoomheightZoom');
+
+
+        let zoomRate;
+        if (widthZoom> heightZoom) {
+            document.querySelector("#wrap").style.transform = `scale(${heightZoom})`
+            zoomRate = heightZoom;
+        } else {
+            document.querySelector("#wrap").style.transform = `scale(${widthZoom})`
+            zoomRate = widthZoom;
+        }
+        document.querySelector("#wrap").style.transformOrigin = '0% 0%';
+        document.querySelector("#wrap").style.MsTransformOrigin = '0% 0%';
+        document.querySelector("#wrap").style.MozTransformOrigin = '0% 0%';
+        document.querySelector("#wrap").style.WebkitTransformOrigin = '0% 0%';
+
+      }
+        
+
+
+// let dragObj = document.querySelectorAll('.lineBox');
+//        let winX = clientX();
+//        let winy = clientY();
 
       
       //  자바스크립트 기본 드래그 막음
-       dragObj.ondragstart = function() {
-        return false;
-      };
+      
+      //  dragObj.ondragstart = function() {
+      //   return false;
+      // };
 
 
-          dragObj.forEach(element => {
-            // 마우스 클릭했을때
-            element.addEventListener('mousedown',function() {
-              element.classList.add('draging');
-              console.log('ewqopeqwojwqeojpkweq'+element);
-              console.log('weoqkewpqokepwqo'+winX);
-              console.log('weoqkewpqokepwqo'+winY);
-            })
+      //     dragObj.forEach(element => {
+      //       // 마우스 클릭했을때
+      //       element.addEventListener('mousedown',function() {
+      //         element.classList.add('draging');
+      //         console.log('ewqopeqwojwqeojpkweq'+element);
+      //         console.log('weoqkewpqokepwqo'+winX);
+      //         console.log('weoqkewpqokepwqo'+winY);
+      //       })
 
-            // 마우스뗏을때
-            element.addEventListener('mouseup',function() {
-              element.classList.remove('draging');
-              // console.log('ewqopeqwojwqeojpkweq222222'+element);
-            })
-            //마우스 아웃
-            element.addEventListener('',function() {
-              element.classList.remove('draging');
-              // console.log('ewqopeqwojwqeojpkweq3333'+element);
-            })
-          });
+      //       // 마우스뗏을때
+      //       element.addEventListener('mouseup',function() {
+      //         element.classList.remove('draging');
+      //         // console.log('ewqopeqwojwqeojpkweq222222'+element);
+      //       })
+      //       //마우스 아웃
+      //       element.addEventListener('',function() {
+      //         element.classList.remove('draging');
+      //         // console.log('ewqopeqwojwqeojpkweq3333'+element);
+      //       })
+      //     });
 
 </script>
 
