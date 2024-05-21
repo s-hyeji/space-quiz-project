@@ -1,7 +1,7 @@
-//  new window.$cale({
-//         target: document.getElementById("wrap"),
-//         mode: ""
-//     });
+
+// 혜지 추가 스크롤바 감추기
+document.body.style.overflow = 'hidden';
+// 
 function size() {
     //전체화면 크기를 불러온다
     let wholeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
