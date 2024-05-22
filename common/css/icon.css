@@ -32,9 +32,10 @@ button:hover,
 
 /* 잘했어요 팝업캐릭 */
 .char_01{
-  width: 2704px;
-  height: 2903px;
-  background: url(../images/char/char_01.png) center / contain no-repeat;
+  position: absolute;
+  width: 1485px;
+  height: 1595px;
+  background: url(../images/char/char_01.svg) center / contain no-repeat;
 }
 
 .char_02{
