@@ -12,10 +12,15 @@ start_btn.addEventListener('click', function () {
     start_page.classList.add('off')
 })
 
-// 다음퀴즈 버튼 클릭시
-next_btn.addEventListener('click', function () {
-    nextPage();
-})
+console.log()
+if (!document.querySelector('.popup_container .nextBtn') === null) {
+    // 다음퀴즈 버튼 클릭시
+
+    next_btn.addEventListener('click', function () {
+        nextPage();
+    })
+
+}
 
 // 다음 퀴즈만! on
 function nextPage() {
