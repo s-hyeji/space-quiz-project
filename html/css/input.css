@@ -125,6 +125,7 @@ input:focus {
   padding-right: 42px;
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
 }
 
 .exBtn {
