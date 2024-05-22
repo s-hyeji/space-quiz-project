@@ -42,7 +42,7 @@ window.addEventListener('load', function () {
     let ox_correct = document.querySelectorAll('[data-quiz="ox"] [data-answer]')
 
     for (let i = 0; i < ox_container.length; i++) {
-      console.log('>>>>>>>>', ox_correct[i].classList);
+      // console.log('>>>>>>>>', ox_correct[i].classList);
       if (ox_correct[i].classList.contains('on')) {
         ox_container[i].classList.add('complete')
       }
