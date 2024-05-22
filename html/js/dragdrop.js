@@ -10,8 +10,8 @@
 
    draggable = e.target;
    // Calculate the offset between mouse position and top-left corner of the draggable element
-   offsetX = e.clientX - draggable.offsetLeft;
-   offsetY = e.clientY - draggable.offsetTop;
+   offsetX = (e.clientX / scale) - draggable.offsetLeft + (draggable.style.width / 2);
+   offsetY = (e.clientY / scale) - draggable.offsetTop + (draggable.style.height / 2);
 
    // Set dragging state to true
    isDragging = true;
@@ -23,12 +23,14 @@
 
  // Function to handle dragging
  function drag(e) {
+  let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
+
    console.log("확인", e);
 
    if (isDragging) {
      // Calculate new position of the draggable element
-     var newX = e.clientX - offsetX;
-     var newY = e.clientY - offsetY;
+     var newX = (e.clientX / scale) - offsetX;
+     var newY = (e.clientY / scale) - offsetY;
 
      // Set the new position
      draggable.style.left = newX + 'px';
@@ -84,7 +86,7 @@
  function checking() {
    let objans = draggable.getAttribute('drag-obj')
    let dropans = droppedArea.getAttribute('drop-obj')
-   if (objans == dropaans) {
+   if (objans == dropans) {
      console.log("cor")
    } else {
      console.log('fail')
