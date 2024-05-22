@@ -104,6 +104,7 @@ main .obj3 {
 /* 퀴즈 */
 .quizBox {
     border-color: #8cfd8cae;
+    user-select: none;
 }
 
 .quizBox h2 {
@@ -146,13 +147,41 @@ main .obj3 {
     line-height: 1.25;
 }
 
+.dragLine .dragLineObj {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.dragLine .dragLineArea {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url(../images/dragLine/star.svg) center/ contain no-repeat;
+    pointer-events: none;
+}
+
+.dragLine .lineQuiz>li {
+    position: absolute;
+}
+
+.dragLine .lineQuiz>li>div.row1 {
+    top: -103px;
+
+}
+
+.dragLine .lineQuiz>li>div.row2 {
+    top: 196px;
+}
+
 /* 문제1 */
 .quiz_1 ul.leftEx {
-    left: 60px;
+    left: 29px;
 }
 
 .quiz_1 ul.rightEx {
-    right: 170px;
+    right: 146px;
     font-size: 64px;
 }
 
@@ -169,6 +198,14 @@ main .obj3 {
 .quiz_1 .leftEx .ex03 {
     width: 100px;
     background: url(../images/dragLine/quiz1_03.svg)center/contain no-repeat;
+}
+
+.quiz_1 .lineQuiz li.leftLine {
+    left: 275px;
+}
+
+.quiz_1 .lineQuiz li.rightLine {
+    left: 851px;
 }
 
 /* 문제2 */
