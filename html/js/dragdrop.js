@@ -10,8 +10,8 @@
 
    draggable = e.target;
    // Calculate the offset between mouse position and top-left corner of the draggable element
-   offsetX = (e.clientX / scale) - draggable.offsetLeft + (draggable.style.width / 2);
-   offsetY = (e.clientY / scale) - draggable.offsetTop + (draggable.style.height / 2);
+   offsetX = (e.clientX / scale) - lineObj.offsetLeft + (lineObj.style.width / 2);
+   offsetY = (e.clientY / scale) - lineObj.offsetTop + (lineObj.style.height / 2);
 
    // Set dragging state to true
    isDragging = true;
@@ -23,8 +23,6 @@
 
  // Function to handle dragging
  function drag(e) {
-  let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
-
    console.log("확인", e);
 
    if (isDragging) {
