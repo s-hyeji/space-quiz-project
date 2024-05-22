@@ -1,50 +1,40 @@
-// Get the draggable element
-var draggable;
-let dropArea = document.querySelector("#dropArea")
-// Variables to track mouse position and dragging state
+// 혜지 드래그라인
+var lineObj;
+let lineArea = document.querySelectorAll(".dragLineArea");
 var offsetX, offsetY;
 var isDragging = false;
-let droppedArea;
-// Function to start dragging
-function startDrag(e) {
-    draggable = e.target;
-    // Calculate the offset between mouse position and top-left corner of the draggable element
-    offsetX = e.clientX - draggable.offsetLeft;
-    offsetY = e.clientY - draggable.offsetTop;
 
-    // Set dragging state to true
+function startDrag(e) {
+    lineObj = e.target
+    console.log("혜지 확인 >>>>>>", e);
+    offsetX = e.clientX - lineObj.offsetLeft;
+    offsetY = e.clientY - lineObj.offsetTop;
+
     isDragging = true;
 
-    // Add event listeners for mousemove and mouseup events
     document.addEventListener('mousemove', drag);
     document.addEventListener('mouseup', stopDrag);
 }
 
-// Function to handle dragging
 function drag(e) {
     if (isDragging) {
-        // Calculate new position of the draggable element
         var newX = e.clientX - offsetX;
         var newY = e.clientY - offsetY;
 
-        // Set the new position
-        draggable.style.left = newX + 'px';
-        draggable.style.top = newY + 'px';
+        lineObj.style.left = newX + 'px';
+        lineObj.style.top = newY + 'px';
     }
 }
 
-// Function to stop dragging
 function stopDrag() {
-    // Set dragging state to false
     checkAnswer();
-    isDragging = false;
 
-    // Remove event listeners for mousemove and mouseup events
+    isDragging = false;
     document.removeEventListener('mousemove', drag);
     document.removeEventListener('mouseup', stopDrag);
 }
 function checkAnswer() {
-    var draggableRect = draggable.getBoundingClientRect();
+    // var lineObjRect = lineObj.getBoundingClientRect();
     let target = document.querySelectorAll(".dropArea")
     // 대상 오브젝트의 위치
     var targetRect = [];
@@ -72,23 +62,17 @@ function checkAnswer() {
     }
     console.log(dropcheck)
 }
-function endCallback() {
-    let copy = draggable.cloneNode(true);
-    copy.style.position = 'static'
-    dropArea.append(copy)
-}
-
 function checking() {
-    let objans = draggable.getAttribute('drag-obj')
-    let dropans = droppedArea.getAttribute('drop-obj')
-    if (objans == dropaans) {
+    let objans = lineObj.getAttribute('drag-Line-left')
+    let dropans = droppedArea.getAttribute('drag-Line-right')
+    if (objans == dropans) {
         console.log("cor")
     } else {
         console.log('fail')
     }
 }
 
-// Add event listener for mousedown event to start dragging
-document.querySelectorAll(".draggable").forEach(function (e) {
+
+document.querySelectorAll(".dragLineObj").forEach(function (e) {
     e.addEventListener('mousedown', startDrag);
 })
