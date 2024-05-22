@@ -1,4 +1,5 @@
 // 혜지 드래그라인
+
 var lineObj;
 let lineArea = document.querySelectorAll(".dragLineArea");
 var offsetX, offsetY;
