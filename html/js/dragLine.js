@@ -48,7 +48,7 @@ function checkAnswer() {
     let dropcheck = false;
 
     // console.log(targetRect[0] )
-    // 마우스가 대상 오브젝트 위에 있는지 확인합니다.
+    // 마우스가 대상 오브젝트 위에 있는지 확인하기!
     for (let i = 0; i < targetRect.length; i++) {
         if (mouseX >= targetRect[i].left && mouseX <= targetRect[i].right &&
             mouseY >= targetRect[i].top && mouseY <= targetRect[i].bottom) {
@@ -57,7 +57,7 @@ function checkAnswer() {
             checking();
         } else {
 
-            //reset;
+            reset;
         }
     }
     console.log(dropcheck)
