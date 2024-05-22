@@ -15,22 +15,21 @@ start_btn.addEventListener('click', function () {
 // 다음퀴즈 버튼 클릭시
 next_btn.addEventListener('click', function () {
     nextPage();
-
 })
 
 // 다음 퀴즈만! on
 function nextPage() {
-    let nextPage = document.querySelector('[class*="quiz_"].on')
+    let thisPage = document.querySelector('[class*="quiz_"].on')
     let lastPage = quiz_p[quiz_p.length - 1];
-    if (nextPage !== lastPage) {
-        console.log("해당페이지 확인", nextPage);
+    if (thisPage !== lastPage) {
+        console.log("해당페이지 확인", thisPage);
         popup.classList.remove('dim')
         setTimeout(() => {
             quizBox.forEach(this_e => { this_e.classList.remove('off') });
         }, 1000);
 
-        nextPage.classList.remove('on')
-        nextPage.nextElementSibling.classList.add('on')
+        thisPage.classList.remove('on')
+        thisPage.nextElementSibling.classList.add('on')
 
         return;
     } else {
