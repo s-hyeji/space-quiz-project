@@ -1,13 +1,13 @@
  // Get the draggable element
  var draggable;
- let dropArea = document.querySelector("#dropArea")
+ let dropArea = document.querySelector(".dropArea")
  // Variables to track mouse position and dragging state
  var offsetX, offsetY;
  var isDragging = false;
  let droppedArea;
  // Function to start dragging
  function startDrag(e) {
-
+  let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
    draggable = e.target;
    // Calculate the offset between mouse position and top-left corner of the draggable element
    offsetX = (e.clientX / scale) - lineObj.offsetLeft + (lineObj.style.width / 2);
