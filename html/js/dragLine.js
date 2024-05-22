@@ -3,12 +3,12 @@ var lineObj;
 let lineArea = document.querySelectorAll(".dragLineArea");
 var offsetX, offsetY;
 var isDragging = false;
-
-function startDrag(e) {
+function startDrag(e) {    
+    let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     lineObj = e.target
     console.log("혜지 확인 >>>>>>", e);
-    offsetX = e.clientX - lineObj.offsetLeft;
-    offsetY = e.clientY - lineObj.offsetTop;
+    offsetX = (e.clientX / scale) - lineObj.offsetLeft + (lineObj.style.width / 2);
+    offsetY = (e.clientY / scale) - lineObj.offsetTop + (lineObj.style.height / 2);
 
     isDragging = true;
 
@@ -17,9 +17,10 @@ function startDrag(e) {
 }
 
 function drag(e) {
+    let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     if (isDragging) {
-        var newX = e.clientX - offsetX;
-        var newY = e.clientY - offsetY;
+        var newX = (e.clientX / scale) - offsetX;
+        var newY = (e.clientY / scale) - offsetY;
 
         lineObj.style.left = newX + 'px';
         lineObj.style.top = newY + 'px';
