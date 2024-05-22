@@ -36,18 +36,17 @@ function stopDrag() {
 }
 function checkAnswer() {
     // var lineObjRect = lineObj.getBoundingClientRect();
-    let target = document.querySelectorAll(".dropArea")
+    let target = document.querySelectorAll(".dragLineArea")
     // 대상 오브젝트의 위치
     var targetRect = [];
     for (let i = 0; i < target.length; i++) {
         targetRect.push(target[i].getBoundingClientRect())
     }
-
+    // let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     // 마우스의 위치
     var mouseX = event.clientX;
     var mouseY = event.clientY;
     let dropcheck = false;
-
     // console.log(targetRect[0] )
     // 마우스가 대상 오브젝트 위에 있는지 확인하기!
     for (let i = 0; i < targetRect.length; i++) {
@@ -58,7 +57,7 @@ function checkAnswer() {
             checking();
         } else {
 
-            reset;
+            // reset;
         }
     }
     console.log(dropcheck)
