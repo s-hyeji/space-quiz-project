@@ -4,7 +4,8 @@ var lineObj;
 let lineArea = document.querySelectorAll(".dragLineArea");
 var offsetX, offsetY;
 var isDragging = false;
-function startDrag(e) {    
+let droppedArea;
+function startDrag(e) {
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     lineObj = e.target
     console.log("혜지 확인 >>>>>>", e);
