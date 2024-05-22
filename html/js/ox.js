@@ -20,7 +20,7 @@ window.addEventListener('load', function () {
     ox_btn.addEventListener('click', function () {
       // 정답 클릭시
       if (ox_btn.attributes.length === 2) {
-        console.log('정답!')
+        // console.log('정답!')
 
         this.classList.add('on')
 
