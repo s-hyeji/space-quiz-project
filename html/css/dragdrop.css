@@ -177,6 +177,7 @@ span {
   font-weight: 100;
   letter-spacing: 3px;
   text-align  : center;
+  pointer-events: none;
 }
 .space-grotesk {
   margin: 0 0 0 9px;  
