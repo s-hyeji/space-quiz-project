@@ -67,7 +67,7 @@ function checkAnswer() {
 function checking() {
     let objans = lineObj.getAttribute('drag-Line-left')
     let dropans = droppedArea.getAttribute('drag-Line-right')
-    if (objans == dropans) {
+    if (objans === dropans) {
         console.log("cor")
     } else {
         console.log('fail')
