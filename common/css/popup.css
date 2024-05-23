@@ -19,7 +19,6 @@
 .popup_container.dim{
   opacity: 1;
   visibility: visible;
-  transition: 1s;
 }
 
 
@@ -39,7 +38,7 @@
   transition: 1s;
   /* outline: 1px solid; */
 }
-.popup_container.dim .nextBtn{
+.popup_container .nextBtn.on{
   right: -30px;
   transition-delay: 1s;
 }
@@ -57,12 +56,14 @@
 
 
 /* 참 잘했어요 팝업 */
-.popup_container.dim .goodJop_popup{
+.popup_container .goodJop_popup{
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #000;
-  transition: 0.1s;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
 }
 .popup_container .goodJop_popup::before{
   content: "";
@@ -70,7 +71,12 @@
   width: 100%;
   height: 100%;
   background: url(../images/bg/goojop_popup_bg.svg) center / contain no-repeat;
-  opacity: 0.2;
+  opacity: 0.5;
+}
+
+.popup_container.dim .goodJop_popup.on{
+  opacity: 1;
+  visibility: visible;
 }
 
 .popup_container .goodJop_popup .char_01{
@@ -79,10 +85,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.3s;
+  transition: 0.5s;
 }
-.popup_container.dim .goodJop_popup .char_01{
+.popup_container.dim .goodJop_popup.on .char_01{
   width: 476px;
   height: 511px;
   transition-delay: 1s;
+}
+.popup_container.dim .goodJop_popup.on .char_01::before{
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  width: 563px;
+  height: 121px;
+  transform: translateX(-50%);
+  background: url(../images/bg/goojop_popup_txt.svg) center / contain no-repeat;
 }
