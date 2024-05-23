@@ -33,6 +33,7 @@ function valueCompare() {
 
 
 }
+
 // 힌트 함수
 function getHangulInitial(char) {
   const cho = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
