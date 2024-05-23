@@ -12,19 +12,14 @@ start_btn.addEventListener('click', function () {
     start_page.classList.add('off')
 })
 
-
-// console.log("확인", !document.querySelector('.popup_container .nextBtn') === null);
+// console.log()
 if (document.querySelector('.popup_container .nextBtn') === null) {
 } else {
+    // 다음퀴즈 버튼 클릭시
     next_btn.addEventListener('click', function () {
         nextPage();
     })
 }
-
-
-
-
-
 
 // 다음 퀴즈만! on
 function nextPage() {
@@ -33,6 +28,7 @@ function nextPage() {
     if (thisPage !== lastPage) {
         console.log("해당페이지 확인", thisPage);
         popup.classList.remove('dim')
+        next_btn.classList.remove('on')
         setTimeout(() => {
             quizBox.forEach(this_e => { this_e.classList.remove('off') });
         }, 1000);
@@ -46,4 +42,5 @@ function nextPage() {
     }
 }
 
+// 참잘했어요 공통 함수 -> 현우선임님
 

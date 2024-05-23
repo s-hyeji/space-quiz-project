@@ -6,6 +6,8 @@ window.addEventListener('load', function () {
   var ox_btn = document.querySelectorAll('.quizBox [class*="btn_icon"]')
   var answerBox = document.querySelectorAll('.quizBox.answer')
   var popup = document.querySelector('.popup_container')
+  var next_btn = this.document.querySelector('.popup_container .nextBtn')
+
 
 
 
@@ -23,7 +25,7 @@ window.addEventListener('load', function () {
           answerBox[i].classList.add('dim')
           answerBox[i].classList.remove('off')
         }
-        setTimeout(() => { popup.classList.add('dim') }, 3000);
+        setTimeout(() => { popup.classList.add('dim'); next_btn.classList.add('on') }, 3000);
       }
 
       // 오답 클릭시(대기)
