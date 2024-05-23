@@ -130,19 +130,10 @@ span {
   font-size: 30px;
   color: #0E3750;
   padding: 0 10px 0 0;
+  z-index: 4;;
   background: url(../images/dragdrop/spaceship22.svg) center / contain  no-repeat;
   }
 
-  .spaceShip>.spaceShipAfter{
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9;
-  animation: blink 1s backwards infinite;
-  background: url(../images/dragdrop/spaceship2.svg) center / 98% no-repeat;
-}
 
 .spaceShip>.spaceShipAfter:hover{
   background: url(../images/dragdrop/spaceship2.svg) center / 100% no-repeat;
@@ -151,25 +142,27 @@ span {
 }
 
 .Humans {
-  display: flex;
-  justify-content: center;
-  position: relative;
+  position: absolute;
+  top: 180px;
+  left: 20;
   gap: 153px;
   width: 100%;
+  height: 250px;
 }
 
 .spaceHuman {
-  position: relative;
+  position: absolute;
+  left: 500px;
   width: 120px;
-  height: 257px;
-  margin: 160px 0 0 0;
+  height: 230px;
+  z-index: 5;
   background: url(../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
 }
 
 .spaceHuman > p{
   position: absolute;
   width: 117px;
-  top: 63px;
+  top: 51px;
   left: 2px;
   font-size: 31px;
   z-index: 10;
@@ -181,6 +174,18 @@ span {
 }
 .space-grotesk {
   margin: 0 0 0 9px;  
+}
+
+.quiz_1 [drag-obj="o1"] {
+  left: 284px;
+}
+
+.quiz_1 [drag-obj="x1"] {
+  left: 536px;
+}
+
+.quiz_1 [drag-obj="x2"] {
+  left: 788px;
 }
 
 

@@ -5,14 +5,19 @@
  var offsetX, offsetY;
  var isDragging = false;
  let droppedArea;
- // Function to start dragging
+ let scale;
+
+ // 드래그를 시작한다.
  function startDrag(e) {
-  let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
+  scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
    draggable = e.target;
    // Calculate the offset between mouse position and top-left corner of the draggable element
-   offsetX = (e.clientX / scale) - lineObj.offsetLeft + (lineObj.style.width / 2);
-   offsetY = (e.clientY / scale) - lineObj.offsetTop + (lineObj.style.height / 2);
+   offsetX = (e.clientX / scale) - draggable.offsetLeft + (draggable.style.width / 2);
+   offsetY = (e.clientY / scale) - draggable.offsetTop + (draggable.style.height / 2);
 
+
+
+   console.log(scale+'sdkakdladladkmsmksl');
    // Set dragging state to true
    isDragging = true;
 
