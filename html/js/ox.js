@@ -26,15 +26,14 @@ window.addEventListener('load', function () {
           answerBox[i].classList.remove('off')
         }
         setTimeout(() => { popup.classList.add('dim'); next_btn.classList.add('on') }, 3000);
+        setTimeout(() => { goodJopPopup() }, 3000);
       }
-
       // 오답 클릭시(대기)
       else {
         console.log('오답!')
       }
     })
   }))
-
 
 
   // ▼ 함수 영역======================================================= //

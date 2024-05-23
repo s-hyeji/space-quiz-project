@@ -22,6 +22,8 @@ if (document.querySelector('.popup_container .nextBtn') === null) {
 	})
 }
 
+
+
 // 다음 퀴즈만! on
 function nextPage() {
 	let thisPage = document.querySelector('[class*="quiz_"].on')
@@ -40,12 +42,14 @@ function nextPage() {
 		return;
 	} else {
 		console.log("마지막 문제입니다.");
-		goodJopPopup();
 	}
 }
 
 // 참잘했어요 공통 함수
 function goodJopPopup() {
-	popup.classList.add('dim')
-	goodJop_popup.classList.add('on')
+	let lastPage = quiz_p[quiz_p.length - 1];
+	if (lastPage.classList.contains('complete')) {
+		popup.classList.add('dim')
+		goodJop_popup.classList.add('on')
+	}
 }
