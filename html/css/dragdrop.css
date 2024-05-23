@@ -153,6 +153,7 @@ span {
 .spaceHuman {
   position: absolute;
   left: 500px;
+  top: 1px;
   width: 120px;
   height: 230px;
   z-index: 5;
