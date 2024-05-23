@@ -73,6 +73,23 @@
   background: url(../images/bg/goojop_popup_bg.svg) center / contain no-repeat;
   opacity: 0.5;
 }
+.popup_container.dim .goodJop_popup::after{
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50px;
+  left: 50%;
+  width: 559px;
+  height: 563px;
+  transform: translateX(-50%);
+}
+.popup_container.dim .goodJop_popup.on::after{
+  display: block;
+  animation: backLight 1s ease-in 1 forwards;
+  animation-delay: 1s;
+  
+}
+
 
 .popup_container.dim .goodJop_popup.on{
   opacity: 1;
@@ -86,19 +103,54 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s;
+  z-index: 1;
 }
 .popup_container.dim .goodJop_popup.on .char_01{
   width: 476px;
   height: 511px;
   transition-delay: 1s;
 }
-.popup_container.dim .goodJop_popup.on .char_01::before{
+.popup_container.dim .goodJop_popup .char_01::before{
   content: "";
   position: absolute;
-  bottom: -35px;
-  left: 50%;
   width: 563px;
   height: 121px;
+  bottom: -35px;
+  left: 50%;
   transform: translateX(-50%);
-  background: url(../images/bg/goojop_popup_txt.svg) center / contain no-repeat;
+}
+.popup_container.dim .goodJop_popup.on .char_01::before{
+  animation: txt 0.7s ease-in 1 forwards;
+  animation-delay: 1.2s;
+}
+
+/* 애니메이션 */
+@keyframes txt {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(5);
+    background: none;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    background: url(../images/bg/goojop_popup_txt.svg) center / contain no-repeat;
+  }
+}
+
+@keyframes backLight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    background: none;
+  }
+  70% {
+    transform: translateX(-50%) scale(1.2);
+    background: url(../images/char/char_01_bg.png) center / contain no-repeat;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    background: url(../images/char/char_01_bg.png) center / contain no-repeat;
+  }
 }
