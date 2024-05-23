@@ -57,14 +57,14 @@
 
 
 /* 참 잘했어요 팝업 */
-.popup_container.dim .goodjop_popup{
+.popup_container.dim .goodJop_popup{
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #000;
   transition: 0.1s;
 }
-.popup_container .goodjop_popup::before{
+.popup_container .goodJop_popup::before{
   content: "";
   position: absolute;
   width: 100%;
@@ -73,7 +73,7 @@
   opacity: 0.2;
 }
 
-.popup_container .goodjop_popup .char_01{
+.popup_container .goodJop_popup .char_01{
   width: 0;
   height: 0;
   top: 50%;
@@ -81,7 +81,7 @@
   transform: translate(-50%, -50%);
   transition: 0.3s;
 }
-.popup_container.dim .goodjop_popup .char_01{
+.popup_container.dim .goodJop_popup .char_01{
   width: 476px;
   height: 511px;
   transition-delay: 1s;
