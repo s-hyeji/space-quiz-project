@@ -19,13 +19,12 @@ start_btn.addEventListener('click', function () {
 function lastPage() {
     let thisPage = document.querySelector('[class*="quiz_"].on')
     let lastPage = quiz_p[quiz_p.length - 1];
-    // 정답을 누르면 다음버튼 오픈
     if (thisPage !== lastPage) {
         next();
     } else {
+        // 마지막일시 함수 개별
         last();
     }
-    // 마지막페이지이면 참잘했어요팝업 오픈
 }
 
 // console.log()
