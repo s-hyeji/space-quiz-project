@@ -5,10 +5,18 @@ let lineArea = document.querySelectorAll(".dragLineArea");
 var offsetX, offsetY;
 var isDragging = false;
 let droppedArea;
+
+let pureOffsetX;
+let pureOffsetY;
+
+
 function startDrag(e) {
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
-    lineObj = e.target
-    console.log("혜지 확인 >>>>>>", e);
+    lineObj = e.target;
+
+    pureOffsetX = lineObj.offsetLeft;
+    pureOffsetY = lineObj.offsetTop;
+
     offsetX = (e.clientX / scale) - lineObj.offsetLeft + (lineObj.style.width / 2);
     offsetY = (e.clientY / scale) - lineObj.offsetTop + (lineObj.style.height / 2);
 
@@ -29,14 +37,14 @@ function drag(e) {
     }
 }
 
-function stopDrag() {
-    checkAnswer();
+function stopDrag(e) {
+    checkAnswer(e);
 
     isDragging = false;
     document.removeEventListener('mousemove', drag);
     document.removeEventListener('mouseup', stopDrag);
 }
-function checkAnswer() {
+function checkAnswer(e) {
     // var lineObjRect = lineObj.getBoundingClientRect();
     let target = document.querySelectorAll(".dragLineArea")
     // 대상 오브젝트의 위치
@@ -58,17 +66,22 @@ function checkAnswer() {
             droppedArea = target[i];
             checking();
         } else {
-
-            // reset;
+            // area에 위치하지 않았음.
+            e.target.style.top = pureOffsetY + 'px'
+            e.target.style.left = pureOffsetX + 'px'
         }
+        // console.log("?????????????", e.target)
     }
-    console.log(dropcheck)
 }
 function checking() {
-    let objans = lineObj.getAttribute('drag-Line-left')
-    let dropans = droppedArea.getAttribute('drag-Line-right')
+    let objans = lineObj.getAttribute('drag-Line-left') || lineObj.getAttribute('drag-Line-right');
+    let dropans = droppedArea.getAttribute('drag-Line-right') || droppedArea.getAttribute('drag-Line-left');
     if (objans === dropans) {
-        console.log("cor")
+        console.log("cor", droppedArea)
+        droppedArea.classList.add("complete")
+        if (droppedArea.classList.contains("complete")) {
+            console.log("혜지", this);
+        }
     } else {
         console.log('fail')
     }
@@ -78,3 +91,4 @@ function checking() {
 document.querySelectorAll(".dragLineObj").forEach(function (e) {
     e.addEventListener('mousedown', startDrag);
 })
+
