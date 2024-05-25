@@ -150,6 +150,10 @@ span {
   height: 250px;
 }
 
+.draggable.on {
+  opacity: 0;;
+}
+
 .spaceHuman {
   position: absolute;
   left: 500px;
