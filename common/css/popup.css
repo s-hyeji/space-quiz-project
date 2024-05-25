@@ -91,7 +91,7 @@
 .popup_container.dim .goodJop_popup.on::after{
   display: block;
   animation: backLight 0.7s ease-in 1 forwards;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 
 

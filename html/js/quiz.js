@@ -47,11 +47,9 @@ function nextPage() {
         next_btn.classList.remove('on')
         setTimeout(() => {
             quizBox.forEach(this_e => { this_e.classList.remove('off') });
+            thisPage.classList.remove('on')
+            thisPage.nextElementSibling.classList.add('on') 
         }, 1000);
-
-        thisPage.classList.remove('on')
-        thisPage.nextElementSibling.classList.add('on')
-
         return;
     } else {
         console.log("마지막 문제입니다.");
