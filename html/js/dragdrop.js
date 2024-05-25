@@ -88,7 +88,7 @@
        droppedArea = target[i];
        checking();
      } else {
-       console.log('우주선 외 다른곳으로 드롭했을때')
+       console.log('우주선 외 다른위치로 드롭했을때')
        //reset;
        draggable.style.left = pureOffsetX + 'px';
        draggable.style.top = pureOffsetY + 'px';
@@ -104,15 +104,20 @@
 
  function checking() {
   // draggable는 드래그할 요소 / droppedArea 드롭영역
-   let objans = draggable.getAttribute('drag-obj')
+   let dragans = draggable.getAttribute('drag-obj')
    let dropans = droppedArea.getAttribute('data-drop')
 
-   console.log(objans+'...objans');
+   console.log(dragans+'...dragans');
    console.log(dropans+'...dropans ');
-   if (objans === dropans) {
+   
+   if (dragans === dropans) {
      console.log("cor")
-   } else if (objans != dropans){
-    // 드래그 영역에 드래그 되지 않앗을때와, 바깥배경에 드래그되었을때도 fail이 떠야함.
+     console.log("dragans")
+
+     draggable.classList.add('on');
+
+     
+   } else if (dragans != dropans){
      console.log('fail')
      draggable.style.left = pureOffsetX + 'px';
      draggable.style.top = pureOffsetY + 'px';
