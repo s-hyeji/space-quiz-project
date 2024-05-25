@@ -112,9 +112,14 @@
    
    if (dragans === dropans) {
      console.log("cor")
-     console.log("dragans")
-
+     droppedArea.innerHTML = "정답입니다!"
+     droppedArea.classList.add('correct');
      draggable.classList.add('on');
+     setTimeout(function(){
+      console.log('매롱');
+      droppedArea.classList.add('fly');
+
+     },3000)
 
      
    } else if (dragans != dropans){
