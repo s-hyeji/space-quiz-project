@@ -106,20 +106,36 @@
   // draggable는 드래그할 요소 / droppedArea 드롭영역
    let dragans = draggable.getAttribute('drag-obj')
    let dropans = droppedArea.getAttribute('data-drop')
+   let heat = document.querySelector('.heat')
 
    console.log(dragans+'...dragans');
    console.log(dropans+'...dropans ');
    
    if (dragans === dropans) {
-     console.log("cor")
-     droppedArea.innerHTML = "정답입니다!"
-     droppedArea.classList.add('correct');
-     draggable.classList.add('on');
-     setTimeout(function(){
-      console.log('매롱');
-      droppedArea.classList.add('fly');
+    draggable.classList.add('correct');
+    droppedArea.classList.add('correct');
+      setTimeout(function(){
+        console.log("cor")
+        droppedArea.classList.add('correctStep_1');
+        droppedArea.innerHTML = "정답입니다!"
+        // 2번째
+          setTimeout(() => {
+            droppedArea.innerHTML = "";
+            droppedArea.classList.add('correctStep_2');
+             // 3번째
+             setTimeout(() => {
+              droppedArea.classList.add('correctStep_3');
+            }, 1000);
+            // 4번째
+            setTimeout(() => {
+              droppedArea.classList.add('fly');
+            }, 2000);
+          }, 2000);
+      },700);
 
-     },3000)
+     
+
+     
 
      
    } else if (dragans != dropans){

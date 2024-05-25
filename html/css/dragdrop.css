@@ -125,20 +125,44 @@ span {
   transform: translate(-50%, -50%);
   width: 633px;
   height: 218px;
-  padding: 0 10px 0 0;
+  padding: 0 0 0 52px;
   transition: 0.5s;
   z-index: 4;
-  font-size: 30px;
+  font-size: 28px;
   color: #0E3750;
   text-shadow: -2px 0px #fff, 0px 2px #fff, 2px 0px #fff, 0px -2px #fff;
   background: url(../images/dragdrop/spaceship22.svg) center / contain  no-repeat;
   }
 
-  [class*="quiz_"] .spaceShip.correct  {
+  [class*="quiz_"] .spaceShip.correctStep_1  {
     font-size: 40px;
     letter-spacing: 2px;
     transition: 0.5s;
    }
+   [class*="quiz_"] .spaceShip.correctStep_2  {
+    background: url(../images/dragdrop/spaceship33.png) center / contain  no-repeat;
+   }
+
+   [class*="quiz_"] .spaceShip.correctStep_3 {
+    transition: 0.5s;
+
+   }
+
+   [class*="quiz_"] .spaceShip.correctStep_3::after  {
+    content: '';
+    scale: 1;
+    position: absolute;
+    width: 52px;
+    height: 42px;
+    top: 50px;
+    left: 342px;
+    transition: 0.5s;
+    background: url(../images/dragdrop/heat.svg) center / contain  no-repeat;
+   }
+
+
+
+
    [class*="quiz_"] .spaceShip.correct.fly  {
     animation: fly 2s ease-in-out 1 forwards;
     transition: 0.2;
@@ -153,8 +177,8 @@ span {
 
     }
   }
-  
 
+  
 
 
 
@@ -169,10 +193,12 @@ span {
   height: 250px;
 }
 
-.draggable.on {
+.draggable.correct {
   opacity: 0;
- 
+  transition: 0.2s;
 }
+
+
 
 .spaceHuman {
   position: absolute;
