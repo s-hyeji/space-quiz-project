@@ -65,6 +65,11 @@
   visibility: hidden;
   transition: 0.2s;
 }
+.popup_container.dim .goodJop_popup.on{
+  opacity: 1;
+  visibility: visible;
+}
+
 .popup_container .goodJop_popup::before{
   content: "";
   position: absolute;
@@ -85,17 +90,12 @@
 }
 .popup_container.dim .goodJop_popup.on::after{
   display: block;
-  animation: backLight 1s ease-in 1 forwards;
+  animation: backLight 0.7s ease-in 1 forwards;
   animation-delay: 1s;
-  
 }
 
-.popup_container.dim .goodJop_popup.on{
-  opacity: 1;
-  visibility: visible;
-}
 
-.popup_container .goodJop_popup .char_01{
+.popup_container.dim .goodJop_popup .char_01{
   width: 0;
   height: 0;
   top: 50%;
@@ -104,10 +104,12 @@
   transition: 0.5s;
   z-index: 1;
 }
-.popup_container.dim .goodJop_popup.on .char_01{
+.popup_container.dim .goodJop_popup .char_01.on{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 476px;
   height: 511px;
-  transition-delay: 1s;
 }
 .popup_container.dim .goodJop_popup .char_01::before{
   content: "";
@@ -118,10 +120,11 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.popup_container.dim .goodJop_popup.on .char_01::before{
+.popup_container.dim .goodJop_popup .char_01.on::before{
   animation: txt 0.7s ease-in 1 forwards;
-  animation-delay: 1.2s;
+  animation-delay: 0.2s;
 }
+
 
 /* 애니메이션 */
 @keyframes txt {

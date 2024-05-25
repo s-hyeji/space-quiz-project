@@ -62,7 +62,14 @@ function nextPage() {
 function goodJopPopup() {
     let lastPage = quiz_p[quiz_p.length - 1];
     if (lastPage.classList.contains('complete')) {
+        let goodPopup = document.createElement("div")
+        let char01 = document.createElement("div")
+        // 굿잡 팝업 html 생성
         popup.classList.add('dim')
-        goodJop_popup.classList.add('on')
+        popup.appendChild(goodPopup)
+        goodPopup.classList.add('goodJop_popup', 'on')
+        goodPopup.appendChild(char01)
+        char01.classList.add('char_01')
+        setTimeout(() => { char01.classList.add('on') }, 1000);
     }
 }
