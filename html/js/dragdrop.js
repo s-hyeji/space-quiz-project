@@ -8,7 +8,6 @@
  let scale;
  let popup_container = document.querySelector('.popup_container');
  let nextBtn = document.querySelector('.nextBtn');
- let quizPage = document.querySelectorAll('.quizPage');
  
  // 맨 처음 드래그 요소의 위치값을 저장해 둘 변수 
  let pureOffsetX ;
@@ -115,6 +114,8 @@
         draggable.classList.add('correct');
         droppedArea.classList.add('correct');
         correctStep_1();
+        completeClass();
+
    } else if (dragans != dropans){
      console.log('fail')
      draggable.style.left = pureOffsetX + 'px';
@@ -147,12 +148,18 @@
     popup_container.classList.add('dim');
     nextBtn.classList.add('on');
       },850);
+
+      return ;
    }
-   
-   
-   
 
  }
+ function completeClass() {
+  console.log('정답 페이지에 complete 클래스를 붙임');
+  let dragdrop_wrap = document.querySelector('[data-quiz="dragDrop"].on')
+  dragdrop_wrap.classList.add('complete');
+}
+
+
 
 
 
