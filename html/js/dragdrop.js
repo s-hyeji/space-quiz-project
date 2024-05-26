@@ -6,10 +6,14 @@
  var isDragging = false;
  let droppedArea;
  let scale;
-
-   // 맨 처음 드래그 요소의 위치값을 저장해 둘 변수 
+ let popup_container = document.querySelector('.popup_container');
+ let nextBtn = document.querySelector('.nextBtn');
+ let quizPage = document.querySelectorAll('.quizPage');
+ 
+ // 맨 처음 드래그 요소의 위치값을 저장해 둘 변수 
  let pureOffsetX ;
  let pureOffsetY ;
+
  
 
 
@@ -21,15 +25,12 @@
   // 맨 처음 드래그 요소의 위치값을 저장해둔다.
   pureOffsetX = draggable.offsetLeft;
   pureOffsetY = draggable.offsetTop;
-  console.log(pureOffsetX+'왼쪽');
-  console.log(pureOffsetY+'위쪽');
+
 
 
    // 드래그 요소의 좌상단 위치와 마우스 위치를 계산한다.
    offsetX = (e.clientX / scale) - draggable.offsetLeft + (draggable.style.width / 2);
    offsetY = (e.clientY / scale) - draggable.offsetTop + (draggable.style.height / 2);
-
-
 
 
    // isDragging의 값을 true로 만들어서 드래그를 시작한다.
@@ -49,7 +50,7 @@
      var newX = (e.clientX / scale) - offsetX;
      var newY = (e.clientY / scale) - offsetY;
 
-     // Set the new position
+     // Set the new position  
      draggable.style.left = newX + 'px';
      draggable.style.top = newY + 'px';
    }
@@ -89,10 +90,8 @@
        checking();
      } else {
        console.log('우주선 외 다른위치로 드롭했을때')
-       //reset;
        draggable.style.left = pureOffsetX + 'px';
        draggable.style.top = pureOffsetY + 'px';
-       console.log(pureOffsetX); 
      }
    }
  }
@@ -108,42 +107,54 @@
    let dropans = droppedArea.getAttribute('data-drop')
    let heat = document.querySelector('.heat')
 
-   console.log(dragans+'...dragans');
-   console.log(dropans+'...dropans ');
+  //  console.log(dragans+'...dragans');
+  //  console.log(dropans+'...dropans ');
    
    if (dragans === dropans) {
-    draggable.classList.add('correct');
-    droppedArea.classList.add('correct');
-      setTimeout(function(){
         console.log("cor")
-        droppedArea.classList.add('correctStep_1');
-        droppedArea.innerHTML = "정답입니다!"
-        // 2번째
-          setTimeout(() => {
-            droppedArea.innerHTML = "";
-            droppedArea.classList.add('correctStep_2');
-             // 3번째
-             setTimeout(() => {
-              droppedArea.classList.add('correctStep_3');
-            }, 1000);
-            // 4번째
-            setTimeout(() => {
-              droppedArea.classList.add('fly');
-            }, 2000);
-          }, 2000);
-      },700);
-
-     
-
-     
-
-     
+        draggable.classList.add('correct');
+        droppedArea.classList.add('correct');
+        correctStep_1();
    } else if (dragans != dropans){
      console.log('fail')
      draggable.style.left = pureOffsetX + 'px';
      draggable.style.top = pureOffsetY + 'px';
-   } 
+   }
+   function correctStep_1() {
+    setTimeout(function(){
+      droppedArea.innerHTML = "정답입니다!"
+      droppedArea.classList.add('correctStep_1');
+       correctStep_2();
+      },1500);
+   }
+   function correctStep_2() {
+    setTimeout(function(){
+      droppedArea.innerHTML = "";
+      droppedArea.classList.add('correctStep_2');
+      droppedArea.classList.add('correctStep_3');
+      correctStep_3();
+      },850);
+   }
+   function correctStep_3() {
+    setTimeout(function(){
+      droppedArea.classList.add('fly');
+      correctStep_4();
+      },850);
+   }
+
+   function correctStep_4() {
+    setTimeout(function(){
+    popup_container.classList.add('dim');
+    nextBtn.classList.add('on');
+      },850);
+   }
+   
+   
+   
+
  }
+
+
 
  // Add event listener for mousedown event to start dragging
  document.querySelectorAll(".draggable").forEach(function (e) {

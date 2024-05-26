@@ -36,8 +36,8 @@ main{
   width: 190px;
   height: 530px;
   animation: upDown3 5s ease-in-out infinite;
-  background: url(
-  ../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
+  background: url(../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
+  
 }
 
 
@@ -126,13 +126,17 @@ span {
   width: 633px;
   height: 218px;
   padding: 0 0 0 52px;
-  transition: 0.5s;
+  transition: 0.s;
   z-index: 4;
-  font-size: 28px;
+  font-size: 30px;
   color: #0E3750;
   text-shadow: -2px 0px #fff, 0px 2px #fff, 2px 0px #fff, 0px -2px #fff;
   background: url(../images/dragdrop/spaceship22.svg) center / contain  no-repeat;
   }
+
+  .quiz_2 .spaceShip {
+    padding: 0 0 0 39px;
+    }
 
   [class*="quiz_"] .spaceShip.correctStep_1  {
     font-size: 40px;
@@ -140,11 +144,12 @@ span {
     transition: 0.5s;
    }
    [class*="quiz_"] .spaceShip.correctStep_2  {
+    transition: 1.2s;
     background: url(../images/dragdrop/spaceship33.png) center / contain  no-repeat;
    }
 
    [class*="quiz_"] .spaceShip.correctStep_3 {
-    transition: 0.5s;
+    transition: 1s;
 
    }
 
@@ -161,41 +166,37 @@ span {
    }
 
 
-
-
    [class*="quiz_"] .spaceShip.correct.fly  {
     animation: fly 2s ease-in-out 1 forwards;
-    transition: 0.2;
    }
 
    @keyframes fly {
     0% {
+      transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+    }
+    0% {
       transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
     }
     100% {
-      transform: translate(100%, -230%) rotate(-15deg) scale(0.7);
+      transform: translate(100%, -230%) rotate(-15deg) scale(0.1);
 
     }
   }
 
-  
 
-
-
-
-
-.Humans {
+.humans {
   position: absolute;
   top: 180px;
   left: 20;
   gap: 153px;
   width: 100%;
   height: 250px;
+  transition : 0.3s
 }
 
 .draggable.correct {
   opacity: 0;
-  transition: 0.2s;
+
 }
 
 
@@ -223,19 +224,26 @@ span {
   text-align  : center;
   pointer-events: none;
 }
+
+.quiz_4 >.spaceHuman > p{
+  top: 47px;
+  left: 4px;
+  font-size: 28px;
+}
 .space-grotesk {
   margin: 0 0 0 9px;  
 }
 
-.quiz_1 [drag-obj="o1"] {
+
+
+[class*="quiz_"]  .spaceHuman:nth-child(1) {
   left: 284px;
 }
 
-.quiz_1 [drag-obj="x1"] {
-  left: 536px;
+[class*="quiz_"]  .spaceHuman:nth-child(2) {
+  left: 540px;
 }
-
-.quiz_1 [drag-obj="x2"] {
+[class*="quiz_"]  .spaceHuman:nth-child(3) {
   left: 788px;
 }
 

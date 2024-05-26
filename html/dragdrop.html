@@ -18,7 +18,7 @@
     <main class="content">
       <ul>
         <!-- 스타트페이지 -->
-        <li class="start_page off">
+        <li class="start_page on">
           <div class="spaceship"></div>
           <div class="spaceHuman"></div>
           <h1></h1>
@@ -26,7 +26,7 @@
           <button class="btn_start"></button>
         </li>
         <!-- 1페이지 -->
-        <li class="quiz_1 quizPage  on">
+        <li class="quiz_1 quizPage">
           <section class="quizBox">
             <div class="char_03"></div>
             <h2 class="quizText">공통점이 적힌 단어를 찾아 보세요.</h2>
@@ -35,7 +35,7 @@
                   토끼, 호랑이, 사슴, 무당벌레, 기린 
                 </div>
 
-                <div class="Humans">
+                <div class="humans">
                   <div class="spaceHuman draggable" drag-obj="o1">
                     <p>동물</p>
                   </div>
@@ -49,55 +49,48 @@
   
             </div>
           </section>
-          
         </li>
         <li class="quiz_2 quizPage ">
           <section class="quizBox">
             <div class="char_03"></div>
-            <h2 class="quizText">다음 문제에서 공통점이 적힌 단어를 찾아 보세요.</h2>
-            <!-- <div class="skyBox">장화, 구두, 운동화, 슬리퍼, 샌들</div> -->
+            <h2 class="quizText">공통점이 적힌 단어를 찾아 보세요.</h2>
             <div class="drag_objs">
-                <div class="spaceShip" data-drop>
+                <div class="spaceShip dropArea" data-drop="o1">
                   장화, 구두, 운동화, 슬리퍼, 샌들
-                  <!-- <div class="spaceShipAfter"></div> -->
                 </div>
-                <div class="Humans">
-                  <div class="spaceHuman draggable" data-drag>
+                <div class="humans">
+                  <div class="spaceHuman draggable" drag-obj="o1">
                     <p>신발</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable" drag-obj="x2">
                     <p>비옷</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable" drag-obj="x1">
                     <p>장갑</p>
                   </div>
                 </div>
   
             </div>
           </section>
-          
         </li>
-
         <li class="quiz_3 quizPage ">
           <section class="quizBox">
             <div class="char_03"></div>
             <h2 class="quizText">다음 문장에서 빈칸에 들어가야 할 단어를 맞추어 보세요.</h2>
-            <!-- <div class="skyBox"> </div> -->
               
             <div class="drag_objs">
-                <div class="spaceShip" data-drop>
+                <div class="spaceShip dropArea" data-drop="o3">
                   나는 오늘 학교에 <span class="space-grotesk"> _ _ .</span>
-                  <!-- <div class="spaceShipAfter"></div> -->
                 </div>
 
-                <div class="Humans">
-                  <div class="spaceHuman draggable" data-drag>
+                <div class="humans">
+                  <div class="spaceHuman draggable" drag-obj="o3">
                     <p>갔다</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable" drag-obj="x1">
                     <p>먹다</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable" drag-obj="x2">
                     <p>잤다</p>
                   </div>
                 </div>
@@ -105,57 +98,49 @@
             </div>
           </section>
           
-        </li>
+        </li>  
 
-        <li class="quiz_4 quizPage ">
+         <li class="quiz_4 quizPage ">
           <section class="quizBox">
             <div class="char_03"></div>
             <h2 class="quizText">다음 문장에서 빈칸에 들어가야 할 단어를 맞추어 보세요.</h2>
-            <!-- <div class="skyBox">학교에서는 매일 책을 <span class="space-grotesk">_ _ _ .</span> </div> -->
-              
             <div class="drag_objs">
-                <div class="spaceShip" data-drop>
+                <div class="spaceShip dropArea" data-drop="o4">
                   학교에서는 매일 책을 <span class="space-grotesk">_ _ _ .</span>
-                  <!-- <div class="spaceShipAfter"></div> -->
                 </div>
-
-                <div class="Humans">
-                  <div class="spaceHuman draggable" data-drag>
+                <div class="humans">
+                  <div class="spaceHuman draggable" drag-obj="x1">
                     <p>만들다 </p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable" drag-obj="x2">
                     <p>그리다</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable" drag-obj="o4">
                     <p>읽는다</p>
                   </div>
                 </div>
-  
             </div>
           </section>
-          
         </li>
 
         <li class="quiz_5 quizPage ">
           <section class="quizBox">
             <div class="char_03"></div>
             <h2 class="quizText">다음 문장에서 빈칸에 들어가야 할 단어를 맞추어 보세요.</h2>
-            <!-- <div class="skyBox">친구들과 함께 숨바꼭질을<span class="space-grotesk">_ _   .</span> </div> -->
               
             <div class="drag_objs">
-                <div class="spaceShip" data-drop>
+                <div class="spaceShip   dropArea" data-drop="o5">
                   친구들과 함께 숨바꼭질을<span class="space-grotesk">_ _   .</span> 
-                  <!-- <div class="spaceShipAfter"></div> -->
                 </div>
 
-                <div class="Humans">
-                  <div class="spaceHuman draggable" data-drag>
+                <div class="humans">
+                  <div class="spaceHuman draggable"  drag-obj="x1">
                     <p>걷다</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable"  drag-obj="o5">
                     <p>한다</p>
                   </div>
-                  <div class="spaceHuman draggable" data-drag>
+                  <div class="spaceHuman draggable"  drag-obj="x2">
                     <p>날다</p>
                   </div>
                 </div>
@@ -163,13 +148,19 @@
             </div>
           </section>
           
-        </li>
+        </li> 
         
       </ul>
     </main>
+
+    <!-- 팝업컨테이너 영역 -->
+    <section class="popup_container">
+      <div class="nextBtn">다음 문제<div class="char_05"></div>
+      </div>
+    </section>
   </div>
 <script src="./js/scale.js"></script>
-<!-- <script src="./js/quiz.js"></script> -->
+<script src="./js/quiz.js"></script>
 <script src="./js/dragdrop.js"></script>
 
 </body>
