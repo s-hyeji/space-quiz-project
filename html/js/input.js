@@ -19,7 +19,7 @@ function inputvaluecheck() {
 
   //  하나 이상시 체킹하기
   if (emptyCount >= 1) {
-    console.log("호ㅓㅏㄱ인")
+    // console.log("확인")`
     alert("정답을 모두 입력해주세요.")
   } else if (emptyCount === 0) {
     // 모두 입력함
