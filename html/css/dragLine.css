@@ -123,9 +123,8 @@ main .obj3 {
 .dragLine canvas {
     position: absolute;
     top: 140px;
-    left: 50%;
+    left: 216px;
     outline: 1px solid;
-    transform: translateX(-53%);
 }
 
 .quizBox ul {
