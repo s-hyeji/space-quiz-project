@@ -193,11 +193,14 @@ span {
   gap: 153px;
   width: 100%;
   height: 250px;
-  transition : 0.3s
+  transition : 0.5s
+
 }
 
 .draggable.correct {
   opacity: 0;
+  transition : 0.5s
+
 
 }
 

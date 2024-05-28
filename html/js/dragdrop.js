@@ -134,14 +134,12 @@ function checking() {
     draggable.style.left = pureOffsetX + 'px';
     draggable.style.top = pureOffsetY + 'px';
   }
-  // for (let i = 0; i < quizPageOn.length; i++) {
 
-  // }
 
   function correctStep_1() {
+    draggable.classList.add('correct');
+    droppedArea.classList.add('correct');
     setTimeout(function () {
-      draggable.classList.add('correct');
-      droppedArea.classList.add('correct');
       droppedArea.innerHTML = "정답입니다!"
       droppedArea.classList.add('correctStep_1');
       correctStep_2();
@@ -152,11 +150,14 @@ function checking() {
       droppedArea.innerHTML = "";
       droppedArea.classList.add('correctStep_2');
       droppedArea.classList.add('correctStep_3');
+
+
       correctStep_3();
     }, 850);
   }
   function correctStep_3() {
     setTimeout(function () {
+
       droppedArea.classList.add('fly');
       correctStep_4();
     }, 850);
