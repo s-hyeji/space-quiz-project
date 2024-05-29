@@ -33,6 +33,8 @@ function startDrag(e) {
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     console.log(e)
     lineObj = e.target;
+    lineObj.classList.add("isDragging")
+
     canvas = document.querySelector('.container > li.on canvas');
     context = canvas.getContext('2d');
 
@@ -72,15 +74,11 @@ function drag(e) {
         }
     }
 
-    // canvas.addEventListener('mousemove', function (e) {
-    //     if (isDrawing) {
-    //         redrawCanvas();
-    //         drawLine(startX, startY, e.offsetX, e.offsetY);
-    //     }
-    // });
 }
 
 function stopDrag(e) {
+    lineObj.classList.remove("isDragging")
+
     checkAnswer(e);
 
     if (isDrawing && answerCheck) {
@@ -105,6 +103,8 @@ function checkAnswer(e) {
     // 마우스의 위치
     var mouseX = event.clientX;
     var mouseY = event.clientY;
+    dropcheck = false;
+
 
     // console.log(targetRect[0] )
     // 마우스가 대상 오브젝트 위에 있는지 확인하기!
@@ -124,13 +124,14 @@ function checkAnswer(e) {
         e.target.style.left = pureOffsetX + 'px'
     }
 
-
 }
 function checking(e) {
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     let objans = lineObj.getAttribute('drag-Line-left') || lineObj.getAttribute('drag-Line-right');
     let dropans = droppedArea.getAttribute('drag-Line-right') || droppedArea.getAttribute('drag-Line-left');
+    answerCheck = false;
 
+    console.log("Tlqkf", dropcheck);
 
     if (objans == dropans) {
         redrawCanvas();
@@ -139,7 +140,7 @@ function checking(e) {
         drawLine(startX, startY, mouseEndX, mouseEndY);
 
         console.log("cor")
-        answerCheck = true
+        answerCheck = true;
         lines.push({ startX: startX, startY: startY, endX: mouseEndX, endY: mouseEndY });
 
         checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);

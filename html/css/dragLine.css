@@ -124,7 +124,7 @@ main .obj3 {
     position: absolute;
     top: 140px;
     left: 216px;
-    outline: 1px solid;
+    /* outline: 1px solid; */
 }
 
 .quizBox ul {
@@ -148,16 +148,16 @@ main .obj3 {
 
 .dragLine .dragLineObj {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     outline: 1px solid #fff;
 }
 
 .dragLine .dragLineArea {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background: url(../images/dragLine/star.svg) center/ contain no-repeat;
     pointer-events: none;
 }
@@ -180,6 +180,11 @@ main .obj3 {
     pointer-events: none;
     user-select: none;
     background-color: blue;
+}
+
+[drag-line-left].isDragging,
+[drag-line-right].isDragging {
+    z-index: 10;
 }
 
 /* 문제1 */
