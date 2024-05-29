@@ -100,11 +100,15 @@ table td input {
   height: 80px;
   border: none;
   background: transparent;
-  color: #FF4A72;
   font-size: 42px;
   text-align: center;
+  color: #FF4A72;
 }
-table td input.col::placeholder{
+table td input.correct{
+  color: rgb(27, 88, 255);
+  pointer-events: none;
+}
+table td input.horizon::placeholder{
   display: flex;
   align-content: center;
   justify-content: center;
@@ -120,6 +124,23 @@ table td input.col::placeholder{
   font-size: 30px;
   padding-top: 3px;
   color: #11AA9F;
+}
+table td input.vertical::placeholder{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 45px;
+  height: 45px;
+  border: 4px solid #15B4F4;
+  border-radius: 100%;
+  box-sizing: border-box;
+  font-size: 30px;
+  padding-top: 3px;
+  color: #15B4F4;
 }
 
 table td input:focus {
@@ -137,26 +158,23 @@ table td input:focus::placeholder {
   margin: 20px 0 0 0;
 }
 
-.btnBox>div {
+.btnBox>button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 220px;
   height: 67px;
-  font-size: 34px;
   padding-right: 42px;
-  background-repeat: no-repeat;
+  font-size: 34px;
+  color: #fff;
   background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
   cursor: pointer;
 }
-
-.exBtn {
-  background-image: url(../images/input/leftBtn_1.svg);
-}
-
-.answerBtn {
-  background-image: url(../images/input/leftBtn_2.svg);
-}
+.complete .btnBox>button{pointer-events: none;}
+.exBtn {background-image: url(../images/input/leftBtn_1.svg);}
+.answerBtn {background-image: url(../images/input/leftBtn_2.svg);}
 
 /* right */
 
