@@ -6,17 +6,7 @@ const userinput = document.querySelectorAll("input")
 
 answer.addEventListener("click", function () {
   inputvaluecheck();
-  // inputAddComplete();
-  for (let i = 0; i < userinput.length; i++) {
-    console.log('>>>>>', userinput[i].classList.length);
-    if (userinput[i].classList.contains('correct') == true) {
-      quizPage.classList.add('complete')
-      // setTimeout(() => { goodJopPopup(); }, 500);
-      console.log('컴플리트 붙음');
-    } else {
-      console.log('컴플리트 안붙음');
-    }
-  }
+  inputQuizComplete();
 })
 
 
@@ -40,7 +30,7 @@ function inputvaluecheck() {
     alert("정답을 모두 입력해주세요.")
   } else if (emptyCount === 0) {
     // 모두 입력함
-    valueCompare()
+    valueCompare();
   }
 }
 
@@ -63,7 +53,7 @@ function valueCompare() {
   let e = 0;
   for (i = 0; i < userinputAns.length; i++) {
     if (userinputAns[i] != userinputVal[i]) {
-      console.log('오답');
+      // console.log('오답');
       // console.log(userinput[i].value);
       userinput[i].value = "";
       e = e + 1;
@@ -79,26 +69,26 @@ function valueCompare() {
       })
     }
   }
-
-  // 힌트 함수
-  function getHangulInitial(char) {
-    const cho = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
-    const code = char.charCodeAt(0) - 44032;
-    const initialIndex = Math.floor(code / 588);
-    return cho[initialIndex];
-  }
+}
+// 힌트 함수
+function getHangulInitial(char) {
+  const cho = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
+  const code = char.charCodeAt(0) - 44032;
+  const initialIndex = Math.floor(code / 588);
+  return cho[initialIndex];
 }
 
+// 정답 함수
+function inputQuizComplete() {
+  let totalInput = userinput.length
+  let totalCorrectCount = document.getElementsByClassName('correct').length
+  console.log('합계 :', totalInput + ':' + totalCorrectCount);
+  // console.log('인풋 갯수 :', totalInput);
+  // console.log('correct 갯수 :', totalCorrectCount);
 
-// function inputAddComplete() {
-//   for (let i = 0; i < userinput.length; i++) {
-//     console.log('>>>>>', userinput[i].classList.contains('correct'));
-//     if (userinput[i].classList.contains('correct') === true) {
-//       quizPage.classList.add('complete')
-//       setTimeout(() => { goodJopPopup(); }, 500);
-//       console.log('컴플리트 붙음');
-//     } else {
-//       console.log('컴플리트 안붙음');
-//     }
-//   }
-// }
+  if (totalInput === totalCorrectCount) {
+    quizPage.classList.add('complete')
+    // setTimeout(() => { goodJopPopup(); }, 500);
+    console.log('컴플리트 ON');
+  } 
+}
