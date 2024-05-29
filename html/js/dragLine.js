@@ -129,7 +129,6 @@ function checking(e) {
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     let objans = lineObj.getAttribute('drag-Line-left') || lineObj.getAttribute('drag-Line-right');
     let dropans = droppedArea.getAttribute('drag-Line-right') || droppedArea.getAttribute('drag-Line-left');
-    answerCheck = false;
 
     console.log("Tlqkf", dropcheck);
 
