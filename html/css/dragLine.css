@@ -151,7 +151,7 @@ main .obj3 {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    outline: 1px solid #fff;
+    /* outline: 1px solid #fff; */
 }
 
 .dragLine .dragLineArea {
@@ -179,7 +179,7 @@ main .obj3 {
 [drag-line-right].complete {
     pointer-events: none;
     user-select: none;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 [drag-line-left].isDragging,
@@ -245,6 +245,14 @@ main .obj3 {
     background: url(../images/dragLine/quiz2_upset.svg) center/contain no-repeat;
 }
 
+.quiz_2 .lineQuiz li.leftLine {
+    left: 275px;
+}
+
+.quiz_2 .lineQuiz li.rightLine {
+    left: 827px;
+}
+
 /* 문제3 */
 .quiz_3 ul.leftEx {
     height: 450px;
@@ -281,13 +289,21 @@ main .obj3 {
 }
 
 .quiz_3 .rightEx .ex01 {
-    background: url(../images/dragLine/quiz3_01.jpg) center/cover no-repeat;
+    background: url(../images/dragLine/quiz3_01_01.svg) center/cover no-repeat;
 }
 
 .quiz_3 .rightEx .ex02 {
-    background: url(../images/dragLine/quiz3_02.jpg) center/cover no-repeat;
+    background: url(../images/dragLine/quiz3_02_02.svg) center/cover no-repeat;
 }
 
 .quiz_3 .rightEx .ex03 {
-    background: url(../images/dragLine/quiz3_03.jpg) center/cover no-repeat;
+    background: url(../images/dragLine/quiz3_03_03.svg) center/cover no-repeat;
+}
+
+.quiz_3 .lineQuiz li.leftLine {
+    left: 343px;
+}
+
+.quiz_3 .lineQuiz li.rightLine {
+    left: 807px;
 }
