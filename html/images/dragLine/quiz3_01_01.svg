@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.32 79.96">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2f2f2;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #d90012;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="_섁1" data-name="섁1">
+    <g id="Japana_flag" data-name="Japana flag">
+      <polygon class="cls-1" points="0 0 0 26.7 0 53.26 0 79.96 118.32 79.96 118.32 53.26 118.32 26.7 118.32 0 0 0"/>
+      <path class="cls-2" d="M59.17,62.7c12.51,0,22.72-10.2,22.72-22.72s-10.21-22.72-22.72-22.72-22.73,10.2-22.73,22.72,10.2,22.72,22.73,22.72Z"/>
+    </g>
+  </g>
+</svg>

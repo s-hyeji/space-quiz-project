@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.01 79.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e10e00;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fcd348;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="_섁1" data-name="섁1">
+    <g id="Vietnam_flag" data-name="Vietnam flag">
+      <polygon class="cls-1" points="0 0 0 26.69 0 53.24 0 79.95 120.01 79.95 120.01 53.24 120.01 26.69 120.01 0 0 0"/>
+      <polygon class="cls-2" points="59.11 15.45 65.83 34.01 84.76 33.95 69.97 45.42 76.75 63.95 60.9 52.46 44.87 63.4 51.14 45.44 35.23 34.01 54.19 34.02 59.11 15.45"/>
+    </g>
+  </g>
+</svg>
