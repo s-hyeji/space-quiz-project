@@ -175,6 +175,13 @@ main .obj3 {
     top: 196px;
 }
 
+[drag-line-left].complete,
+[drag-line-right].complete {
+    pointer-events: none;
+    user-select: none;
+    background-color: blue;
+}
+
 /* 문제1 */
 .quiz_1 ul.leftEx {
     left: 29px;
