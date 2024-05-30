@@ -44,22 +44,22 @@ function valueCompare() {
       userinput[i].classList.add('fail')
     }
   }
-
-  let fail = document.querySelectorAll('.fail')
-  for (let k = 0; k < fail.length; k++) {
-    fail[k].setAttribute('hint', getHangulInitial(fail[k].getAttribute('answer')))
-  }
 }
 
 // 힌트오픈 함수
 function inputHintOpen() {
   userinput.forEach(function (inputHint) {
+    inputHint.setAttribute('hint', getHangulInitial(inputHint.getAttribute('answer')))
+
     let hintText = inputHint.getAttribute('hint')
     if (hintText) {
       if (!inputHint.classList.contains('readonly')) {
-        inputHint.classList.add('hintOn')
+        inputHint.classList.add('hintOn');
         inputHint.value = hintText;
-        setTimeout(() => { inputHint.value = ''; }, 1000);
+        setTimeout(() => {
+          inputHint.classList.remove('hintOn');
+          inputHint.value = '';
+        }, 1000);
       }
     }
   })
