@@ -38,7 +38,7 @@ function valueCompare() {
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
       userinput[i].removeAttribute('hint')
       userinput[i].classList.remove('fail')
-      userinput[i].classList.add('readonly')
+      userinput[i].classList.add('readOnly')
     } else {
       userinput[i].value = ''
       userinput[i].classList.add('fail')
@@ -53,7 +53,7 @@ function inputHintOpen() {
 
     let hintText = inputHint.getAttribute('hint')
     if (hintText) {
-      if (!inputHint.classList.contains('readonly')) {
+      if (!inputHint.classList.contains('readOnly')) {
         inputHint.classList.add('hintOn');
         inputHint.value = hintText;
         setTimeout(() => {
@@ -67,10 +67,9 @@ function inputHintOpen() {
 
 // 힌트자음 배열함수
 function getHangulInitial(char) {
-  const jaum = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅌ", "ㅍ", "ㅎ"];
-  // const jaum = ["ㄴ", "ㅊ", "ㅍ", "ㄷ", "ㅈ", "ㅈ", "ㅅ", "ㅁ", "ㅎ", "ㄹ", "ㅇ", "ㅁ", "ㄱ"];
-  const code = char.charCodeAt(0) - 44032;
-  const initialIndex = Math.floor(code / 588);
+  const jaum = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+  const code = char.charCodeAt(0) - 44032; //한글 자모마다 특정 숫자가 정해져있음 = 초중종성 합친 값 - 중성과 종성이 들어가려고 마련된 자리
+  const initialIndex = Math.floor(code / 588); // 588은 잘 모르겠지만 해당숫자로 나눠서 자음을 가져옴
   console.log('>>>>>>>>>> 자음 가져오기', initialIndex);
 
   return jaum[initialIndex];
@@ -81,7 +80,7 @@ function getHangulInitial(char) {
 function inputQuizComplete() {
   let answerAttr = document.querySelectorAll('[answer]')
   let totalAnswer = answerAttr.length
-  let totalCorrectCount = document.getElementsByClassName('readonly').length
+  let totalCorrectCount = document.getElementsByClassName('readOnly').length
 
   if (totalAnswer === totalCorrectCount) {
     quizPage.classList.add('complete')

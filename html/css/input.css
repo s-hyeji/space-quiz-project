@@ -1,5 +1,6 @@
 main {
   background: url(../images/input/inputMain.svg)center/cover no-repeat;
+  user-select: none;
 }
 
 
@@ -104,10 +105,12 @@ table td input {
   text-align: center;
   color: #FF4A72;
 }
-table td input.readonly{
+table td input.readOnly{
   color: rgb(27, 88, 255);
   pointer-events: none;
-  user-select: none;
+}
+table td input.hintOn{
+  pointer-events: none;
 }
 table td input.horizon::placeholder{
   display: flex;
