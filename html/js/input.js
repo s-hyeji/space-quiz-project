@@ -9,15 +9,9 @@ answerBtn.addEventListener("click", function () {
   inputvaluecheck();
   inputQuizComplete();
 })
-hintBtn.addEventListener("click", function () {
-  userinput.forEach(function (inputHint,i) {
-    // console.log('>>>>>>>>',userinput[i].getAttribute('hint'));
-    let showHint = userinput[i].getAttribute('hint')
-    console.log('>>>>>>>>',showHint);
 
-    userinput[i].innerText(showHint)
-    // console.log('>>>>>>>>',userinput[i].attributes[5].value);
-  })
+hintBtn.addEventListener("click", function () {
+  inputHintOpen();
 })
 
 
@@ -34,8 +28,6 @@ function inputvaluecheck() {
   //  전부 입력시
   else if (emptyCount === 0) { valueCompare(); }
 }
-
-
 
 
 // 정답시 팝업함수 오픈, 오답시 인풋 value 지우기
@@ -59,24 +51,38 @@ function valueCompare() {
   }
 }
 
-// 힌트 함수
+// 힌트오픈 함수
+function inputHintOpen() {
+  userinput.forEach(function (inputHint) {
+    let hintText = inputHint.getAttribute('hint')
+    if (hintText) {
+      if (!inputHint.classList.contains('readonly')) {
+        inputHint.classList.add('hintOn')
+        inputHint.value = hintText;
+        setTimeout(() => { inputHint.value = ''; }, 1000);
+      }
+    }
+  })
+}
+
+// 힌트자음 배열함수
 function getHangulInitial(char) {
-  const jaum = ["ㄴ", "ㅊ", "ㅍ", "ㄷ", "ㅈ", "ㅈ", "ㅅ", "ㅁ", "ㅎ", "ㄹ", "ㅇ", "ㅁ", "ㄱ"];
+  const jaum = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅌ", "ㅍ", "ㅎ"];
+  // const jaum = ["ㄴ", "ㅊ", "ㅍ", "ㄷ", "ㅈ", "ㅈ", "ㅅ", "ㅁ", "ㅎ", "ㄹ", "ㅇ", "ㅁ", "ㄱ"];
   const code = char.charCodeAt(0) - 44032;
   const initialIndex = Math.floor(code / 588);
-  console.log('aaaaaaaaaaa', initialIndex);
+  console.log('>>>>>>>>>> 자음 가져오기', initialIndex);
+
   return jaum[initialIndex];
 }
 
 
-// 정답 함수
+// 정답확인 함수
 function inputQuizComplete() {
   let answerAttr = document.querySelectorAll('[answer]')
   let totalAnswer = answerAttr.length
   let totalCorrectCount = document.getElementsByClassName('readonly').length
-  // console.log('정답 비율 :', totalAnswer + ':' + totalCorrectCount);
-  // console.log('answer 갯수 :', totalAnswer);
-  // console.log('correct 갯수 :', totalCorrectCount);
+
   if (totalAnswer === totalCorrectCount) {
     quizPage.classList.add('complete')
     setTimeout(() => { goodJopPopup(); }, 1000);

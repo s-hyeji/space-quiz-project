@@ -107,6 +107,7 @@ table td input {
 table td input.readonly{
   color: rgb(27, 88, 255);
   pointer-events: none;
+  user-select: none;
 }
 table td input.horizon::placeholder{
   display: flex;
