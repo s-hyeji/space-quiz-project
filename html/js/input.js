@@ -37,11 +37,9 @@ function valueCompare() {
   for (let i = 0; i < userinput.length; i++) {
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
       userinput[i].removeAttribute('hint')
-      userinput[i].classList.remove('fail')
       userinput[i].classList.add('readOnly')
     } else {
       userinput[i].value = ''
-      userinput[i].classList.add('fail')
     }
   }
 }
