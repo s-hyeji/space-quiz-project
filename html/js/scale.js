@@ -17,10 +17,10 @@ function size() {
     //줄어들어야 되는 요소에 인라인으로 부여한다(언제?) resize window.addEventListener('resize', this.reSet.bind(this, this.element));
     let zoomRate;
     if (widthZoom > heightZoom) {
-        document.querySelector("#wrap").style.transform = `scale(${heightZoom})`
+        document.querySelector("#wrap").style.transform = `scale(${heightZoom}) translateX(-50%)`
         zoomRate = heightZoom;
     } else {
-        document.querySelector("#wrap").style.transform = `scale(${widthZoom})`
+        document.querySelector("#wrap").style.transform = `scale(${widthZoom}) translateX(-50%)`
         zoomRate = widthZoom;
     }
     document.querySelector("#wrap").style.transformOrigin = '0% 0%';

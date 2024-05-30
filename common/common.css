@@ -29,7 +29,8 @@ body {
 }
 
 #wrap {
-  position: relative;
+  position: absolute;
+  left: 50%;
   width: 1280px;
   height: 720px;
   /* max-width: 1280px;
