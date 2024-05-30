@@ -104,7 +104,7 @@ table td input {
   text-align: center;
   color: #FF4A72;
 }
-table td input.correct{
+table td input.readonly{
   color: rgb(27, 88, 255);
   pointer-events: none;
 }
@@ -173,7 +173,7 @@ table td input:focus::placeholder {
   cursor: pointer;
 }
 .complete .btnBox>button{pointer-events: none;}
-.exBtn {background-image: url(../images/input/leftBtn_1.svg);}
+.hintBtn {background-image: url(../images/input/leftBtn_1.svg);}
 .answerBtn {background-image: url(../images/input/leftBtn_2.svg);}
 
 /* right */
