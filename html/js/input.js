@@ -55,21 +55,19 @@ function valueCompare() {
     if (userinputAns[i] != userinputVal[i]) {
       // console.log('오답');
       // console.log(userinput[i].value);
+      // console.log('>>>>>>>>>>> 인풋 오답입력',e);
       userinput[i].value = "";
-      e = e + 1;
+      e = 1;
     }
     if (e == 0) {
-      console.log('정답');
-      userinput.forEach(function (INPUT) {
-        // console.log('>>>>>>>>>>>인풋 정답입력',INPUT.value);
-        if (INPUT.value == true) {
-        } else {
-          INPUT.classList.add('correct')
-        }
-      })
+      // console.log('정답');
+      // console.log('>>>>>>>>>>> 인풋 정답입력',e);
+      console.log('>>>>>>>>>>> 인풋 값', userinput[i].value);
+      userinput[i].classList.add('correct')
     }
   }
 }
+
 // 힌트 함수
 function getHangulInitial(char) {
   const cho = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
@@ -80,13 +78,14 @@ function getHangulInitial(char) {
 
 // 정답 함수
 function inputQuizComplete() {
-  let totalInput = userinput.length
+  let answerAttr = document.querySelectorAll('[answer]')
+  let totalAnswer = answerAttr.length
   let totalCorrectCount = document.getElementsByClassName('correct').length
-  console.log('합계 :', totalInput + ':' + totalCorrectCount);
-  // console.log('인풋 갯수 :', totalInput);
+  console.log('정답 비율 :', totalAnswer + ':' + totalCorrectCount);
+  // console.log('answer 갯수 :', totalAnswer);
   // console.log('correct 갯수 :', totalCorrectCount);
 
-  if (totalInput === totalCorrectCount) {
+  if (totalAnswer === totalCorrectCount) {
     quizPage.classList.add('complete')
     // setTimeout(() => { goodJopPopup(); }, 500);
     console.log('컴플리트 ON');
