@@ -17,11 +17,11 @@ window.addEventListener('load', function () {
   ox_btn.forEach((function (ox_btn, i) {
     ox_btn.addEventListener('click', function () {
       let lastPage = quiz_p[quiz_p.length - 1];
-
       // 정답 클릭시
       if (ox_btn.attributes.length === 2) {
         console.log('정답!')
         this.classList.add('on')
+        corretSound();
         completeClass();
         for (let i = 0; i < quizBox.length; i++) { quizBox[i].classList.add('off') }
         for (let i = 0; i < answerBox.length; i++) {
@@ -44,6 +44,7 @@ window.addEventListener('load', function () {
       // 오답 클릭시(대기)
       else {
         console.log('오답!')
+        wrongSound();
       }
     })
   }))

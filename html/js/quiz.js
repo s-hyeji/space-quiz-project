@@ -72,3 +72,28 @@ function goodJopPopup() {
         setTimeout(() => { char01.classList.add('on') }, 1000);
     }
 }
+
+
+
+
+// =================================사운드 함수
+
+// 정답 사운드
+function corretSound() {
+	let audio = new Audio('../../common/media/correct.mp3')
+	audio.play();
+}
+
+// 오답 사운드
+function wrongSound() {
+	let audio = new Audio('../../common/media/wrong.mp3')
+	audio.play();
+}
+
+// 마우스 클릭음
+// function clickSound() {
+// 	window.document.addEventListener('click', function () {
+// 		let audio = new Audio('../../common/media/click.mp3')
+// 		audio.play();
+// 	})
+// }
