@@ -48,8 +48,8 @@ function startDrag(e) {
     // console.log(e.target.getBoundingClientRect.width)
     offsetX = (e.clientX / scale) - lineObj.offsetLeft + (lineObj.style.width / 2);
     offsetY = (e.clientY / scale) - lineObj.offsetTop + (lineObj.style.height / 2);
-    startmouseX = (event.clientX / scale) - e.offsetX + objWidth;
-    startmouseY = (event.clientY / scale) - e.offsetY + objHeight;
+    startmouseX = (event.clientX + objWidth) / scale - e.offsetX;
+    startmouseY = (event.clientY + objHeight) / scale - e.offsetY;
     // console.log("확인 >>>>>>>>>>>>>>>", canvas.offsetLeft);
     isDragging = true;
     isDrawing = true;
