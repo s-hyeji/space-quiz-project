@@ -114,6 +114,7 @@ function checkAnswer(e) {
             mouseY >= targetRect[i].top && mouseY <= targetRect[i].bottom) {
             dropcheck = true;
             droppedArea = target[i];
+            console.log(target[i])
             checking();
         }
         // console.log("?????????????", e.target)
@@ -135,8 +136,9 @@ function checking(e) {
 
     if (objans == dropans) {
         redrawCanvas();
-        mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + droppedArea.getBoundingClientRect().width / 2
-        mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + droppedArea.getBoundingClientRect().height / 2
+        console.log(droppedArea.getBoundingClientRect())
+        mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + (droppedArea.getBoundingClientRect().width / scale) / 2
+        mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + (droppedArea.getBoundingClientRect().height / scale) / 2
         drawLine(startX, startY, mouseEndX, mouseEndY);
 
         console.log("cor")
