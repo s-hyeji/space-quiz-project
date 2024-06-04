@@ -11,6 +11,7 @@ var goodJop_popup = this.document.querySelector('.popup_container .goodJop_popup
 start_btn.addEventListener('click', function () {
     quiz_p[0].classList.add('on')
     start_page.classList.add('off')
+    clickSound();
 })
 
 
@@ -33,6 +34,8 @@ if (document.querySelector('.popup_container .nextBtn') === null) {
     // 다음퀴즈 버튼 클릭시
     next_btn.addEventListener('click', function () {
         nextPage();
+        clickSound();
+        setTimeout(() => { slideSound(); }, 700);
     })
 }
 
@@ -91,9 +94,13 @@ function wrongSound() {
 }
 
 // 마우스 클릭음
-// function clickSound() {
-// 	window.document.addEventListener('click', function () {
-// 		let audio = new Audio('../../common/media/click.mp3')
-// 		audio.play();
-// 	})
-// }
+function clickSound() {
+    let audio = new Audio('../../common/media/click.mp3')
+    audio.play();
+}
+
+// 슬라이드 효과음
+function slideSound() {
+    let audio = new Audio('../../common/media/slide.mp3')
+    audio.play();
+}
