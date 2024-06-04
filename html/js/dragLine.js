@@ -202,7 +202,7 @@ function drawLine(x1, y1, x2, y2) {
     context.lineTo(x2, y2);
     context.scale = (document.querySelector("#wrap").style.transform.split("scale(")[1].split(")")[0], document.querySelector("#wrap").style.transform.split("scale(")[1].split(")")[0])
     context.strokeStyle = '#ffffff'; // Set line color
-    context.lineWidth = 3; // Set line width
+    context.lineWidth = 5; // Set line width
     context.stroke();
     context.closePath();
 
