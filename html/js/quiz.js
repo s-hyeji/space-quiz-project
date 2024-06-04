@@ -48,7 +48,7 @@ function nextPage() {
         setTimeout(() => {
             quizBox.forEach(this_e => { this_e.classList.remove('off') });
             thisPage.classList.remove('on')
-            thisPage.nextElementSibling.classList.add('on') 
+            thisPage.nextElementSibling.classList.add('on')
         }, 1000);
         return;
     } else {
@@ -80,14 +80,14 @@ function goodJopPopup() {
 
 // 정답 사운드
 function corretSound() {
-	let audio = new Audio('../../common/media/correct.mp3')
-	audio.play();
+    let audio = new Audio('../../common/media/correct.mp3')
+    audio.play();
 }
 
 // 오답 사운드
 function wrongSound() {
-	let audio = new Audio('../../common/media/wrong.mp3')
-	audio.play();
+    let audio = new Audio('../../common/media/wrong.mp3')
+    audio.play();
 }
 
 // 마우스 클릭음

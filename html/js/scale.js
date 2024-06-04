@@ -1,6 +1,21 @@
 
 // 혜지 추가 스크롤바 감추기
 document.body.style.overflow = 'hidden';
+const minWidth = 1400; // 최소 너비 설정
+const minHeight = 790; // 최소 높이 설정
+// 
+
+function enforceMinSize() {
+    if (window.innerWidth < minWidth) {
+        window.resizeTo(minWidth, window.innerHeight);
+    }
+    if (window.innerHeight < minHeight) {
+        window.resizeTo(window.innerWidth, minHeight);
+    }
+}
+
+
+// 초기 로드 시 최소 크기 확인
 // 
 function size() {
     //전체화면 크기를 불러온다
@@ -37,8 +52,16 @@ function size() {
 }
 
 window.onload = function () {
+    // enforceMinSize();
     size()
+
 }
 window.addEventListener('resize', function () {
+    // enforceMinSize();
     size()
+
 })
+
+
+
+

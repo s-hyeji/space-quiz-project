@@ -26,6 +26,7 @@ let mouseEndY
 
 let checkObj
 let checkArea
+let completeCunt = 0;
 
 // dragLine
 
@@ -89,8 +90,8 @@ function stopDrag(e) {
     isDrawing = false;
     document.removeEventListener('mousemove', drag);
     document.removeEventListener('mouseup', stopDrag);
-
 }
+
 function checkAnswer(e) {
     // var lineObjRect = lineObj.getBoundingClientRect();
     let target = document.querySelectorAll(".dragLineArea")
@@ -123,8 +124,8 @@ function checkAnswer(e) {
         e.target.style.top = pureOffsetY + 'px'
         e.target.style.left = pureOffsetX + 'px'
     }
-
 }
+
 function checking(e) {
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     let objans = lineObj.getAttribute('drag-Line-left') || lineObj.getAttribute('drag-Line-right');
@@ -144,6 +145,8 @@ function checking(e) {
 
         checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);
         checkObj.forEach(e => e.classList.add("complete"))
+
+        countPage()
     }
     else {
         console.log('fail')
@@ -159,6 +162,26 @@ function checking(e) {
     mouseEndX = "";
     mouseEndY = "";
 
+}
+
+function countPage() {
+    completeCunt++;
+    console.log(completeCunt);
+    if (completeCunt === 3 || completeCunt === 6) {
+        console.log("한페이지 끝!! 다음페이지로 이동")
+        popup.classList.add('dim')
+        next_btn.classList.add('on')
+    } else if (completeCunt === 9) {
+        let goodPopup = document.createElement("div")
+        let char01 = document.createElement("div")
+
+        popup.classList.add('dim')
+        popup.appendChild(goodPopup)
+        goodPopup.classList.add('goodJop_popup', 'on')
+        goodPopup.appendChild(char01)
+        char01.classList.add('char_01')
+        setTimeout(() => { char01.classList.add('on') }, 1000);
+    }
 }
 
 function redrawCanvas() {

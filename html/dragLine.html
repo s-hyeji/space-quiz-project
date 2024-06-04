@@ -178,7 +178,17 @@
   <script src="./js/quiz.js"></script>
   <script src="./js/dragLine.js"></script>
   <script>
+    const next = document.querySelector(".nextBtn");
 
+    function clearCanvas() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    next.addEventListener("click", function () {
+      setTimeout(() => {
+        lines = [];
+
+      }, 1000);
+    });
   </script>
 </body>
 
