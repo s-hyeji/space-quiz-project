@@ -167,12 +167,15 @@ main .obj3 {
 }
 
 .dragLine .lineQuiz>li>div.row1 {
-    top: -103px;
+    top: -113px;
+}
 
+.dragLine .lineQuiz>li>div.row2 {
+    top: 32px;
 }
 
 .dragLine .lineQuiz>li>div.row3 {
-    top: 196px;
+    top: 179px;
 }
 
 [drag-line-left].complete,

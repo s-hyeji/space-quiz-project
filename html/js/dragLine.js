@@ -125,6 +125,7 @@ function checkAnswer(e) {
         redrawCanvas();
         e.target.style.top = pureOffsetY + 'px'
         e.target.style.left = pureOffsetX + 'px'
+        wrongSound()
     }
 }
 
@@ -148,14 +149,15 @@ function checking(e) {
 
         checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);
         checkObj.forEach(e => e.classList.add("complete"))
-
-        countPage()
+        corretSound()
+        countPage();
     }
     else {
         console.log('fail')
         redrawCanvas();
         lineObj.style.top = pureOffsetY + 'px'
         lineObj.style.left = pureOffsetX + 'px'
+        wrongSound();
     }
     console.log(lines)
     startmouseY = "";
