@@ -1,35 +1,91 @@
 /* 둥실둥실 */
 @keyframes upDown {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  /* 회전 */
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-/* 깜빡깜빡 */
-  @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
 
-  /* 애니매이션 종료 */
-  .aniStop{
-    animation: none !important;
+  50% {
+    transform: translateY(-10px);
   }
+}
+
+/* 회전 */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 깜빡깜빡 */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 애니매이션 종료 */
+.aniStop {
+  animation: none !important;
+}
+
+/* 진동 애니메이션 */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  20% {
+    transform: translate(-2px, 1px) rotate(-1deg);
+  }
+
+  30% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(-1px, 1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(1px, -1px) rotate(-2deg);
+  }
+
+  60% {
+    transform: translate(2px, 1px) rotate(1deg);
+  }
+
+  70% {
+    transform: translate(-1px, 2px) rotate(2deg);
+  }
+
+  80% {
+    transform: translate(2px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(-1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+}
+

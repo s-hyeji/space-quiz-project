@@ -141,7 +141,7 @@ main h2 span.char_03 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 800px;
+  width: 1000px;
   height: 110px;
   margin: 0 auto;
   font-size: 36px;
@@ -171,6 +171,11 @@ main h2 span.char_03 {
   background: url(../images/ox/quiz_icon_x.png) center / contain no-repeat;
 }
 
+.quizBox .oxBox [class*="btn_icon"].on{pointer-events: none; transform: scale(1.1);}
+.quizBox .oxBox [class*="btn_icon"].wrongAni{
+  animation: shake 0.2s linear infinite;
+  pointer-events: none;
+}
 
 
 /* ★퀴즈 답 & 설명 박스 */
@@ -212,6 +217,3 @@ main h2 span.char_03 {
 
 
 
-
-
-/* ===============================quiz_1 */
