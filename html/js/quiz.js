@@ -73,6 +73,7 @@ function goodJopPopup() {
         goodPopup.appendChild(char01)
         char01.classList.add('char_01')
         setTimeout(() => { char01.classList.add('on') }, 1000);
+        setTimeout(() => { goodJopSound(); }, 1000);
     }
 }
 
@@ -102,5 +103,11 @@ function clickSound() {
 // 슬라이드 효과음
 function slideSound() {
     let audio = new Audio('../../common/media/slide.mp3')
+    audio.play();
+}
+
+// 굿잡팝업 사운드
+function goodJopSound() {
+    let audio = new Audio('../../common/media/goodjob.mp3')
     audio.play();
 }
