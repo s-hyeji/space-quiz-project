@@ -22,28 +22,33 @@ window.addEventListener('load', function () {
         console.log('정답!')
         this.classList.add('on')
         corretSound();
-        completeClass();
-        for (let i = 0; i < quizBox.length; i++) { quizBox[i].classList.add('off') }
-        for (let i = 0; i < answerBox.length; i++) {
-          answerBox[i].classList.add('dim')
-          answerBox[i].classList.remove('off')
-        }
-        setTimeout(() => {
-          if (lastPage.classList.contains('complete')) {
-            popup.classList.remove('dim');
-            next_btn.classList.remove('on')
-          } else {
-            popup.classList.add('dim');
-            next_btn.classList.add('on')
-          }
-        }, 2000);
 
-        setTimeout(() => { goodJopPopup() }, 4000);
+        setTimeout((correctSet) => {
+          completeClass();
+          for (let i = 0; i < quizBox.length; i++) { quizBox[i].classList.add('off') }
+          for (let i = 0; i < answerBox.length; i++) {
+            answerBox[i].classList.add('dim')
+            answerBox[i].classList.remove('off')
+          }
+          setTimeout(() => {
+            if (lastPage.classList.contains('complete')) {
+              popup.classList.remove('dim');
+              next_btn.classList.remove('on')
+            } else {
+              popup.classList.add('dim');
+              next_btn.classList.add('on')
+            }
+          }, 2000);
+          setTimeout(() => { goodJopPopup() }, 4000);
+        }, 1500);
+
       }
 
       // 오답 클릭시(대기)
       else {
         console.log('오답!')
+        this.classList.add('wrongAni')
+        setTimeout(() => { this.classList.remove('wrongAni') }, 1000);
         wrongSound();
       }
     })
