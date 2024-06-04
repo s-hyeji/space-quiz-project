@@ -18,6 +18,7 @@ let pureOffsetY;
 
 // 드래그를 시작한다.
 function startDrag(e) {
+  e.preventDefault()
   scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
   draggable = e.target;
 

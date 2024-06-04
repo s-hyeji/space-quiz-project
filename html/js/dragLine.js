@@ -31,6 +31,7 @@ let completeCunt = 0;
 // dragLine
 
 function startDrag(e) {
+    e.preventDefault();
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     console.log(e)
     lineObj = e.target;
