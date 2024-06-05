@@ -33,7 +33,7 @@ let completeCunt = 0;
 function startDrag(e) {
     e.preventDefault();
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
-    console.log(e)
+    // console.log(e)
     lineObj = e.target;
     lineObj.classList.add("isDragging")
 
@@ -115,7 +115,7 @@ function checkAnswer(e) {
             mouseY >= targetRect[i].top && mouseY <= targetRect[i].bottom) {
             dropcheck = true;
             droppedArea = target[i];
-            console.log(target[i])
+            // console.log(target[i])
             checking();
         }
         // console.log("?????????????", e.target)
@@ -134,32 +134,40 @@ function checking(e) {
     let objans = lineObj.getAttribute('drag-Line-left') || lineObj.getAttribute('drag-Line-right');
     let dropans = droppedArea.getAttribute('drag-Line-right') || droppedArea.getAttribute('drag-Line-left');
 
-    console.log("Tlqkf", dropcheck);
+    // console.log("Tlqkf", dropcheck);
 
-    if (lineObj.getAttribute('drag-Line-left') == droppedArea.getAttribute('drag-Line-right') || lineObj.getAttribute('drag-Line-right') == droppedArea.getAttribute('drag-Line-left')) {
-        redrawCanvas();
-        console.log(droppedArea.getBoundingClientRect())
-        mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + (droppedArea.getBoundingClientRect().width / scale) / 2
-        mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + (droppedArea.getBoundingClientRect().height / scale) / 2
-        drawLine(startX, startY, mouseEndX, mouseEndY);
+    if (lineObj.getAttribute('drag-Line-left') === droppedArea.getAttribute('drag-Line-right') || lineObj.getAttribute('drag-Line-right') === droppedArea.getAttribute('drag-Line-left')) {
+        if (objans === dropans) {
+            redrawCanvas();
+            // console.log(droppedArea.getBoundingClientRect())
+            mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + (droppedArea.getBoundingClientRect().width / scale) / 2
+            mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + (droppedArea.getBoundingClientRect().height / scale) / 2
+            drawLine(startX, startY, mouseEndX, mouseEndY);
 
-        console.log("cor")
-        answerCheck = true;
-        lines.push({ startX: startX, startY: startY, endX: mouseEndX, endY: mouseEndY });
+            console.log("정답입니다")
+            answerCheck = true;
+            lines.push({ startX: startX, startY: startY, endX: mouseEndX, endY: mouseEndY });
 
-        checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);
-        checkObj.forEach(e => e.classList.add("complete"))
-        corretSound()
-        countPage();
-    }
-    else {
-        console.log('fail')
+            checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);
+            checkObj.forEach(e => e.classList.add("complete"))
+            corretSound()
+            countPage();
+        }
+        else {
+            console.log('오답입니다')
+            redrawCanvas();
+            lineObj.style.top = pureOffsetY + 'px'
+            lineObj.style.left = pureOffsetX + 'px'
+            wrongSound();
+        }
+    } else {
+        console.log('오답입니다')
         redrawCanvas();
         lineObj.style.top = pureOffsetY + 'px'
         lineObj.style.left = pureOffsetX + 'px'
         wrongSound();
-    }
-    console.log(lines)
+    };
+    // console.log("선 확인", lines)
     startmouseY = "";
     startmouseX = "";
     objWidth = "";
@@ -171,7 +179,7 @@ function checking(e) {
 
 function countPage() {
     completeCunt++;
-    console.log(completeCunt);
+    // console.log(completeCunt);
     if (completeCunt === 3 || completeCunt === 6) {
         console.log("한페이지 끝!! 다음페이지로 이동")
         popup.classList.add('dim')
