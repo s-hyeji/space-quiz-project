@@ -1,4 +1,4 @@
-#wrap header{
+#wrap header {
     position: relative;
     display: flex;
     align-items: center;
@@ -13,20 +13,28 @@
 
 }
 
-#wrap header .gameName{
+#wrap header .gameName {
     position: absolute;
     top: 13px;
     left: 50%;
     font-size: 24px;
     transform: translateX(-50%);
 }
-#wrap header .quizName{
+
+#wrap header .quizName {
     font-size: 14px;
 }
-#wrap header .goHome a{
+
+#wrap header .goHome a {
     display: block;
     width: 30px;
     height: 30px;
     background: url(../images/icon/icon_gohome.png) center / contain no-repeat;
-    filter: drop-shadow(2px 3px 0px #fff);;
+    filter: drop-shadow(2px 3px 0px #fff);
+}
+
+#wrap header .goHome a:hover {
+    transition: all 0.5s;
+    transform: rotate(-90deg);
+    filter: drop-shadow(-2px 3px 0px #fff);
 }
