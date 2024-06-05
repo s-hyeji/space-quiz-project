@@ -15,8 +15,8 @@ document.body.style.overflow = 'hidden';
 // 
 function size() {
     //전체화면 크기를 불러온다
-    let wholeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let wholeHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    let wholeWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    let wholeHeight = document.documentElement.clientHeight || document.body.clientHeight;
     //줄어들어야되는 요소 크기를 불러온다
     let wrapWidth = document.querySelector("#wrap").clientWidth;
     let wrapHeight = document.querySelector("#wrap").clientHeight;

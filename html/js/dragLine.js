@@ -31,6 +31,7 @@ let completeCunt = 0;
 // dragLine
 
 function startDrag(e) {
+    e.preventDefault();
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
     console.log(e)
     lineObj = e.target;
@@ -114,6 +115,7 @@ function checkAnswer(e) {
             mouseY >= targetRect[i].top && mouseY <= targetRect[i].bottom) {
             dropcheck = true;
             droppedArea = target[i];
+            console.log(target[i])
             checking();
         }
         // console.log("?????????????", e.target)
@@ -123,6 +125,7 @@ function checkAnswer(e) {
         redrawCanvas();
         e.target.style.top = pureOffsetY + 'px'
         e.target.style.left = pureOffsetX + 'px'
+        wrongSound()
     }
 }
 
@@ -135,8 +138,9 @@ function checking(e) {
 
     if (objans == dropans) {
         redrawCanvas();
-        mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + droppedArea.getBoundingClientRect().width / 2
-        mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + droppedArea.getBoundingClientRect().height / 2
+        console.log(droppedArea.getBoundingClientRect())
+        mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + (droppedArea.getBoundingClientRect().width / scale) / 2
+        mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + (droppedArea.getBoundingClientRect().height / scale) / 2
         drawLine(startX, startY, mouseEndX, mouseEndY);
 
         console.log("cor")
@@ -145,14 +149,15 @@ function checking(e) {
 
         checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);
         checkObj.forEach(e => e.classList.add("complete"))
-
-        countPage()
+        corretSound()
+        countPage();
     }
     else {
         console.log('fail')
         redrawCanvas();
         lineObj.style.top = pureOffsetY + 'px'
         lineObj.style.left = pureOffsetX + 'px'
+        wrongSound();
     }
     console.log(lines)
     startmouseY = "";
@@ -201,8 +206,9 @@ function drawLine(x1, y1, x2, y2) {
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
     context.scale = (document.querySelector("#wrap").style.transform.split("scale(")[1].split(")")[0], document.querySelector("#wrap").style.transform.split("scale(")[1].split(")")[0])
-    context.strokeStyle = '#ffffff'; // Set line color
-    context.lineWidth = 5; // Set line width
+    context.strokeStyle = '#FFC305'; // Set line color
+    context.lineWidth = 7; // Set line width
+    // context.boderRadius = "50px";
     context.stroke();
     context.closePath();
 

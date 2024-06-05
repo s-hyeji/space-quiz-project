@@ -162,14 +162,8 @@ main h2 span.char_03 {
   width: 260px;
   height: 100%;
 }
-
-.quizBox .oxBox .btn_icon_o {
-  background: url(../images/ox/quiz_icon_o.png) center / contain no-repeat;
-}
-
-.quizBox .oxBox .btn_icon_x {
-  background: url(../images/ox/quiz_icon_x.png) center / contain no-repeat;
-}
+.quizBox .oxBox .btn_icon_o {background: url(../images/ox/quiz_icon_o.png) center / contain no-repeat;}
+.quizBox .oxBox .btn_icon_x {background: url(../images/ox/quiz_icon_x.png) center / contain no-repeat;}
 
 .quizBox .oxBox [class*="btn_icon"].on{pointer-events: none; transform: scale(1.1);}
 .quizBox .oxBox [class*="btn_icon"].wrongAni{
