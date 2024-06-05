@@ -34,7 +34,7 @@
 }
 
 #wrap header .goHome a:hover {
-    transition: all 0.5s;
+    transition: all 0.4s;
     transform: rotate(-90deg);
     filter: drop-shadow(-2px 3px 0px #fff);
 }
