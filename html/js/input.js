@@ -85,3 +85,42 @@ function inputQuizComplete() {
     setTimeout(() => { goodJopPopup(); }, 1000);
   }
 }
+
+
+// 호버시 이벤트
+const hoverObj = document.querySelectorAll("[hover-obj]");
+let hoverTar = document.querySelectorAll("[hover-target]");
+let num
+var targets = [];
+
+hoverObj.forEach(function (obj) {
+  obj.addEventListener("mouseover", function () {
+    num = parseInt(obj.getAttribute("hover-obj"), 10);
+    targets = [];
+    obj.classList.add("hover")
+
+    targets.forEach(h => h.classList.remove('active'))
+    hoverTar.forEach(function (t) {
+      var hoverTargetValue = t.getAttribute('hover-target');
+      if (hoverTargetValue) {
+        var hoverTargetArray = hoverTargetValue.split(',').map(Number);
+        if (hoverTargetArray.includes(num)) {
+          targets.push(t);
+        }
+      }
+
+      targets.forEach(h => h.classList.add("active"));
+      // console.log("확인", targets);
+    });
+
+
+  })
+
+  obj.addEventListener("mouseout", function () {
+    obj.classList.remove("hover")
+
+    targets.forEach(h => h.classList.remove('active'))
+
+
+  })
+})

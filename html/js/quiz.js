@@ -56,7 +56,7 @@ function nextPage() {
         return;
     } else {
         console.log("마지막 문제입니다.");
-        goodJopPopup();
+        // goodJopPopup();
     }
 }
 
@@ -75,6 +75,20 @@ function goodJopPopup() {
         setTimeout(() => { char01.classList.add('on') }, 1000);
         setTimeout(() => { goodJopSound(); }, 1000);
     }
+}
+// 참잘했어요 공통 함수 -> 페이지에 complete 설정 안할 시  이거 사용. 
+function goodJopPopup2() {
+    let goodPopup = document.createElement("div")
+    let char01 = document.createElement("div")
+    // 굿잡 팝업 html 생성
+    popup.classList.add('dim')
+    popup.appendChild(goodPopup)
+    goodPopup.classList.add('goodJop_popup', 'on')
+    goodPopup.appendChild(char01)
+    char01.classList.add('char_01')
+    setTimeout(() => { char01.classList.add('on') }, 1000);
+    setTimeout(() => { goodJopSound(); }, 1000);
+
 }
 
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2e7bed;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: url(#_무제_그라디언트);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="80" height="80"/>
+    </clipPath>
+    <linearGradient id="_무제_그라디언트" data-name="무제 그라디언트" x1=".2" y1="2.43" x2="80.38" y2="82.16" gradientTransform="translate(0 82) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffde24"/>
+      <stop offset=".46" stop-color="#ff4a72"/>
+      <stop offset="1" stop-color="#9a3bbb"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-5">
+    <g>
+      <path class="cls-3" d="M74.37,0H5.63C2.52,0,0,2.52,0,5.63v68.73c0,3.11,2.52,5.63,5.63,5.63h68.73c3.11,0,5.63-2.52,5.63-5.63V5.63c0-3.11-2.52-5.63-5.63-5.63h0Z"/>
+      <g>
+        <path class="cls-4" d="M10.82,8.5h57.35c1.28,0,2.32,1.04,2.32,2.32v57.35c0,1.28-1.04,2.32-2.32,2.32H10.82c-1.28,0-2.32-1.04-2.32-2.32V10.82c0-1.28,1.04-2.32,2.32-2.32Z"/>
+        <path class="cls-1" d="M68.18,10c.45,0,.82.37.82.82v57.35c0,.45-.37.82-.82.82H10.82c-.45,0-.82-.37-.82-.82V10.82c0-.45.37-.82.82-.82h57.35M68.18,7H10.82c-2.11,0-3.82,1.71-3.82,3.82v57.35c0,2.11,1.71,3.82,3.82,3.82h57.35c2.11,0,3.82-1.71,3.82-3.82V10.82c0-2.11-1.71-3.82-3.82-3.82h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

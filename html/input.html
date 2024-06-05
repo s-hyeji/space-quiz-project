@@ -5,8 +5,8 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<!-- <meta name="viewport" content="width=1280, height=720, initial-scale=1.0" /> -->
 	<meta name="viewport" content="initial-scale=1, width=device-width" />
-
 	<title>우주 퀴즈 프로젝트</title>
+	<link rel="icon" href="../common/images/icon/icon_gohome.png">
 	<link rel="stylesheet" href="../common/common.css" />
 	<link rel="stylesheet" href="./css/input.css">
 </head>
@@ -37,37 +37,42 @@
 						<div class="leftBox">
 							<table>
 								<tr>
-									<td><input class="horizon" type="text" answer="남" maxlength="1" placeholder="1"></td>
+									<td hover-target="1"><input class="horizon_1" type="text" answer="남" maxlength="1"></td>
 									<td></td>
 									<td></td>
-									<td><input class="vertical" type="text" answer="출" maxlength="1" placeholder="3"></td>
-									<td><input class="horizon" type="text" answer="판" maxlength="1" placeholder="3"></td>
+									<td hover-target="6"><input class="vertical_3" type="text" answer="출" maxlength="1">
+									</td>
+									<td hover-target="3,6"><input class="horizon_3" type="text" answer="판" maxlength="1">
+									</td>
 								</tr>
 								<tr>
-									<td><input class="vertical" type="text" answer="대" maxlength="1" placeholder="1"></td>
-									<td><input class="" type="text" answer="장" maxlength="2"></td>
-									<td><input class="horizon" type="text" answer="정" maxlength="1" placeholder="1"></td>
+									<td hover-target="1, 4"><input class="vertical_1" type="text" answer="대" maxlength="1">
+									</td>
+									<td hover-target="4"><input type="text" answer="장" maxlength="1"></td>
+									<td hover-target="2, 4"><input class="horizon_2" type="text" answer="정" maxlength="1">
+									</td>
 									<td></td>
-									<td><input class="" type="text" answer="소" maxlength="1"></td>
+									<td hover-target="3"><input type="text" answer="소" maxlength="1"></td>
 								</tr>
 								<tr>
-									<td><input class="" type="text" answer="문" maxlength="1"></td>
+									<td hover-target="1"><input type="text" answer="문" maxlength="1"></td>
 									<td></td>
-									<td><input class="" type="text" answer="형" maxlength="1"></td>
+									<td hover-target="2"><input type="text" answer="형" maxlength="1"></td>
 									<td></td>
-									<td><input class="" type="text" answer="리" maxlength="1"></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-									<td><input class="vertical" type="text" answer="외" maxlength="1" placeholder="2"></td>
-									<td><input class="horizon" type="text" answer="모" maxlength="1"></td>
-									<td></td>
+									<td hover-target="3"><input type="text" answer="리" maxlength="1"></td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
-									<td><input class="" type="text" answer="과" maxlength="1"></td>
+									<td hover-target="2,5"><input class="vertical_2" type="text" answer="외" maxlength="1">
+									</td>
+									<td hover-target="5"><input class="horizon" type="text" answer="모" maxlength="1"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td hover-target="2"><input type="text" answer="과" maxlength="1"></td>
 									<td></td>
 									<td></td>
 								</tr>
@@ -85,17 +90,17 @@
 									가로 열쇠
 								</div>
 								<ul>
-									<li><span class="num">1</span>
+									<li hover-obj="1"><span class="num">1</span>
 										<span>멀고 먼 길. 또는 그런 노정을 일컫는 말
 										</span>
 									</li>
-									<li><span class="num">2</span>
+									<li hover-obj="2"><span class="num">2</span>
 										<span>
 											겉으로 드러나 보이는 모양을 일컫는 말 <br>
 											예) 사람들은 OO을/를 보고 첫인상을 파악한다.
 										</span>
 									</li>
-									<li><span class="num">3</span>
+									<li hover-obj="3"><span class="num">3</span>
 										<span>
 											책을 인쇄하여 내놓는 말 <br>
 											예) 신간 소설이 OO 되었어요.
@@ -109,18 +114,18 @@
 									세로 열쇠
 								</div>
 								<ul>
-									<li><span class="num">1</span>
+									<li hover-obj="4"><span class="num">1</span>
 										<span>
 											우리나라 국보로, 정식 명칭은 '서울 숭례문'이다. <br>
 											이 국보의 또 다른 명칭은?
 										</span>
 									</li>
-									<li><span class="num">2</span>
+									<li hover-obj="5"><span class="num">2</span>
 										<span>
 											근육, 뼈대 등의 운동 기관 장애를 치료하는 외과는?
 										</span>
 									</li>
-									<li><span class="num">3</span>
+									<li hover-obj="6"><span class="num">3</span>
 										<span>
 											소리꾼이 북장단에 맞춰 노래하고 이야기하는 민속 음악 <br>
 											예) 이번 공연에서 OOO로 심청가를 들었어요.
