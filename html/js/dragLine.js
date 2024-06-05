@@ -136,7 +136,7 @@ function checking(e) {
 
     console.log("Tlqkf", dropcheck);
 
-    if (objans == dropans) {
+    if (lineObj.getAttribute('drag-Line-left') == droppedArea.getAttribute('drag-Line-right') || lineObj.getAttribute('drag-Line-right') == droppedArea.getAttribute('drag-Line-left')) {
         redrawCanvas();
         console.log(droppedArea.getBoundingClientRect())
         mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + (droppedArea.getBoundingClientRect().width / scale) / 2
