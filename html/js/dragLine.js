@@ -177,15 +177,7 @@ function countPage() {
         popup.classList.add('dim')
         next_btn.classList.add('on')
     } else if (completeCunt === 9) {
-        let goodPopup = document.createElement("div")
-        let char01 = document.createElement("div")
-
-        popup.classList.add('dim')
-        popup.appendChild(goodPopup)
-        goodPopup.classList.add('goodJop_popup', 'on')
-        goodPopup.appendChild(char01)
-        char01.classList.add('char_01')
-        setTimeout(() => { char01.classList.add('on') }, 1000);
+        goodJopPopup2();
     }
 }
 
