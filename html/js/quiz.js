@@ -56,7 +56,7 @@ function nextPage() {
         return;
     } else {
         console.log("마지막 문제입니다.");
-        goodJopPopup();
+        // goodJopPopup();
     }
 }
 
