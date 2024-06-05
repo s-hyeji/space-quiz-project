@@ -10,7 +10,16 @@ document.body.style.overflow = 'hidden';
 //     }
 // }
 
+function fetchData(url, callback) {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => callback(data))
+        .catch(error => console.error('Error:', error));
+}
 
+window.$callBack = function(data) {
+    console.log('Received data:', data);
+};
 // 초기 로드 시 최소 크기 확인
 // 
 function size() {
