@@ -89,7 +89,7 @@ function checkAnswer() {
   let quizPageOn = document.querySelectorAll('.quizPage.on')
   quizPageOn = true
   if (quizPageOn === true) {
-    for (let i = 0; i < targetRect.length; i++) {
+    for (let i = 0; i < 1 ; i++) {
       if (mouseX >= targetRect[i].left && mouseX <= targetRect[i].right &&
         mouseY >= targetRect[i].top && mouseY <= targetRect[i].bottom) {
         dropcheck = true;
@@ -98,10 +98,11 @@ function checkAnswer() {
         checking();
       } 
       else {
-        console.log('오답');
         console.log('우주선 외 다른위치로 드롭했을때')
+        wrongSound();
         draggable.style.left = pureOffsetX + 'px';
         draggable.style.top = pureOffsetY + 'px';
+
       }
     }
   } 
@@ -122,9 +123,8 @@ function checking() {
 
   //  console.log(dragans+'...dragans');
   //  console.log(dropans+'...dropans ');
-
-  console.log('드래그 속성', dragans);
-  console.log('드랍 속성', dragans);
+  // console.log('드래그 속성', dragans);
+  // console.log('드랍 속성', dragans);
 
 
 
@@ -134,18 +134,18 @@ function checking() {
     console.log("정답>>>>>>>>>>>")
     correctStep_1();
     completeClass();
-
+    corretSound()
   } else if (dragans != dropans) {
     console.log('오답>>>>>>>>>>>>')
     draggable.style.left = pureOffsetX + 'px';
     draggable.style.top = pureOffsetY + 'px';
+    wrongSound();
   }
 
 
   function correctStep_1() {
     draggable.classList.add('correct');
     droppedArea.classList.add('correct');
-    // corretSound();
     setTimeout(function () {
       droppedArea.innerHTML = "정답입니다!"
       droppedArea.classList.add('correctStep_1');

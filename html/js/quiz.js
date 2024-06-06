@@ -5,7 +5,7 @@ var quizBox = document.querySelectorAll('.quizBox')
 var popup = document.querySelector('.popup_container')
 var next_btn = this.document.querySelector('.popup_container .nextBtn')
 var goodJop_popup = this.document.querySelector('.popup_container .goodJop_popup')
-
+var wrap = document.querySelector('#wrap');
 
 // 스타트버튼 클릭시
 start_btn.addEventListener('click', function () {
@@ -98,30 +98,41 @@ function goodJopPopup2() {
 
 // 정답 사운드
 function corretSound() {
-    let audio = new Audio('../../common/media/correct.mp3')
+    let audio = new Audio('../common/media/correct.mp3')
     audio.play();
+    console.log('정답사운드재생');
+
 }
 
 // 오답 사운드
 function wrongSound() {
-    let audio = new Audio('../../common/media/wrong.mp3')
+    let audio = new Audio('../common/media/wrong.mp3')
     audio.play();
+    console.log('오답사운드재생');
+
+
 }
 
 // 마우스 클릭음
 function clickSound() {
-    let audio = new Audio('../../common/media/click.mp3')
+    let audio = new Audio('../common/media/click.mp3')
     audio.play();
 }
 
 // 슬라이드 효과음
 function slideSound() {
-    let audio = new Audio('../../common/media/slide.mp3')
+    let audio = new Audio('../common/media/slide.mp3')
     audio.play();
 }
 
 // 굿잡팝업 사운드
 function goodJopSound() {
-    let audio = new Audio('../../common/media/goodjob.mp3')
+    let audio = new Audio('../common/media/goodjob.mp3')
+    audio.play();
+}
+
+// 로켓 사운드
+function roketSound() {
+    let audio = new Audio('../common/media/roket.mp3')
     audio.play();
 }
