@@ -97,12 +97,12 @@ function checkAnswer() {
         console.log('정답');
         checking();
       } 
-      // else {
-      //   console.log('오답');
-      //   console.log('우주선 외 다른위치로 드롭했을때')
-      //   draggable.style.left = pureOffsetX + 'px';
-      //   draggable.style.top = pureOffsetY + 'px';
-      // }
+      else {
+        console.log('오답');
+        console.log('우주선 외 다른위치로 드롭했을때')
+        draggable.style.left = pureOffsetX + 'px';
+        draggable.style.top = pureOffsetY + 'px';
+      }
     }
   } 
 
@@ -145,6 +145,7 @@ function checking() {
   function correctStep_1() {
     draggable.classList.add('correct');
     droppedArea.classList.add('correct');
+    // corretSound();
     setTimeout(function () {
       droppedArea.innerHTML = "정답입니다!"
       droppedArea.classList.add('correctStep_1');

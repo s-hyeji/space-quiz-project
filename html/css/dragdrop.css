@@ -213,7 +213,7 @@ span {
   width: 120px;
   height: 230px;
   z-index: 5;
-
+  cursor: pointer;
   background: url(../images/dragdrop/spaceHuman.svg) center / 100% no-repeat;
 }
 
