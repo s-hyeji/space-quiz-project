@@ -13,11 +13,15 @@ let nextBtn = document.querySelector('.nextBtn');
 let pureOffsetX;
 let pureOffsetY;
 
+console.log(pureOffsetX)
+console.log(pureOffsetY)
+
 
 
 
 // 드래그를 시작한다.
 function startDrag(e) {
+
   e.preventDefault()
   scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
   draggable = e.target;
@@ -93,13 +97,14 @@ function checkAnswer() {
         console.log('정답');
         checking();
       } 
+      // else {
+      //   console.log('오답');
+      //   console.log('우주선 외 다른위치로 드롭했을때')
+      //   draggable.style.left = pureOffsetX + 'px';
+      //   draggable.style.top = pureOffsetY + 'px';
+      // }
     }
-  } else {
-    console.log('오답');
-    console.log('우주선 외 다른위치로 드롭했을때')
-    draggable.style.left = pureOffsetX + 'px';
-    draggable.style.top = pureOffsetY + 'px';
-  }
+  } 
 
 
 }
