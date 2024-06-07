@@ -101,8 +101,9 @@ function inputQuizComplete() {
 
   if (totalAnswer === totalCorrectCount) {
     quizPage.classList.add('complete')
+    corretSound();
     setTimeout(() => { goodJopPopup(); }, 1000);
-  }
+  } else{ wrongSound(); }
 }
 
 

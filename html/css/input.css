@@ -121,6 +121,7 @@ table td input.readOnly {
 }
 
 table td input.hintOn {
+  color: #00801e;
   pointer-events: none;
 }
 
@@ -128,7 +129,6 @@ table td input.hintOn {
 
 } */
 
-table td input.vertical::placeholder {}
 
 table td input:focus {
   outline: none;

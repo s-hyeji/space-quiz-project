@@ -9,9 +9,9 @@ var wrap = document.querySelector('#wrap');
 
 // 스타트버튼 클릭시
 start_btn.addEventListener('click', function () {
+    clickSound(); 
     quiz_p[0].classList.add('on')
     start_page.classList.add('off')
-    clickSound();
 })
 
 
@@ -81,7 +81,8 @@ function goodJopPopup() {
             goodPopup.appendChild(goHome)
             goHome.classList.add('goHome')
             goHome.addEventListener('click',function(){
-                window.location.href = '../index.html'
+                clickSound();
+                setTimeout(() => { window.location.href = '../index.html' }, 500);
             })
         }, 3000);
     }
@@ -92,7 +93,7 @@ function goodJopPopup2() {
     let goodPopup = document.createElement("div")
     let char01 = document.createElement("div")
     let goHome = document.createElement("button")
-
+    
     // 굿잡 팝업 html 생성
     popup.classList.add('dim')
     popup.appendChild(goodPopup)
@@ -106,10 +107,10 @@ function goodJopPopup2() {
         goodPopup.appendChild(goHome)
         goHome.classList.add('goHome')
         goHome.addEventListener('click',function(){
-            window.location.href = '../index.html'
+            clickSound();
+            setTimeout(() => { window.location.href = '../index.html' }, 500);
         })
     }, 3000);
-
 }
 
 
@@ -121,14 +122,14 @@ function goodJopPopup2() {
 function corretSound() {
     let audio = new Audio('../common/media/correct.mp3')
     audio.play();
-    console.log('정답사운드재생');
+    console.log('정답사운드 재생');
 }
 
 // 오답 사운드
 function wrongSound() {
     let audio = new Audio('../common/media/wrong.mp3')
     audio.play();
-    console.log('오답사운드재생');
+    console.log('오답사운드 재생');
 }
 
 // 마우스 클릭음

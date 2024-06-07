@@ -68,12 +68,14 @@
             </div>
         </div>
     </div>
-    <script src="./html/js/scale.js"></script>
-    <script>
+    <script type="text/javascript" src="./html/js/scale.js"></script>
+    <script type="text/javascript">
         const from = document.querySelector(".from")
         const quizBox = document.querySelector(".quizBox")
+        const stars = document.querySelectorAll(".index_wrap .star")
 
         from.addEventListener("click", function () {
+            clickSound()
             if (!quizBox.classList.contains("on")) {
                 quizBox.classList.add("on")
                 this.classList.add("on")
@@ -83,11 +85,23 @@
             }
 
         })
-        document.addEventListener('DOMContentLoaded', function(){
-            window.$callBack.sizez = function(){
+        document.addEventListener('DOMContentLoaded', function () {
+            window.$callBack.sizez = function () {
                 console.log("test")
             }
         })
+
+        stars.forEach(function(stars){
+            stars.addEventListener('click',function(){
+                clickSound();
+            })
+        })
+
+        // 마우스 클릭음
+        function clickSound() {
+            let audio = new Audio('./common/media/click.mp3')
+            audio.play();
+        }
     </script>
 </body>
 
