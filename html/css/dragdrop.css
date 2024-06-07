@@ -87,13 +87,21 @@ span {
 }
 
 .char_03 {
-  width: 117px;
-  height: 128px;
+  width: 87px;
+  height: 108px;
   position: relative;
+  left: 269px;
+  top: -17px;
+}
+
+.quiz_3 .char_03,
+.quiz_4 .char_03,
+.quiz_5 .char_03 {
+  left : 125px;
 }
 
 .quizText {
-  top: -94px;
+  top: -77px;
   font-size: 36px;
   font-weight: 100;
   word-break: keep-all;
@@ -122,13 +130,12 @@ span {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 633px;
-  height: 218px;
-  padding: 0 0 0 52px;
-  transition: 0.s;
+  height: 212px;
+  padding: 1px 0 0 28px;
   z-index: 4;
   font-size: 30px;
   color: #0E3750;
@@ -185,6 +192,13 @@ span {
     }
   }
 
+  [class*="quiz_"] .spaceShip.comText{
+    text-align: center;
+    text-shadow: none;
+    color:#000;
+    font-size: 25px;
+  }
+
 
 .humans {
   position: absolute;
@@ -207,6 +221,9 @@ span {
 
 
 
+
+
+
 .spaceHuman {
   position: absolute;
   left: 500px;
@@ -222,7 +239,7 @@ span {
   position: absolute;
   width: 117px;
   top: 51px;
-  left: 2px;
+  left: 3px;
   font-size: 31px;
   z-index: 10;
   color: #403B00;
@@ -230,6 +247,10 @@ span {
   letter-spacing: 3px;
   text-align  : center;
   pointer-events: none;
+}
+
+.quiz_4 .spaceHuman > p{
+  font-size: 29px;
 }
 
 .quiz_4 >.spaceHuman > p{
