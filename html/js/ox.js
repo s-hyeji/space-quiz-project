@@ -55,9 +55,9 @@ window.addEventListener('load', function () {
         wrongSound();
       }
 
-      oxBox.forEach(function(elem){
-        elem.classList.add('pointerOff')
-        setTimeout(() => { elem.classList.remove('pointerOff') }, 1300);
+      oxBox.forEach(function(oxBox){
+        oxBox.classList.add('pointerOff')
+        setTimeout(() => { oxBox.classList.remove('pointerOff') }, 1300);
 
       })
     })
