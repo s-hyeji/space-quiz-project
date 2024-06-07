@@ -148,6 +148,16 @@ main h2 span.char_03 {
   text-align: center;
   word-break: keep-all;
 }
+.quizBox .quizText .point{
+  margin-top: -6px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 5px 0px;
+  border-radius: 5px;
+  background-color: #FF2858;
+}
+.ml_10{margin-left: 10px !important;}
+.mr_10{margin-right: 10px !important;}
 
 .quizBox .oxBox {
   display: flex;
