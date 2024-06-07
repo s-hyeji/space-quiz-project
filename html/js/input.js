@@ -42,6 +42,7 @@ function valueCompare() {
       userinput[i].classList.add('readOnly')
     } else {
       userinput[i].value = ''
+      userinput[i].classList.remove('hasText')
     }
   }
 }
@@ -51,9 +52,12 @@ function inputHintOpen() {
   userinput.forEach(function (inputHint) {
     inputHint.setAttribute('hint', getHangulInitial(inputHint.getAttribute('answer')))
 
+
+
     let hintText = inputHint.getAttribute('hint')
     if (hintText) {
-      if (!inputHint.classList.contains('readOnly')) {
+      if (!inputHint.classList.contains('readOnly') && !inputHint.classList.contains('hasText')) {
+        console.log('aaa', inputHint.className);
         inputHint.classList.add('hintOn');
         inputHint.value = hintText;
         setTimeout(() => {
@@ -73,6 +77,20 @@ function getHangulInitial(char) {
   // console.log('>>>>>>>>>> 자음 가져오기', initialIndex);
   return jaum[initialIndex];
 }
+
+
+
+// 인풋 내 텍스트가 있을 경우 클래스 부여
+userinput.forEach(function (INPUT) {
+  INPUT.addEventListener('keydown', function () {
+    INPUT.classList.add('hasText')
+    // console.log('키보드 keyCode', event.keyCode);
+    if (event.keyCode == 8) {
+      // console.log('인풋값 없음');
+      INPUT.classList.remove('hasText')
+    }
+  })
+})
 
 
 // 정답확인 함수
