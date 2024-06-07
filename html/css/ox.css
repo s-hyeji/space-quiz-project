@@ -152,7 +152,7 @@ main h2 span.char_03 {
   margin-top: -6px;
   margin-right: 5px;
   margin-left: 5px;
-  padding: 5px 5px 0px;
+  padding: 5px 5px 2px;
   border-radius: 5px;
   background-color: #FF2858;
 }
@@ -180,6 +180,7 @@ main h2 span.char_03 {
   animation: shake 0.2s linear infinite;
   pointer-events: none;
 }
+.quizBox .pointerOff{pointer-events: none;}
 
 
 /* ★퀴즈 답 & 설명 박스 */

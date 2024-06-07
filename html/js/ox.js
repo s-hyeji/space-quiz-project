@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
   // 지역선언
   var quiz_p = document.querySelectorAll('[class*="quiz_"]')
   var quizBox = document.querySelectorAll('.quizBox')
+  var oxBox = document.querySelectorAll('.quizBox .oxBox')
   var ox_btn = document.querySelectorAll('.quizBox [class*="btn_icon"]')
   var answerBox = document.querySelectorAll('.quizBox.answer')
   var popup = document.querySelector('.popup_container')
@@ -17,6 +18,8 @@ window.addEventListener('load', function () {
   ox_btn.forEach((function (ox_btn, i) {
     ox_btn.addEventListener('click', function () {
       let lastPage = quiz_p[quiz_p.length - 1];
+
+      
       // 정답 클릭시
       if (ox_btn.attributes.length === 2) {
         console.log('정답!')
@@ -51,6 +54,12 @@ window.addEventListener('load', function () {
         setTimeout(() => { this.classList.remove('wrongAni') }, 1000);
         wrongSound();
       }
+
+      oxBox.forEach(function(elem){
+        elem.classList.add('pointerOff')
+        setTimeout(() => { elem.classList.remove('pointerOff') }, 1300);
+
+      })
     })
   }))
 
