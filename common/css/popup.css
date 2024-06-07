@@ -125,6 +125,34 @@
   animation-delay: 0.2s;
 }
 
+.popup_container.dim .goodJop_popup .goHome {
+  display: block;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  box-sizing: border-box;
+  border: 5px solid #A9DBF5;
+  border-radius: 15px;
+  background-color: #FFD54F;
+}
+.popup_container.dim .goodJop_popup .goHome::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70px;
+  height: 70px;
+  background: url(../images/icon/icon_gohome.png) center / contain no-repeat;
+}
+
+.popup_container.dim .goodJop_popup .goHome:hover {
+  transition: all 0.1s;
+  transform: scale(0.9);
+}
+
 
 /* 애니메이션 */
 @keyframes txt {

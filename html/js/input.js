@@ -8,10 +8,12 @@ const userinput = document.querySelectorAll("input")
 answerBtn.addEventListener("click", function () {
   inputvaluecheck();
   inputQuizComplete();
+  clickSound();
 })
 
 hintBtn.addEventListener("click", function () {
   inputHintOpen();
+  clickSound();
 })
 
 
@@ -67,9 +69,8 @@ function inputHintOpen() {
 function getHangulInitial(char) {
   const jaum = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
   const code = char.charCodeAt(0) - 44032; //한글 자모마다 특정 숫자가 정해져있음 = 초중종성 합친 값 - 중성과 종성이 들어가려고 마련된 자리
-  const initialIndex = Math.floor(code / 588); // 588은 잘 모르겠지만 해당숫자로 나눠서 자음을 가져옴
-  console.log('>>>>>>>>>> 자음 가져오기', initialIndex);
-
+  const initialIndex = Math.floor(code / 588); // 588은 잘 모르겠지만 해당숫자로 나누어 자음을 가져옴
+  // console.log('>>>>>>>>>> 자음 가져오기', initialIndex);
   return jaum[initialIndex];
 }
 
@@ -112,15 +113,10 @@ hoverObj.forEach(function (obj) {
       targets.forEach(h => h.classList.add("active"));
       // console.log("확인", targets);
     });
-
-
   })
 
   obj.addEventListener("mouseout", function () {
     obj.classList.remove("hover")
-
     targets.forEach(h => h.classList.remove('active'))
-
-
   })
 })
