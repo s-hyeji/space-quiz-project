@@ -66,6 +66,8 @@ function goodJopPopup() {
     if (lastPage.classList.contains('complete')) {
         let goodPopup = document.createElement("div")
         let char01 = document.createElement("div")
+        let goHome = document.createElement("button")
+
         // 굿잡 팝업 html 생성
         popup.classList.add('dim')
         popup.appendChild(goodPopup)
@@ -74,12 +76,23 @@ function goodJopPopup() {
         char01.classList.add('char_01')
         setTimeout(() => { char01.classList.add('on') }, 1000);
         setTimeout(() => { goodJopSound(); }, 1000);
+
+        setTimeout((goHome_set) => {
+            goodPopup.appendChild(goHome)
+            goHome.classList.add('goHome')
+            goHome.addEventListener('click',function(){
+                window.location.href = '../index.html'
+            })
+        }, 3000);
     }
 }
+
 // 참잘했어요 공통 함수 -> 페이지에 complete 설정 안할 시  이거 사용. 
 function goodJopPopup2() {
     let goodPopup = document.createElement("div")
     let char01 = document.createElement("div")
+    let goHome = document.createElement("button")
+
     // 굿잡 팝업 html 생성
     popup.classList.add('dim')
     popup.appendChild(goodPopup)
@@ -88,6 +101,14 @@ function goodJopPopup2() {
     char01.classList.add('char_01')
     setTimeout(() => { char01.classList.add('on') }, 1000);
     setTimeout(() => { goodJopSound(); }, 1000);
+
+    setTimeout((goHome_set) => {
+        goodPopup.appendChild(goHome)
+        goHome.classList.add('goHome')
+        goHome.addEventListener('click',function(){
+            window.location.href = '../index.html'
+        })
+    }, 3000);
 
 }
 
@@ -101,7 +122,6 @@ function corretSound() {
     let audio = new Audio('../common/media/correct.mp3')
     audio.play();
     console.log('정답사운드재생');
-
 }
 
 // 오답 사운드
@@ -109,8 +129,6 @@ function wrongSound() {
     let audio = new Audio('../common/media/wrong.mp3')
     audio.play();
     console.log('오답사운드재생');
-
-
 }
 
 // 마우스 클릭음
