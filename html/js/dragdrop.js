@@ -8,6 +8,8 @@ let droppedArea;
 let scale;
 let popup_container = document.querySelector('.popup_container');
 let nextBtn = document.querySelector('.nextBtn');
+let quizPages = document.querySelectorAll('[class*="quiz_"]')
+
 
 // 맨 처음 드래그 요소의 위치값을 저장해 둘 변수 
 let pureOffsetX;
@@ -79,7 +81,6 @@ function checkAnswer() {
 
   // console.log(targetRect[0] )
   // 마우스가 대상 오브젝트 위에 있는지 확인합니다.
-  let quizPages = document.querySelectorAll('.quizPage');
   let quizPageOn = document.querySelectorAll('.quizPage.on');
   let pageOn_tg = document.querySelectorAll('.quizPage.on .spaceShip');
   let quizPageOnFlag = true;
@@ -116,7 +117,6 @@ function checking() {
   // draggable는 드래그할 요소 / droppedArea 드롭영역
   let dragans = draggable.getAttribute('drag-obj')
   let dropans = droppedArea.getAttribute('data-drop')
-  let heat = document.querySelector('.heat')
 
   //  console.log(dragans+'...dragans');
   //  console.log(dropans+'...dropans ');
@@ -135,20 +135,23 @@ function checking() {
     wrongSound();
   }
 
-
   function correctStep_1() {
     draggable.classList.add('correct');
     droppedArea.classList.add('correct');
     setTimeout(function () {
       console.log(draggable.textContent);
-      console.log();
-      if(quiz_p[0]) {
-        droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레, 기린은 동물입니다."
+      // console.log(quizPages[0]);
+      // console.log(quizPages[1]);
+
+      if(quizPages[0]) {
+        droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다."
+      } else if(quizPages[1]) {
+        droppedArea.innerHTML = "장화, 구두, 운동화, 슬리퍼, 샌들은<br> <span class='blue'>신발</span>입니다."
       }
       // droppedArea.innerHTML = "정답입니다!"
       droppedArea.classList.add('correctStep_1');
       correctStep_2();
-    }, 3000);
+    }, 1500);
   }
   function correctStep_2() {
     setTimeout(function () {
@@ -156,7 +159,7 @@ function checking() {
       droppedArea.classList.add('correctStep_2');
       droppedArea.classList.add('correctStep_3');
       correctStep_3();
-    }, 5000);
+    }, 3000);
   }
   function correctStep_3() {
     setTimeout(function () {
@@ -167,7 +170,6 @@ function checking() {
   }
 
   function correctStep_4() {
-    let quizPages = document.querySelectorAll('[class*="quiz_"]')
     let lastPage = quizPages[quizPages.length -1]
     let lastPageCom = lastPage.classList.contains('complete') 
     setTimeout(function () {
