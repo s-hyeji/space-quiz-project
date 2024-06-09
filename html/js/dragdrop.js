@@ -8,7 +8,10 @@ let droppedArea;
 let scale;
 let popup_container = document.querySelector('.popup_container');
 let nextBtn = document.querySelector('.nextBtn');
-let quizPages = document.querySelectorAll('[class*="quiz_"]')
+let quizPages = document.querySelectorAll('.quizPage')
+let page_tg = document.querySelectorAll('.spaceShip');
+
+
 
 
 // 맨 처음 드래그 요소의 위치값을 저장해 둘 변수 
@@ -82,7 +85,6 @@ function checkAnswer() {
   // console.log(targetRect[0] )
   // 마우스가 대상 오브젝트 위에 있는지 확인합니다.
   let quizPageOn = document.querySelectorAll('.quizPage.on');
-  let pageOn_tg = document.querySelectorAll('.quizPage.on .spaceShip');
   let quizPageOnFlag = true;
   
   if (quizPageOnFlag === true) {
@@ -139,15 +141,30 @@ function checking() {
     draggable.classList.add('correct');
     droppedArea.classList.add('correct');
     setTimeout(function () {
-      console.log(draggable.textContent);
-      // console.log(quizPages[0]);
-      // console.log(quizPages[1]);
-
-      if(quizPages[0]) {
+      // droppedArea.forEach(element => {
+      if(droppedArea.closest('.quiz_1') ) {
         droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다."
-      } else if(quizPages[1]) {
+      }else if(droppedArea.closest('.quiz_2')){
         droppedArea.innerHTML = "장화, 구두, 운동화, 슬리퍼, 샌들은<br> <span class='blue'>신발</span>입니다."
+      }else if(droppedArea.closest('.quiz_3')){
+        droppedArea.innerHTML = "나는 오늘 학교에 <span class='blue'>갔다</span>."
+      }else if(droppedArea.closest('.quiz_4')){
+        droppedArea.innerHTML = "학교에서는 매일 책을 <span class='blue'>읽는다</span>."
       }
+      else if(droppedArea.closest('.quiz_5')){
+        droppedArea.innerHTML = "친구들과 함께 숨바꼭질을 <span class='blue'>한다</span>."
+      }
+      
+
+
+      
+      // });
+
+
+      
+      
+        // droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다."
+        // droppedArea.innerHTML = "장화, 구두, 운동화, 슬리퍼, 샌들은<br> <span class='blue'>신발</span>입니다."
       // droppedArea.innerHTML = "정답입니다!"
       droppedArea.classList.add('correctStep_1');
       correctStep_2();

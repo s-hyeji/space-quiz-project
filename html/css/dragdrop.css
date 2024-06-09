@@ -3,76 +3,76 @@
 /* --------------------- */
 
 main {
-    width: 100%;
-    height: 100%;
-    background: url(../images/dragdrop/dragdropBg.png)center/cover no-repeat;
-    user-select: none;
+  width: 100%;
+  height: 100%;
+  background: url(../images/dragdrop/dragdropBg.png)center/cover no-repeat;
+  user-select: none;
 }
 
 .start_page h1 {
-    position: relative;
-    top: 82px;
-    width: 762px;
-    height: 344px;
-    margin: 0 auto;
-    background: url("../images/dragdrop/dragdropText2.svg") center/ 100% no-repeat;
+  position: relative;
+  top: 82px;
+  width: 762px;
+  height: 344px;
+  margin: 0 auto;
+  background: url("../images/dragdrop/dragdropText2.svg") center/ 100% no-repeat;
 }
 
 .start_page .spaceship {
-    position: absolute;
-    top: 97px;
-    left: 180px;
-    width: 200px;
-    height: 510px;
-    transform: rotate(35deg);
-    animation: upDown1 3s ease-in-out infinite;
-    background: url("../images/dragdrop/spaceship.svg") center / 100% no-repeat;
+  position: absolute;
+  top: 97px;
+  left: 180px;
+  width: 200px;
+  height: 510px;
+  transform: rotate(35deg);
+  animation: upDown1 3s ease-in-out infinite;
+  background: url("../images/dragdrop/spaceship.svg") center / 100% no-repeat;
 }
 
 .start_page .spaceHuman {
-    position: absolute;
-    top: 30px;
-    left: 890px;
-    width: 190px;
-    height: 530px;
-    transition: 0.5s;
-    animation: upDown3 5s ease-in-out infinite;
-    background: url("../images/dragdrop/spaceHuman.svg") center / 100% no-repeat;
+  position: absolute;
+  top: 30px;
+  left: 890px;
+  width: 190px;
+  height: 530px;
+  transition: 0.5s;
+  animation: upDown3 5s ease-in-out infinite;
+  background: url("../images/dragdrop/spaceHuman.svg") center / 100% no-repeat;
 
 }
 
 span {
-    font: 500px;
+  font: 500px;
 }
 
 @keyframes upDown1 {
-    0%,
-    100% {
-        transform: translateY(0) rotate(35deg);
-    }
-    50% {
-        transform: translateY(-10px) rotate(35deg);
-    }
+  0%,
+  100% {
+      transform: translateY(0) rotate(35deg);
+  }
+  50% {
+      transform: translateY(-10px) rotate(35deg);
+  }
 
 }
 @keyframes upDown2 {
-    0%,
-    100% {
-        transform: translateY(0) rotate(700deg) scaleX(-1);
-    }
-    50% {
-        transform: translateY(-10px) rotate(740deg) scaleX(-1);
-    }
+  0%,
+  100% {
+      transform: translateY(0) rotate(700deg) scaleX(-1);
+  }
+  50% {
+      transform: translateY(-10px) rotate(740deg) scaleX(-1);
+  }
 
 }
 @keyframes upDown3 {
-    0%,
-    100% {
-        transform: translateY(0) scaleX(-1);
-    }
-    50% {
-        transform: translateY(-10px) scaleX(-1);
-    }
+  0%,
+  100% {
+      transform: translateY(0) scaleX(-1);
+  }
+  50% {
+      transform: translateY(-10px) scaleX(-1);
+  }
 
 }
 /* --------------------- */
@@ -80,72 +80,72 @@ span {
 /* --------------------- */
 
 .quizBox {
-    border-color: #BC3BB7;
+  border-color: #BC3BB7;
 }
 .quizBoxTop {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .char_03 {
-    width: 87px;
-    height: 108px;
-    position: relative;
-    left: 269px;
-    top: -17px;
+  width: 87px;
+  height: 108px;
+  position: relative;
+  left: 269px;
+  top: -17px;
 }
 
 .quiz_3 .char_03,
 .quiz_4 .char_03,
 .quiz_5 .char_03 {
-    left: 125px;
+  left: 125px;
 }
 
 .quizText {
-    top: -77px;
-    font-size: 36px;
-    font-weight: 100;
-    word-break: keep-all;
+  top: -77px;
+  font-size: 36px;
+  font-weight: 100;
+  word-break: keep-all;
 }
 
 .skyBox {
-    width: fit-content;
-    font-size: 40px;
-    letter-spacing: 0;
-    color: #8DFFDE;
-    border: 5px solid #8DFFDE;
-    border-radius: 15px;
-    padding: 22px;
-    margin: -30px auto 0;
+  width: fit-content;
+  font-size: 40px;
+  letter-spacing: 0;
+  color: #8DFFDE;
+  border: 5px solid #8DFFDE;
+  border-radius: 15px;
+  padding: 22px;
+  margin: -30px auto 0;
 }
 
 .drag_objs {
-    position: relative;
-    width: 100%;
-    height: 380px;
+  position: relative;
+  width: 100%;
+  height: 380px;
 
 }
 
 [class*="quiz_"] .spaceShip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 633px;
-    height: 212px;
-    padding: 1px 0 0 28px;
-    z-index: 4;
-    font-size: 30px;
-    color: #0E3750;
-    text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
-    background: url("../images/dragdrop/spaceship22.svg") center / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 633px;
+  height: 212px;
+  padding: 1px 0 0 28px;
+  z-index: 4;
+  font-size: 30px;
+  color: #0E3750;
+  text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
+  background: url("../images/dragdrop/spaceship22.svg") center / contain no-repeat;
 }
 
 .quiz_2 .spaceShip {
-  padding: 0 0 0 39px;
+padding: 0 0 0 39px;
 }
 
 /* 
@@ -155,115 +155,119 @@ span {
 
 
 [class*="quiz_"] .spaceShip.correctStep_1 {
-    transition: 0.5s;
-    text-align: center;
-    text-shadow: none;
-    color: #000;
-    font-size: 28px;
+  transition: 0.5s;
+  text-align: center;
+  text-shadow: none;
+  color: #000;
+  font-size: 28px;
 }
 [class*="quiz_"] .spaceShip.correctStep_2 {
-    transition: 1.2s;
-    background: url("../images/dragdrop/spaceship33.png") center / contain no-repeat;
+  transition: 1.2s;
+  background: url("../images/dragdrop/spaceship33.png") center / contain no-repeat;
 }
 
 [class*="quiz_"] .spaceShip.correctStep_3 {
-    transition: 1s;
+  transition: 1s;
 
 }
 
 [class*="quiz_"] .spaceShip.correctStep_3::after {
-    content: '';
-    scale: 1;
-    position: absolute;
-    width: 52px;
-    height: 42px;
-    top: 50px;
-    left: 342px;
-    transition: 0.5s;
-    background: url("../images/dragdrop/heat.svg") center / contain no-repeat;
+  content: '';
+  scale: 1;
+  position: absolute;
+  width: 52px;
+  height: 42px;
+  top: 50px;
+  left: 342px;
+  transition: 0.5s;
+  background: url("../images/dragdrop/heat.svg") center / contain no-repeat;
 }
 
 [class*="quiz_"] .spaceShip.correct.fly {
-    animation: fly 2s ease-in-out 1 forwards;
+  animation: fly 2s ease-in-out 1 forwards;
 }
 
 @keyframes fly {
-    0% {
-        transform: translate(-50%, -50%) rotate(-15deg) scale(1);
-    }
-    0% {
-        transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
-    }
-    100% {
-        transform: translate(100%, -230%) rotate(-15deg) scale(0.1);
+  0% {
+      transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+  }
+  0% {
+      transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
+  }
+  100% {
+      transform: translate(100%, -230%) rotate(-15deg) scale(0.1);
 
-    }
+  }
 }
 
 .humans {
-    position: absolute;
-    top: 180px;
-    left: 20;
-    gap: 153px;
-    width: 100%;
-    height: 250px;
-    transition: 0.5s;
+  position: absolute;
+  top: 180px;
+  left: 20;
+  gap: 153px;
+  width: 100%;
+  height: 250px;
+  transition: 0.5s;
 }
 
 .draggable.correct {
-    opacity: 0;
-    transition: 0.5s;
+  opacity: 0;
+  transition: 0.5s;
 }
 .blue {
-    display: contents;
-    color: #00A0FF;
+  display: contents;
+  color: #00A0FF;
 }
 
 .spaceHuman {
-    position: absolute;
-    left: 500px;
-    top: 1px;
-    width: 120px;
-    height: 230px;
-    z-index: 5;
-    cursor: pointer;
-    background: url("../images/dragdrop/spaceHuman.svg") center / 100% no-repeat;
+  position: absolute;
+  left: 500px;
+  top: 1px;
+  width: 119px;
+  height: 230px;
+  z-index: 5;
+  cursor: pointer;
+  background: url("../images/dragdrop/spaceHuman.svg") center / 100% no-repeat;
 }
 
 .spaceHuman > p {
-    position: absolute;
-    width: 117px;
-    top: 51px;
-    left: 3px;
-    font-size: 31px;
-    z-index: 10;
-    color: #403B00;
-    font-weight: 100;
-    letter-spacing: 3px;
-    text-align: center;
-    pointer-events: none;
+  position: absolute;
+  width: 118px;
+  top: 47px;
+  left: 1px;
+  font-size: 31px;
+  z-index: 10;
+  color: #403B00;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-align: center;
+  pointer-events: none;
+  letter-spacing: -1px;
 }
 
 .quiz_4 .spaceHuman > p {
-    font-size: 29px;
+width: 120px;
+font-size: 29px;
+letter-spacing: -1px;
+left: 0px;
 }
 
 .quiz_4 > .spaceHuman > p {
-    top: 47px;
-    left: 4px;
-    font-size: 28px;
+  top: 47px;
+  left: 4px;
+  font-size: 28px;
 }
 .space-grotesk {
-    margin: 0 0 0 9px;
+  margin: 0 0 0 9px;
 }
 
 [class*="quiz_"] .spaceHuman:nth-child(1) {
-    left: 284px;
+  left: 284px;
 }
 
 [class*="quiz_"] .spaceHuman:nth-child(2) {
-    left: 540px;
+  left: 540px;
 }
 [class*="quiz_"] .spaceHuman:nth-child(3) {
-    left: 788px;
+  left: 788px;
 }
