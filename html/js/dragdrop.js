@@ -140,6 +140,7 @@ function checking() {
   function correctStep_1() {
     draggable.classList.add('correct');
     droppedArea.classList.add('correct');
+    document.querySelector('main').classList.add('pointerNon')
     setTimeout(function () {
       // droppedArea.forEach(element => {
       if(droppedArea.closest('.quiz_1') ) {
@@ -154,18 +155,6 @@ function checking() {
       else if(droppedArea.closest('.quiz_5')){
         droppedArea.innerHTML = "친구들과 함께 숨바꼭질을 <span class='blue'>한다</span>."
       }
-      
-
-
-      
-      // });
-
-
-      
-      
-        // droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다."
-        // droppedArea.innerHTML = "장화, 구두, 운동화, 슬리퍼, 샌들은<br> <span class='blue'>신발</span>입니다."
-      // droppedArea.innerHTML = "정답입니다!"
       droppedArea.classList.add('correctStep_1');
       correctStep_2();
     }, 1500);
@@ -195,6 +184,8 @@ function checking() {
       }else {
         popup_container.classList.add('dim');
         nextBtn.classList.add('on');
+    document.querySelector('main').classList.remove('pointerNon')
+
       }
     }, 2500);
     return;

@@ -9,6 +9,13 @@ main {
   user-select: none;
 }
 
+.pointerNon{
+  pointer-events: none;
+}
+
+
+
+
 .start_page h1 {
   position: relative;
   top: 82px;
