@@ -103,7 +103,7 @@ function inputQuizComplete() {
     quizPage.classList.add('complete')
     corretSound();
     setTimeout(() => { goodJopPopup(); }, 1000);
-  } else{ wrongSound(); }
+  } else { wrongSound(); }
 }
 
 
@@ -139,3 +139,91 @@ hoverObj.forEach(function (obj) {
     targets.forEach(h => h.classList.remove('active'))
   })
 })
+document.addEventListener('keydown', function (event) {
+  switch (event.keyCode) {
+    case 37:
+      moveInput('left');
+      break;
+    case 38:
+      moveInput('up');
+      break;
+    case 39:
+      moveInput('right');
+      break;
+    case 40:
+      moveInput('down');
+      break;
+    default:
+      break;
+  }
+})
+function moveInput(direction) {
+  let table = document.querySelector('.inputTable')
+  let rows = table.getElementsByTagName('tr')
+  let array = []
+  for (let i = 0; i < rows.length; i++) {
+    let cells = rows[i].getElementsByTagName('td')
+    let array2 = [];
+    for (let j = 0; j < cells.length; j++) {
+      array2.push(cells[j])
+    }
+    array.push(array2)
+  }
+  let rowNum;
+  let colNum;
+  let maxRow;
+  let maxCol;
+  for (let i = 0; i < array.length; i++) {
+    maxRow = array.length;
+    for(let j = 0; j < array[i].length; j++){
+      maxCol = array[i].length;
+      let focus;
+      if(document.activeElement === array[i][j].querySelector('input')){
+        focus = array[i][j];
+        rowNum = i;
+        colNum = j;
+      }      
+    }
+  }
+  if(direction == 'up'){
+    if(rowNum != 0){
+      if(array[rowNum-1][colNum].querySelector('input')){
+        array[rowNum-1][colNum].querySelector('input').focus();
+      }else{
+        return;
+      }
+    }else{
+      return;
+    }
+  }else if(direction == 'down'){
+    if(rowNum != maxRow){
+      if(array[rowNum+1][colNum].querySelector('input')){
+        array[rowNum+1][colNum].querySelector('input').focus();
+      }else{
+        return;
+      }
+    }else{
+      return;
+    }
+  }else if(direction == 'left'){
+    if(colNum != 0){
+      if(array[rowNum][colNum-1].querySelector('input')){
+        array[rowNum][colNum-1].querySelector('input').focus();
+      }else{
+        return;
+      }
+    }else{
+      return;
+    }    
+  }else if(direction == 'right'){
+    if(colNum != maxCol){
+      if(array[rowNum][colNum+1].querySelector('input')){
+        array[rowNum][colNum+1].querySelector('input').focus();
+      }else{
+        return;
+      }
+    }else{
+      return;
+    }
+  }
+}
