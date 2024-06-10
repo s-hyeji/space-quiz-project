@@ -37,16 +37,20 @@ function size() {
     //줄어들어야 되는 요소에 인라인으로 부여한다(언제?) resize window.addEventListener('resize', this.reSet.bind(this, this.element));
     let zoomRate;
     if (widthZoom > heightZoom) {
-        document.querySelector("#wrap").style.transform = `scale(${heightZoom}) translateX(-50%)`
+        document.querySelector("#wrap").style.transform = `scale(${heightZoom})`
         zoomRate = heightZoom;
     } else {
-        document.querySelector("#wrap").style.transform = `scale(${widthZoom}) translateX(-50%)`
+        document.querySelector("#wrap").style.transform = `scale(${widthZoom})`
         zoomRate = widthZoom;
     }
     document.querySelector("#wrap").style.transformOrigin = '0% 0%';
     document.querySelector("#wrap").style.MsTransformOrigin = '0% 0%';
     document.querySelector("#wrap").style.MozTransformOrigin = '0% 0%';
     document.querySelector("#wrap").style.WebkitTransformOrigin = '0% 0%';
+    let scaledWidth = wrapWidth * zoomRate;
+    let leftOffset = (wholeWidth - scaledWidth) / 2;
+    document.querySelector("#wrap").style.position = 'absolute';
+    document.querySelector("#wrap").style.left = `${leftOffset}px`;
     // document.querySelector("#wrap").style.left = wholeWidth - (wrapWidth * zoomRate) > 0 ? wholeWidth - (wrapWidth * zoomRate) / 2 : 'auto'
     // console.log(document.querySelector('#wrap').style.transform.split('scale(')[1].split(')')[0])
     // // ctx.scale = document.querySelector('#wrap').style.transform.split('scale(')[1].split(')')[0]

@@ -132,6 +132,10 @@ hoverObj.forEach(function (obj) {
       targets.forEach(h => h.classList.add("active"));
       // console.log("확인", targets);
     });
+  obj.addEventListener('click', function(){
+    targets[0].querySelector('input').focus()
+  })
+
   })
 
   obj.addEventListener("mouseout", function () {
@@ -173,57 +177,61 @@ function moveInput(direction) {
   let colNum;
   let maxRow;
   let maxCol;
+  let focus;
   for (let i = 0; i < array.length; i++) {
     maxRow = array.length;
-    for(let j = 0; j < array[i].length; j++){
+    for (let j = 0; j < array[i].length; j++) {
       maxCol = array[i].length;
-      let focus;
-      if(document.activeElement === array[i][j].querySelector('input')){
+      if (document.activeElement === array[i][j].querySelector('input')) {
         focus = array[i][j];
         rowNum = i;
         colNum = j;
-      }      
+      }
     }
   }
-  if(direction == 'up'){
-    if(rowNum != 0){
-      if(array[rowNum-1][colNum].querySelector('input')){
-        array[rowNum-1][colNum].querySelector('input').focus();
-      }else{
+  if (focus) {
+    if (direction == 'up') {
+      if (rowNum != 0) {
+        if (array[rowNum - 1][colNum].querySelector('input')) {
+          array[rowNum - 1][colNum].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
         return;
       }
-    }else{
-      return;
+    } else if (direction == 'down') {
+      if (rowNum != maxRow) {
+        if (array[rowNum + 1][colNum].querySelector('input')) {
+          array[rowNum + 1][colNum].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    } else if (direction == 'left') {
+      if (colNum != 0) {
+        if (array[rowNum][colNum - 1].querySelector('input')) {
+          array[rowNum][colNum - 1].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    } else if (direction == 'right') {
+      if (colNum != maxCol) {
+        if (array[rowNum][colNum + 1].querySelector('input')) {
+          array[rowNum][colNum + 1].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
     }
-  }else if(direction == 'down'){
-    if(rowNum != maxRow){
-      if(array[rowNum+1][colNum].querySelector('input')){
-        array[rowNum+1][colNum].querySelector('input').focus();
-      }else{
-        return;
-      }
-    }else{
-      return;
-    }
-  }else if(direction == 'left'){
-    if(colNum != 0){
-      if(array[rowNum][colNum-1].querySelector('input')){
-        array[rowNum][colNum-1].querySelector('input').focus();
-      }else{
-        return;
-      }
-    }else{
-      return;
-    }    
-  }else if(direction == 'right'){
-    if(colNum != maxCol){
-      if(array[rowNum][colNum+1].querySelector('input')){
-        array[rowNum][colNum+1].querySelector('input').focus();
-      }else{
-        return;
-      }
-    }else{
-      return;
-    }
+  } else {
+    return;
   }
 }
