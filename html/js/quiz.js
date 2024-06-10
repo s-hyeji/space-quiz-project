@@ -94,7 +94,7 @@ function goodJopPopup2() {
     let char01 = document.createElement("div")
     let goHome = document.createElement("button")
     
-    // 굿잡 팝업 html 생성
+    // 굿잡 팝업 태그 생성
     popup.classList.add('dim')
     popup.appendChild(goodPopup)
     goodPopup.classList.add('goodJop_popup', 'on')
