@@ -132,6 +132,10 @@ hoverObj.forEach(function (obj) {
       targets.forEach(h => h.classList.add("active"));
       // console.log("확인", targets);
     });
+  obj.addEventListener('click', function(){
+    targets[0].querySelector('input').focus()
+  })
+
   })
 
   obj.addEventListener("mouseout", function () {
