@@ -207,6 +207,7 @@ table td input:focus::placeholder {
   height: 84px;
   margin: 0 -10px 0 0px;
   left: -18px;
+  top: -5px;
   animation: none;
 }
 
