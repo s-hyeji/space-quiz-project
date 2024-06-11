@@ -9,7 +9,8 @@ main .obj1 {
     width: 60px;
     height: 58px;
     background: url(../images/dragLine/bg01.svg);
-    animation: rotate 8s linear infinite;
+    -webkit-animation: rotate 8s linear infinite;
+            animation: rotate 8s linear infinite;
 }
 
 main .obj2 {
@@ -29,7 +30,8 @@ main .obj2::after {
     width: 160px;
     height: 180px;
     background: url(../images/dragLine/bg03_1.svg) center / contain no-repeat;
-    animation: blink 2.3s ease-in-out infinite;
+    -webkit-animation: blink 2.3s ease-in-out infinite;
+            animation: blink 2.3s ease-in-out infinite;
 }
 
 main .obj3 {
@@ -39,7 +41,8 @@ main .obj3 {
     width: 80px;
     height: 78px;
     background: url(../images/dragLine/bg04.svg) center/contain no-repeat;
-    animation: rotate 8s linear infinite;
+    -webkit-animation: rotate 8s linear infinite;
+            animation: rotate 8s linear infinite;
 }
 
 /* startPage */
@@ -56,7 +59,8 @@ main .obj3 {
     left: 50%;
     background: url(../images/dragLine/title.png)center/contain no-repeat;
     transform: translateX(-50%);
-    filter: drop-shadow(0px 2px 5px #0000007b);
+    -webkit-filter: drop-shadow(0px 2px 5px #0000007b);
+            filter: drop-shadow(0px 2px 5px #0000007b);
 
 }
 
@@ -67,7 +71,8 @@ main .obj3 {
     width: 736px;
     height: 436px;
     background: url(../images/dragLine/bg02.svg)center/contain no-repeat;
-    filter: drop-shadow(0px 0px 30px #ffffff41);
+    -webkit-filter: drop-shadow(0px 0px 30px #ffffff41);
+            filter: drop-shadow(0px 0px 30px #ffffff41);
 }
 
 .char {
@@ -87,7 +92,8 @@ main .obj3 {
     width: 55px;
     height: 55px;
     background: url(../images/dragLine/char_right.svg)center/contain no-repeat;
-    animation: upDown 2s ease-in-out infinite;
+    -webkit-animation: upDown 2s ease-in-out infinite;
+            animation: upDown 2s ease-in-out infinite;
 }
 
 .char::before {
@@ -98,13 +104,17 @@ main .obj3 {
     width: 55px;
     height: 55px;
     background: url(../images/dragLine/char_left.svg)center/contain no-repeat;
-    animation: upDown 2s ease-in-out infinite;
+    -webkit-animation: upDown 2s ease-in-out infinite;
+            animation: upDown 2s ease-in-out infinite;
 }
 
 /* 퀴즈 */
 .quizBox {
     border-color: #8cfd8cae;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .quizBox h2 {
@@ -140,6 +150,8 @@ main .obj3 {
 .quizBox ul>li {
     display: flex;
     align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     height: 120px;
     text-align: center;
@@ -159,7 +171,8 @@ main .obj3 {
     width: 50px;
     height: 50px;
     background: url(../images/dragLine/star.svg) center/ contain no-repeat;
-    filter: drop-shadow(0px 1px 6px #fff);
+    -webkit-filter: drop-shadow(0px 1px 6px #fff);
+            filter: drop-shadow(0px 1px 6px #fff);
     pointer-events: none;
 }
 
@@ -182,7 +195,10 @@ main .obj3 {
 [drag-line-left].complete,
 [drag-line-right].complete {
     pointer-events: none;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     /* background-color: blue; */
 }
 

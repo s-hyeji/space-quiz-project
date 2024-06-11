@@ -61,6 +61,7 @@ h1.on::after {
 }
 
 .star:hover .starImg {
+    -webkit-animation: none !important;
     animation: none !important;
 }
 
@@ -70,8 +71,21 @@ h1.on::after {
     border-radius: 50%;
     box-shadow: rgba(213, 194, 228, 0.3) 0px 0px 17px 4px;
     /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    -webkit-animation: upDown 3s ease-in-out infinite;
     animation: upDown 3s ease-in-out infinite;
+    pointer-events: none;
+}
 
+@-webkit-keyframes upDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 @keyframes upDown {
@@ -143,6 +157,7 @@ a:nth-child(4) .starText {
 
 .starText {
     text-align: center;
+    pointer-events: none;
 }
 
 
@@ -187,6 +202,9 @@ a:nth-child(4) .starText {
     padding: 194px 0 0;
     text-align: center;
     line-height: 1.35;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
