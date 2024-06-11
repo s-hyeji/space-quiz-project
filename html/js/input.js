@@ -4,6 +4,8 @@ var quizPage = document.querySelector('.quiz_1')
 const answerBtn = document.querySelector(".answerBtn");
 const hintBtn = document.querySelector(".hintBtn");
 const userinput = document.querySelectorAll("input")
+let inputvalue
+
 
 answerBtn.addEventListener("click", function () {
   inputvaluecheck();
@@ -51,21 +53,31 @@ function valueCompare() {
 function inputHintOpen() {
   userinput.forEach(function (inputHint) {
     inputHint.setAttribute('hint', getHangulInitial(inputHint.getAttribute('answer')))
+    for (let i = 0; i < userinput.length; i++) {
+      let hintText = userinput[i].getAttribute('hint')
 
-
-
-    let hintText = inputHint.getAttribute('hint')
-    if (hintText) {
-      if (!inputHint.classList.contains('readOnly') && !inputHint.classList.contains('hasText')) {
-        console.log('aaa', inputHint.className);
-        inputHint.classList.add('hintOn');
-        inputHint.value = hintText;
+      if (userinput[i].classList.contains('readOnly') || userinput[i].classList.contains('hasText')) {
+        if (userinput[i].value == userinput[i].getAttribute('answer')) {
+          userinput[i].removeAttribute('hint')
+          userinput[i].classList.add('readOnly')
+        } else {
+          userinput[i].classList.add('hintOn');
+          userinput[i].value = hintText;
+          setTimeout(() => {
+            userinput[i].classList.remove('hintOn');
+            userinput[i].value = '';
+          }, 1000);
+        }
+      } else {
+        userinput[i].classList.add('hintOn');
+        userinput[i].value = hintText;
         setTimeout(() => {
-          inputHint.classList.remove('hintOn');
-          inputHint.value = '';
+          userinput[i].classList.remove('hintOn');
+          userinput[i].value = '';
         }, 1000);
       }
     }
+    // }
   })
 }
 
@@ -82,12 +94,15 @@ function getHangulInitial(char) {
 
 // 인풋 내 텍스트가 있을 경우 클래스 부여
 userinput.forEach(function (INPUT) {
-  INPUT.addEventListener('keydown', function () {
-    INPUT.classList.add('hasText')
-    // console.log('키보드 keyCode', event.keyCode);
-    if (event.keyCode == 8) {
-      // console.log('인풋값 없음');
-      INPUT.classList.remove('hasText')
+  INPUT.addEventListener("blur", function () {
+    inputvalue = this.value;
+    // console.log("혜지확인", inputvalue)
+    if (inputvalue) {
+      // console.log("값이 있다");
+      INPUT.classList.add("hasText")
+    } else {
+      // console.log("값이 없다")
+      INPUT.classList.remove("hasText")
     }
   })
 })
@@ -132,9 +147,9 @@ hoverObj.forEach(function (obj) {
       targets.forEach(h => h.classList.add("active"));
       // console.log("확인", targets);
     });
-  obj.addEventListener('click', function(){
-    targets[0].querySelector('input').focus()
-  })
+    obj.addEventListener('click', function () {
+      targets[0].querySelector('input').focus()
+    })
 
   })
 
