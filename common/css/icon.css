@@ -54,6 +54,7 @@ button:hover,
 
 /* 다음문제 유도 우주인 */
 .char_05{
+  position: relative;
   width: 200px;
   height: 204px;
   background: url(../images/char/char_05_1.svg) center / contain no-repeat;
@@ -72,6 +73,7 @@ button:hover,
 
 /* 인풋 미니팝업 우주인 */
 .char_06{
+  position: relative;
   width: 409px;
   height: 370px;
   background: url(../images/char/char_06_1.svg) center / contain no-repeat;
