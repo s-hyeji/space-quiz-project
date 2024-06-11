@@ -213,6 +213,7 @@ table td input:focus::placeholder {
 .hintBtn {
   background-image: url(../images/input/leftBtn_1.svg);
 }
+.hintBtn.on{pointer-events: none;}
 
 .answerBtn {
   background-image: url(../images/input/leftBtn_2.svg);

@@ -16,6 +16,8 @@ answerBtn.addEventListener("click", function () {
 hintBtn.addEventListener("click", function () {
   inputHintOpen();
   clickSound();
+  this.classList.add('on')
+  setTimeout(() => { this.classList.remove('on') }, 1000);
 })
 
 
@@ -28,7 +30,7 @@ function inputvaluecheck() {
   };
 
   //  미입력 1개이상 일때 경고창
-  if (emptyCount >= 1) { alert("정답을 모두 입력해주세요.") }
+  if (emptyCount >= 1) { miniPopup1(); }
   //  전부 입력시
   else if (emptyCount === 0) { valueCompare(); }
 }
@@ -158,6 +160,9 @@ hoverObj.forEach(function (obj) {
     targets.forEach(h => h.classList.remove('active'))
   })
 })
+
+
+// input 키보드 이동
 document.addEventListener('keydown', function (event) {
   let keyCode = event.keyCode || event.code;
   switch (keyCode) {

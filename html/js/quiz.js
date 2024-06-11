@@ -115,6 +115,29 @@ function goodJopPopup2() {
 
 
 
+// 전부 입력해! 미니팝업
+function miniPopup1() {
+    let miniPopup = document.createElement("div")
+    let char06 = document.createElement("div")
+    let notice = document.createElement("p")
+    
+    // 굿잡 팝업 태그 생성
+    popup.classList.add('dim')
+    popup.appendChild(miniPopup)
+    miniPopup.classList.add('miniPopup', 'notice')
+    miniPopup.prepend(char06)
+    miniPopup.appendChild(notice)
+    char06.classList.add('char_06')
+    notice.innerHTML = '정답을 모두<br>입력해야 해!'
+
+    setTimeout(() => { miniPopupSound(); }, 500);
+    setTimeout(() => { miniPopup.classList.add('on') }, 500);
+    setTimeout(() => { popup.classList.remove('dim') }, 2000);
+    setTimeout(() => { miniPopup.remove(); }, 2000);
+}
+
+
+
 
 // =================================사운드 함수
 
@@ -158,6 +181,13 @@ function goodJopSound() {
 // 로켓 사운드
 function roketSound() {
     let audio = new Audio('../common/media/roket.mp3')
+    audio.play();
+    audio.volume = 0.3;
+}
+
+// 미니팝업 사운드
+function miniPopupSound() {
+    let audio = new Audio('../common/media/miniPopup.mp3')
     audio.play();
     audio.volume = 0.3;
 }
