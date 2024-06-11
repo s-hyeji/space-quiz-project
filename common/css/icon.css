@@ -44,7 +44,7 @@ button:hover,
   background: url(../images/char/char_02.svg) center / contain no-repeat;
 }
 
-/* 문제요정 */
+/* 문제 우주인 */
 .char_03{
   width: 200px;
   height: 245px;
@@ -52,7 +52,7 @@ button:hover,
   animation: upDown 2s ease-in-out infinite;
 }
 
-/* 다음문제 유도요정 */
+/* 다음문제 유도 우주인 */
 .char_05{
   width: 200px;
   height: 204px;
@@ -69,3 +69,20 @@ button:hover,
   animation: blink 1.2s ease-in infinite;
   z-index: -1;
 }
+
+/* 인풋 미니팝업 우주인 */
+.char_06{
+  width: 409px;
+  height: 370px;
+  background: url(../images/char/char_06_1.svg) center / contain no-repeat;
+}
+.char_06::before{
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 38px;
+  width: 45px;
+  height: 34px;
+  background: url(../images/char/char_06_2.svg) center / contain no-repeat;
+}
+
