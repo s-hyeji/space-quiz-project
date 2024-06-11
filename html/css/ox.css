@@ -24,14 +24,16 @@ main ul li {
   width: 470px;
   height: 630px;
   background: url(../images/ox/moon_01.svg) center / contain no-repeat;
-  animation: rotate 50s linear infinite;
+  -webkit-animation: rotate 50s linear infinite;
+          animation: rotate 50s linear infinite;
 }
 
 .start_page .char_02 {
   position: absolute;
   bottom: 30px;
   left: 60px;
-  animation: upDown 2s ease-in-out infinite;
+  -webkit-animation: upDown 2s ease-in-out infinite;
+          animation: upDown 2s ease-in-out infinite;
 }
 
 .start_page .page_bg {
@@ -178,7 +180,8 @@ main h2 span.char_03 {
 
 .quizBox .oxBox [class*="btn_icon"].on{pointer-events: none; transform: scale(1.1);}
 .quizBox .oxBox [class*="btn_icon"].wrongAni{
-  animation: shake 0.2s linear infinite;
+  -webkit-animation: shake 0.2s linear infinite;
+          animation: shake 0.2s linear infinite;
   pointer-events: none;
 }
 .quizBox .pointerOff{pointer-events: none;}
@@ -187,6 +190,8 @@ main h2 span.char_03 {
 /* ★퀴즈 답 & 설명 박스 */
 .quizBox.answer .answerText {
   margin: 70px auto 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding: 20px 25px 16px 25px;
   border-radius: 20px;
