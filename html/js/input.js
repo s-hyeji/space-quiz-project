@@ -159,17 +159,22 @@ hoverObj.forEach(function (obj) {
   })
 })
 document.addEventListener('keydown', function (event) {
-  switch (event.keyCode) {
-    case 37 || event.code == "ArrowLeft" :
+  let keyCode = event.keyCode || event.code;
+  switch (keyCode) {
+    case 37:
+    case "ArrowLeft":
       moveInput('left');
       break;
-    case 38  || event.code == "ArrowUp" :
+    case 38:
+    case "ArrowUp":
       moveInput('up');
       break;
-    case 39 || event.code == "ArrowRight" :
+    case 39:
+    case "ArrowRight":
       moveInput('right');
       break;
-    case 40 || event.code == "ArrowDown" :
+    case 40:
+    case "ArrowDown":
       moveInput('down');
       break;
     default:
