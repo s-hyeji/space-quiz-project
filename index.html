@@ -95,12 +95,21 @@
             stars.addEventListener('click', function () {
                 clickSound();
             })
+            stars.addEventListener('mouseover', function () {
+                hoverSound();
+            })
         })
 
         // 마우스 클릭음
         function clickSound() {
             let audio = new Audio('./common/media/click.mp3')
             audio.play();
+            audio.volume = 0.3;
+        }
+        function hoverSound() {
+            let audio = new Audio('./common/media/hoverSound.mp3')
+            audio.play();
+            audio.volume = 0.3;
         }
     </script>
 </body>
