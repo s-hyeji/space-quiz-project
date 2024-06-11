@@ -74,8 +74,8 @@ button:hover,
 /* 인풋 미니팝업 우주인 */
 .char_06{
   position: relative;
-  width: 409px;
-  height: 370px;
+  width: 400px;
+  height: 360px;
   background: url(../images/char/char_06_1.svg) center / contain no-repeat;
 }
 .char_06::before{
