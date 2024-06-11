@@ -121,6 +121,7 @@ function goodJopPopup2() {
 // 정답 사운드
 function corretSound() {
     let audio = new Audio('../common/media/correct.mp3')
+    audio.preload = 'auto';
     audio.play();
     console.log('정답사운드 재생');
 }
@@ -128,30 +129,35 @@ function corretSound() {
 // 오답 사운드
 function wrongSound() {
     let audio = new Audio('../common/media/wrong.mp3')
+    audio.preload = 'auto';
     audio.play();
     console.log('오답사운드 재생');
 }
 
 // 마우스 클릭음
 function clickSound() {
-    let audio = new Audio('../common/media/click.mp3')
+    let audio = new Audio('../common/media/click.mp3');
+    audio.preload = 'auto';
     audio.play();
 }
 
 // 슬라이드 효과음
 function slideSound() {
     let audio = new Audio('../common/media/slide.mp3')
+    audio.preload = 'auto';
     audio.play();
 }
 
 // 굿잡팝업 사운드
 function goodJopSound() {
     let audio = new Audio('../common/media/goodjob.mp3')
+    audio.preload = 'auto';
     audio.play();
 }
 
 // 로켓 사운드
 function roketSound() {
     let audio = new Audio('../common/media/roket.mp3')
+    audio.preload = 'auto';
     audio.play();
 }
