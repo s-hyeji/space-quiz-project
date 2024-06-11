@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <title>우주 퀴즈 프로젝트</title>
+    <title>Space Quiz Project</title>
     <link rel="icon" href="./common/images/icon/icon_gohome.png">
     <link rel="stylesheet" href="./common/common.css">
     <link rel="stylesheet" href="./html/css/index.css">
@@ -15,7 +15,7 @@
 <body>
     <div id="wrap">
         <div class="content">
-            <h1>Space Quiz Project</h1>
+            <h1></h1>
             <div class="index_wrap">
                 <a href="./html/dragdrop.html">
                     <div class="star">
@@ -31,6 +31,7 @@
                         </div>
                     </div>
                 </a>
+
                 <a href="./html/input.html">
                     <div class="star">
                         <div class="starImg"></div>
@@ -79,21 +80,28 @@
             if (!quizBox.classList.contains("on")) {
                 quizBox.classList.add("on")
                 this.classList.add("on")
+                document.querySelector("h1").classList.add("on")
             } else {
                 quizBox.classList.remove("on")
                 this.classList.remove("on")
+                document.querySelector("h1").classList.remove("on")
             }
 
         })
         document.addEventListener('DOMContentLoaded', function () {
             window.$callBack.sizez = function () {
-                console.log("test")
+                // console.log("test")
             }
         })
 
-        stars.forEach(function(stars){
-            stars.addEventListener('click',function(){
+        stars.forEach(function (stars) {
+            stars.addEventListener('click', function () {
                 clickSound();
+            })
+            stars.addEventListener('mouseover', function () {
+                let audio = new Audio('./common/media/hoverSound.mp3')
+                audio.play();
+                audio.volume = 0.3;
             })
         })
 
@@ -101,6 +109,7 @@
         function clickSound() {
             let audio = new Audio('./common/media/click.mp3')
             audio.play();
+            audio.volume = 0.3;
         }
     </script>
 </body>

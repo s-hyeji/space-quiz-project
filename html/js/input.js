@@ -4,6 +4,8 @@ var quizPage = document.querySelector('.quiz_1')
 const answerBtn = document.querySelector(".answerBtn");
 const hintBtn = document.querySelector(".hintBtn");
 const userinput = document.querySelectorAll("input")
+let inputvalue
+
 
 answerBtn.addEventListener("click", function () {
   inputvaluecheck();
@@ -14,6 +16,8 @@ answerBtn.addEventListener("click", function () {
 hintBtn.addEventListener("click", function () {
   inputHintOpen();
   clickSound();
+  this.classList.add('on')
+  setTimeout(() => { this.classList.remove('on') }, 1000);
 })
 
 
@@ -26,7 +30,7 @@ function inputvaluecheck() {
   };
 
   //  미입력 1개이상 일때 경고창
-  if (emptyCount >= 1) { alert("정답을 모두 입력해주세요.") }
+  if (emptyCount >= 1) { miniPopup1(); }
   //  전부 입력시
   else if (emptyCount === 0) { valueCompare(); }
 }
@@ -51,21 +55,31 @@ function valueCompare() {
 function inputHintOpen() {
   userinput.forEach(function (inputHint) {
     inputHint.setAttribute('hint', getHangulInitial(inputHint.getAttribute('answer')))
+    for (let i = 0; i < userinput.length; i++) {
+      let hintText = userinput[i].getAttribute('hint')
 
-
-
-    let hintText = inputHint.getAttribute('hint')
-    if (hintText) {
-      if (!inputHint.classList.contains('readOnly') && !inputHint.classList.contains('hasText')) {
-        console.log('aaa', inputHint.className);
-        inputHint.classList.add('hintOn');
-        inputHint.value = hintText;
+      if (userinput[i].classList.contains('readOnly') || userinput[i].classList.contains('hasText')) {
+        if (userinput[i].value == userinput[i].getAttribute('answer')) {
+          userinput[i].removeAttribute('hint')
+          userinput[i].classList.add('readOnly')
+        } else {
+          userinput[i].classList.add('hintOn');
+          userinput[i].value = hintText;
+          setTimeout(() => {
+            userinput[i].classList.remove('hintOn');
+            userinput[i].value = '';
+          }, 1000);
+        }
+      } else {
+        userinput[i].classList.add('hintOn');
+        userinput[i].value = hintText;
         setTimeout(() => {
-          inputHint.classList.remove('hintOn');
-          inputHint.value = '';
+          userinput[i].classList.remove('hintOn');
+          userinput[i].value = '';
         }, 1000);
       }
     }
+    // }
   })
 }
 
@@ -82,12 +96,15 @@ function getHangulInitial(char) {
 
 // 인풋 내 텍스트가 있을 경우 클래스 부여
 userinput.forEach(function (INPUT) {
-  INPUT.addEventListener('keydown', function () {
-    INPUT.classList.add('hasText')
-    // console.log('키보드 keyCode', event.keyCode);
-    if (event.keyCode == 8) {
-      // console.log('인풋값 없음');
-      INPUT.classList.remove('hasText')
+  INPUT.addEventListener("blur", function () {
+    inputvalue = this.value;
+    // console.log("혜지확인", inputvalue)
+    if (inputvalue) {
+      // console.log("값이 있다");
+      INPUT.classList.add("hasText")
+    } else {
+      // console.log("값이 없다")
+      INPUT.classList.remove("hasText")
     }
   })
 })
@@ -103,7 +120,7 @@ function inputQuizComplete() {
     quizPage.classList.add('complete')
     corretSound();
     setTimeout(() => { goodJopPopup(); }, 1000);
-  } else{ wrongSound(); }
+  } else { wrongSound(); }
 }
 
 
@@ -132,6 +149,10 @@ hoverObj.forEach(function (obj) {
       targets.forEach(h => h.classList.add("active"));
       // console.log("확인", targets);
     });
+    obj.addEventListener('click', function () {
+      targets[0].querySelector('input').focus()
+    })
+
   })
 
   obj.addEventListener("mouseout", function () {
@@ -139,3 +160,103 @@ hoverObj.forEach(function (obj) {
     targets.forEach(h => h.classList.remove('active'))
   })
 })
+
+
+// input 키보드 이동
+document.addEventListener('keydown', function (event) {
+  let keyCode = event.keyCode || event.code;
+  switch (keyCode) {
+    case 37:
+    case "ArrowLeft":
+      moveInput('left');
+      break;
+    case 38:
+    case "ArrowUp":
+      moveInput('up');
+      break;
+    case 39:
+    case "ArrowRight":
+      moveInput('right');
+      break;
+    case 40:
+    case "ArrowDown":
+      moveInput('down');
+      break;
+    default:
+      break;
+  }
+})
+function moveInput(direction) {
+  let table = document.querySelector('.inputTable')
+  let rows = table.getElementsByTagName('tr')
+  let array = []
+  for (let i = 0; i < rows.length; i++) {
+    let cells = rows[i].getElementsByTagName('td')
+    let array2 = [];
+    for (let j = 0; j < cells.length; j++) {
+      array2.push(cells[j])
+    }
+    array.push(array2)
+  }
+  let rowNum;
+  let colNum;
+  let maxRow;
+  let maxCol;
+  let focus;
+  for (let i = 0; i < array.length; i++) {
+    maxRow = array.length;
+    for (let j = 0; j < array[i].length; j++) {
+      maxCol = array[i].length;
+      if (document.activeElement === array[i][j].querySelector('input')) {
+        focus = array[i][j];
+        rowNum = i;
+        colNum = j;
+      }
+    }
+  }
+  if (focus) {
+    if (direction == 'up') {
+      if (rowNum != 0) {
+        if (array[rowNum - 1][colNum].querySelector('input')) {
+          array[rowNum - 1][colNum].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    } else if (direction == 'down') {
+      if (rowNum != maxRow) {
+        if (array[rowNum + 1][colNum].querySelector('input')) {
+          array[rowNum + 1][colNum].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    } else if (direction == 'left') {
+      if (colNum != 0) {
+        if (array[rowNum][colNum - 1].querySelector('input')) {
+          array[rowNum][colNum - 1].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    } else if (direction == 'right') {
+      if (colNum != maxCol) {
+        if (array[rowNum][colNum + 1].querySelector('input')) {
+          array[rowNum][colNum + 1].querySelector('input').focus();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    }
+  } else {
+    return;
+  }
+}

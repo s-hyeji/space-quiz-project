@@ -6,7 +6,10 @@ main {
   width: 100%;
   height: 100%;
   background: url(../images/dragdrop/dragdropBg.png)center/cover no-repeat;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .pointerNon{
@@ -32,7 +35,8 @@ main {
   width: 200px;
   height: 510px;
   transform: rotate(35deg);
-  animation: upDown1 3s ease-in-out infinite;
+  -webkit-animation: upDown1 3s ease-in-out infinite;
+          animation: upDown1 3s ease-in-out infinite;
   background: url("../images/dragdrop/spaceship.svg") center / 100% no-repeat;
 }
 
@@ -43,13 +47,25 @@ main {
   width: 190px;
   height: 530px;
   transition: 0.5s;
-  animation: upDown3 5s ease-in-out infinite;
+  -webkit-animation: upDown3 5s ease-in-out infinite;
+          animation: upDown3 5s ease-in-out infinite;
   background: url("../images/dragdrop/spaceHuman.svg") center / 100% no-repeat;
 
 }
 
 span {
   font: 500px;
+}
+
+@-webkit-keyframes upDown1 {
+  0%,
+  100% {
+      transform: translateY(0) rotate(35deg);
+  }
+  50% {
+      transform: translateY(-10px) rotate(35deg);
+  }
+
 }
 
 @keyframes upDown1 {
@@ -62,6 +78,16 @@ span {
   }
 
 }
+@-webkit-keyframes upDown2 {
+  0%,
+  100% {
+      transform: translateY(0) rotate(700deg) scaleX(-1);
+  }
+  50% {
+      transform: translateY(-10px) rotate(740deg) scaleX(-1);
+  }
+
+}
 @keyframes upDown2 {
   0%,
   100% {
@@ -69,6 +95,16 @@ span {
   }
   50% {
       transform: translateY(-10px) rotate(740deg) scaleX(-1);
+  }
+
+}
+@-webkit-keyframes upDown3 {
+  0%,
+  100% {
+      transform: translateY(0) scaleX(-1);
+  }
+  50% {
+      transform: translateY(-10px) scaleX(-1);
   }
 
 }
@@ -116,6 +152,8 @@ span {
 }
 
 .skyBox {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 40px;
   letter-spacing: 0;
@@ -191,7 +229,21 @@ padding: 0 0 0 39px;
 }
 
 [class*="quiz_"] .spaceShip.correct.fly {
-  animation: fly 2s ease-in-out 1 forwards;
+  -webkit-animation: fly 2s ease-in-out 1 forwards;
+          animation: fly 2s ease-in-out 1 forwards;
+}
+
+@-webkit-keyframes fly {
+  0% {
+      transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+  }
+  0% {
+      transform: translate(-50%, -50%) rotate(-15deg) scale(0.7);
+  }
+  100% {
+      transform: translate(100%, -230%) rotate(-15deg) scale(0.1);
+
+  }
 }
 
 @keyframes fly {

@@ -24,14 +24,16 @@ main ul li {
   width: 470px;
   height: 630px;
   background: url(../images/ox/moon_01.svg) center / contain no-repeat;
-  animation: rotate 50s linear infinite;
+  -webkit-animation: rotate 50s linear infinite;
+          animation: rotate 50s linear infinite;
 }
 
 .start_page .char_02 {
   position: absolute;
   bottom: 30px;
   left: 60px;
-  animation: upDown 2s ease-in-out infinite;
+  -webkit-animation: upDown 2s ease-in-out infinite;
+          animation: upDown 2s ease-in-out infinite;
 }
 
 .start_page .page_bg {
@@ -98,13 +100,13 @@ main ul li {
   width: 100%;
   height: 100%;
   background-color: rgba(16, 13, 30, 0.85);
-  border-color: #5139BE;
+  border-color: #FF2858;
 }
 
 .quizBox.answer {
   top: 0;
   width: 100%;
-  border-color: #FF4D77;
+  border-color: #1089CD;
   opacity: 0;
   visibility: hidden;
 }
@@ -144,7 +146,8 @@ main h2 span.char_03 {
   width: 1000px;
   height: 110px;
   margin: 0 auto;
-  font-size: 36px;
+  font-size: 40px;
+  line-height: 1.2em;
   text-align: center;
   word-break: keep-all;
 }
@@ -163,13 +166,13 @@ main h2 span.char_03 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 80px;
   width: 100%;
-  height: 270px;
+  height: 285px;
 }
 
 .quizBox .oxBox [class*="btn_icon"] {
-  width: 260px;
+  width: 250px;
   height: 100%;
 }
 .quizBox .oxBox .btn_icon_o {background: url(../images/ox/quiz_icon_o.png) center / contain no-repeat;}
@@ -177,7 +180,8 @@ main h2 span.char_03 {
 
 .quizBox .oxBox [class*="btn_icon"].on{pointer-events: none; transform: scale(1.1);}
 .quizBox .oxBox [class*="btn_icon"].wrongAni{
-  animation: shake 0.2s linear infinite;
+  -webkit-animation: shake 0.2s linear infinite;
+          animation: shake 0.2s linear infinite;
   pointer-events: none;
 }
 .quizBox .pointerOff{pointer-events: none;}
@@ -186,11 +190,13 @@ main h2 span.char_03 {
 /* ★퀴즈 답 & 설명 박스 */
 .quizBox.answer .answerText {
   margin: 70px auto 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding: 20px 25px 16px 25px;
   border-radius: 20px;
   font-size: 80px;
-  background-color: #D62F57;
+  background-color: #1089CD;
 }
 
 .quizBox.answer .description {
