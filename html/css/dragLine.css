@@ -130,6 +130,17 @@ main .obj3 {
     height: 125px;
 }
 
+.quizCnt {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+}
+
+.quizCnt .thisQuiz {
+    color: #53E047;
+    margin-left: 4px
+}
+
 .dragLine canvas {
     position: absolute;
     top: 140px;
