@@ -153,7 +153,7 @@ function wrongSound() {
     let audio = new Audio('../common/media/wrong.mp3')
     audio.preload = 'auto';
     audio.play();
-    audio.volume = 0.3;
+    audio.volume = 0.1;
     console.log('오답사운드 재생');
 }
 
@@ -162,7 +162,7 @@ function clickSound() {
     let audio = new Audio('../common/media/click.mp3');
     audio.preload = 'auto';
     audio.play();
-    audio.volume = 0.3;
+    audio.volume = 0.2;
 }
 
 // 슬라이드 효과음

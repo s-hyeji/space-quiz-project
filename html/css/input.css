@@ -139,6 +139,7 @@ table td input {
 table td input.readOnly {
   color: rgb(27, 88, 255);
   pointer-events: none;
+  user-select: none;
 }
 
 table td input.hintOn {
