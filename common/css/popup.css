@@ -273,6 +273,4 @@
   font-size: 55px;
   text-align: center;
 }
-.popup_container.dim:has(>.miniPopup.notice){
-  transition: unset;
-}
+.popup_container.dim:has(>.miniPopup.notice){transition: unset;}

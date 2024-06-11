@@ -130,10 +130,10 @@ function miniPopup1() {
     char06.classList.add('char_06')
     notice.innerHTML = '정답을 모두<br>입력해야 해!'
 
-    setTimeout(() => { miniPopupSound(); }, 500);
-    setTimeout(() => { miniPopup.classList.add('on') }, 500);
-    setTimeout(() => { popup.classList.remove('dim') }, 2000);
-    setTimeout(() => { miniPopup.remove(); }, 2000);
+    setTimeout(() => { miniPopupSound(); }, 200);
+    setTimeout(() => { miniPopup.classList.add('on') }, 400);
+    setTimeout(() => { popup.classList.remove('dim') }, 1700);
+    setTimeout(() => { miniPopup.remove(); }, 1700);
 }
 
 
