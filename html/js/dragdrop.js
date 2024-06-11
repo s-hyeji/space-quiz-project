@@ -157,7 +157,7 @@ function checking() {
       }
       droppedArea.classList.add('correctStep_1');
       correctStep_2();
-    }, 1500);
+    }, 1000);
   }
   function correctStep_2() {
     setTimeout(function () {
