@@ -16,8 +16,11 @@ answerBtn.addEventListener("click", function () {
 hintBtn.addEventListener("click", function () {
   inputHintOpen();
   clickSound();
-  this.classList.add('on')
-  setTimeout(() => { this.classList.remove('on') }, 1000);
+
+  document.querySelectorAll('.btnBox').forEach(function(BTN){
+    BTN.style.pointerEvents = 'none'
+    setTimeout(() => { BTN.removeAttribute('style') }, 1000);
+  })
 })
 
 

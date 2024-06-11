@@ -130,10 +130,10 @@ function miniPopup1() {
     char06.classList.add('char_06')
     notice.innerHTML = '정답을 모두<br>입력해야 해!'
 
-    setTimeout(() => { miniPopupSound(); }, 500);
-    setTimeout(() => { miniPopup.classList.add('on') }, 500);
-    setTimeout(() => { popup.classList.remove('dim') }, 2000);
-    setTimeout(() => { miniPopup.remove(); }, 2000);
+    setTimeout(() => { miniPopupSound(); }, 200);
+    setTimeout(() => { miniPopup.classList.add('on') }, 400);
+    setTimeout(() => { popup.classList.remove('dim') }, 1700);
+    setTimeout(() => { miniPopup.remove(); }, 1700);
 }
 
 
@@ -153,7 +153,7 @@ function wrongSound() {
     let audio = new Audio('../common/media/wrong.mp3')
     audio.preload = 'auto';
     audio.play();
-    audio.volume = 0.3;
+    audio.volume = 0.1;
     console.log('오답사운드 재생');
 }
 
@@ -162,7 +162,7 @@ function clickSound() {
     let audio = new Audio('../common/media/click.mp3');
     audio.preload = 'auto';
     audio.play();
-    audio.volume = 0.3;
+    audio.volume = 0.2;
 }
 
 // 슬라이드 효과음
