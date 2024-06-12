@@ -143,6 +143,7 @@ function goodJopPopup2() {
 
 function resetMain() {
     const goodJop_popup = document.querySelector(".goodJop_popup")
+    // 공통 참잘했어요 팝업 없애기
     if (goodJop_popup.classList.contains("on")) {
         popup.removeChild(goodJop_popup);
         popup.classList.remove("dim")
