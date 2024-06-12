@@ -52,8 +52,8 @@
               <li class="ex03">토성</li>
             </ul>
             <canvas class="canvas1" width="740px" height="440px"></canvas>
-            <ul class="lineQuiz">
-              <li class="leftLine">
+            <ul class="lineQuiz" quizCunt="3">
+              <li class=" leftLine">
                 <!-- 1 -->
                 <div class="dragLineObj row1" drag-Line-left="1"></div>
                 <div class="dragLineArea row1" drag-Line-left="1"></div>
@@ -97,7 +97,7 @@
               <li class="ex03">내기에서 졌어요.</li>
             </ul>
             <canvas class="canvas2" width="740" height="440"></canvas>
-            <ul class="lineQuiz">
+            <ul class="lineQuiz" quizCunt="3">
               <li class="leftLine">
                 <!-- 1 -->
                 <div class="dragLineObj row1" drag-Line-left="4"></div>
@@ -142,7 +142,7 @@
               <li class="ex03"></li>
             </ul>
             <canvas class="canvas3" width="740" height="440"></canvas>
-            <ul class="lineQuiz">
+            <ul class="lineQuiz" quizCunt="3">
               <li class="leftLine">
                 <!-- 1 -->
                 <div class="dragLineObj row1" drag-Line-left="7"></div>
@@ -183,12 +183,12 @@
   <script src="./js/quiz.js"></script>
   <script src="./js/dragLine.js"></script>
   <script>
-    const next = document.querySelector(".nextBtn");
+    const nextBtn = document.querySelector(".nextBtn");
 
     function clearCanvas() {
       context.clearRect(0, 0, canvas.width, canvas.height);
     }
-    next.addEventListener("click", function () {
+    nextBtn.addEventListener("click", function () {
       setTimeout(() => {
         lines = [];
 

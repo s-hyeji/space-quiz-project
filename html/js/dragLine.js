@@ -33,7 +33,6 @@ let completeCunt = 0;
 function startDrag(e) {
     e.preventDefault();
     let scale = document.querySelector("#wrap").style.transform.split('scale(')[1].split(')')[0]
-    // console.log(e)
     lineObj = e.target;
     lineObj.classList.add("isDragging")
 
@@ -138,6 +137,8 @@ function checking(e) {
 
     if (lineObj.getAttribute('drag-Line-left') === droppedArea.getAttribute('drag-Line-right') || lineObj.getAttribute('drag-Line-right') === droppedArea.getAttribute('drag-Line-left')) {
         if (objans === dropans) {
+            completeCunt++;
+
             redrawCanvas();
             // console.log(droppedArea.getBoundingClientRect())
             mouseEndX = (droppedArea.getBoundingClientRect().left / scale) - (canvas.getBoundingClientRect().left / scale) + (droppedArea.getBoundingClientRect().width / scale) / 2
@@ -151,7 +152,7 @@ function checking(e) {
             checkObj = document.querySelectorAll(`[drag-Line-left="${objans}"], [drag-Line-right="${objans}"]`);
             checkObj.forEach(e => e.classList.add("complete"))
             corretSound()
-            countPage();
+            lastPage()
         }
         else {
             console.log('오답입니다')
@@ -177,15 +178,33 @@ function checking(e) {
 
 }
 
-function countPage() {
-    completeCunt++;
-    // console.log(completeCunt);
-    if (completeCunt === 3 || completeCunt === 6) {
-        console.log("한페이지 끝!! 다음페이지로 이동")
+// function countPage() {
+//     completeCunt++;
+//     // console.log(completeCunt);
+//     if (completeCunt === 3 || completeCunt === 6) {
+//         console.log("한페이지 끝!! 다음페이지로 이동")
+//         popup.classList.add('dim')
+//         next_btn.classList.add('on')
+//     } else if (completeCunt === 9) {
+//         goodJopPopup2();
+//     }
+// }
+
+function next() {
+    let linequiz = lineObj.parentNode.parentNode.getAttribute("quizCunt")
+    console.log(completeCunt === linequiz)
+    if (completeCunt == linequiz) {
+        console.log("------------다음페이지로 이동")
         popup.classList.add('dim')
         next_btn.classList.add('on')
-    } else if (completeCunt === 9) {
+        completeCunt = 0;
+    }
+}
+function last() {
+    let linequiz = lineObj.parentNode.parentNode.getAttribute("quizCunt")
+    if (completeCunt == linequiz) {
         goodJopPopup2();
+
     }
 }
 
