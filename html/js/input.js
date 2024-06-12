@@ -102,7 +102,8 @@ userinput.forEach(function (INPUT) {
   INPUT.addEventListener("blur", function () {
     inputvalue = this.value;
     // console.log("혜지확인", inputvalue)
-    if (inputvalue) {this.value
+    if (inputvalue) {
+      this.value
       // console.log("값이 있다");
       INPUT.classList.add("hasText")
     } else {
@@ -112,10 +113,10 @@ userinput.forEach(function (INPUT) {
   })
 
 
-  // 한글자 제한 
+  // 최대글자 수 자름 
   INPUT.addEventListener('keyup', function () {
     if (this.value.length > this.getAttribute('maxlength')) {
-      this.value = this.value.slice(0 , this.getAttribute('maxlength').length)
+      this.value = this.value.slice(0, 1)
     }
   })
 })

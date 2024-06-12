@@ -271,7 +271,7 @@ table td input:focus::placeholder {
 }
 
 .rightBox ul li:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .rightBox ul li .num {
@@ -284,14 +284,17 @@ table td input:focus::placeholder {
   border-radius: 50%;
   font-size: 14px;
 }
-
-.rightBox .topBox .num {
-  background-color: #14B3F2;
+.rightBox ul li span:last-child{
+  margin-top: -5px;
+  padding: 5px 5px 2px 5px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  /* outline: 1px solid #fff; */
 }
+.rightBox ul li span:last-child:hover{background-color: #176ef1;}
 
-.rightBox .botBox .num {
-  background-color: #31C1B7;
-}
+.rightBox .topBox .num {background-color: #14B3F2;}
+.rightBox .botBox .num {background-color: #31C1B7;}
 
 /* add */
 td:has([class*="vertical_"])::after,
