@@ -145,7 +145,7 @@ function checking(e) {
             mouseEndY = (droppedArea.getBoundingClientRect().top / scale) - (canvas.getBoundingClientRect().top / scale) + (droppedArea.getBoundingClientRect().height / scale) / 2
             drawLine(startX, startY, mouseEndX, mouseEndY);
 
-            console.log("정답입니다")
+            // console.log("정답입니다")
             answerCheck = true;
             lines.push({ startX: startX, startY: startY, endX: mouseEndX, endY: mouseEndY });
 
@@ -155,14 +155,14 @@ function checking(e) {
             lastPage()
         }
         else {
-            console.log('오답입니다')
+            // console.log('오답입니다')
             redrawCanvas();
             lineObj.style.top = pureOffsetY + 'px'
             lineObj.style.left = pureOffsetX + 'px'
             wrongSound();
         }
     } else {
-        console.log('오답입니다')
+        // console.log('오답입니다')
         redrawCanvas();
         lineObj.style.top = pureOffsetY + 'px'
         lineObj.style.left = pureOffsetX + 'px'

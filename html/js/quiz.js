@@ -158,7 +158,7 @@ function resetMain() {
 
         quizAll.forEach(function (all) {
             all.classList.remove("complete");
-            console.log(all);
+            // console.log(all);
             all.style.top = "";
             all.style.left = "";
         })
