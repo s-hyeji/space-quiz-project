@@ -84,14 +84,20 @@ function goodJopPopup() {
         setTimeout(() => { char01.classList.add('on') }, 1000);
         setTimeout(() => { goodJopSound(); }, 1000);
 
-        setTimeout((goHome_set) => {
+        setTimeout(() => {
             goodPopup.appendChild(goHome)
-            goHome.classList.add('goHome')
-            goHome.addEventListener('click', function () {
-                clickSound();
-                setTimeout(() => { window.location.href = '../index.html' }, 500);
-            })
+            goodPopup.appendChild(goReset)
+            goHome.classList.add('goHome', "goButton")
+            goReset.classList.add('goReset', "goButton")
         }, 3000);
+
+        goHome.addEventListener('click', function () {
+            clickSound();
+            setTimeout(() => { window.location.href = '../index.html' }, 500);
+        })
+        goReset.addEventListener("click", function () {
+            goReset()
+        })
     }
 }
 
@@ -116,11 +122,15 @@ function goodJopPopup2() {
         goodPopup.appendChild(goReset)
         goHome.classList.add('goHome', "goButton")
         goReset.classList.add('goReset', "goButton")
-        goHome.addEventListener('click', function () {
-            clickSound();
-            setTimeout(() => { window.location.href = '../index.html' }, 500);
-        })
     }, 3000);
+
+    goHome.addEventListener('click', function () {
+        clickSound();
+        setTimeout(() => { window.location.href = '../index.html' }, 500);
+    })
+    goReset.addEventListener("click", function () {
+        goReset()
+    })
 }
 
 
