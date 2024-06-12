@@ -17,7 +17,7 @@ var wrap = document.querySelector('#wrap');
 
 // 스타트버튼 클릭시
 start_btn.addEventListener('click', function () {
-    clickSound(); 
+    clickSound();
     quiz_p[0].classList.add('on')
     start_page.classList.add('off')
 })
@@ -87,7 +87,7 @@ function goodJopPopup() {
         setTimeout((goHome_set) => {
             goodPopup.appendChild(goHome)
             goHome.classList.add('goHome')
-            goHome.addEventListener('click',function(){
+            goHome.addEventListener('click', function () {
                 clickSound();
                 setTimeout(() => { window.location.href = '../index.html' }, 500);
             })
@@ -100,7 +100,8 @@ function goodJopPopup2() {
     let goodPopup = document.createElement("div")
     let char01 = document.createElement("div")
     let goHome = document.createElement("button")
-    
+    let goReset = document.createElement("button")
+
     // 굿잡 팝업 태그 생성
     popup.classList.add('dim')
     popup.appendChild(goodPopup)
@@ -110,10 +111,12 @@ function goodJopPopup2() {
     setTimeout(() => { char01.classList.add('on') }, 1000);
     setTimeout(() => { goodJopSound(); }, 1000);
 
-    setTimeout((goHome_set) => {
+    setTimeout(() => {
         goodPopup.appendChild(goHome)
-        goHome.classList.add('goHome')
-        goHome.addEventListener('click',function(){
+        goodPopup.appendChild(goReset)
+        goHome.classList.add('goHome', "goButton")
+        goReset.classList.add('goReset', "goButton")
+        goHome.addEventListener('click', function () {
             clickSound();
             setTimeout(() => { window.location.href = '../index.html' }, 500);
         })
@@ -127,7 +130,7 @@ function miniPopup1() {
     let miniPopup = document.createElement("div")
     let char06 = document.createElement("div")
     let notice = document.createElement("p")
-    
+
     // 굿잡 팝업 태그 생성
     popup.classList.add('dim')
     popup.appendChild(miniPopup)
