@@ -1,3 +1,4 @@
+var goHome_btn = this.document.querySelector('.goHome')
 var start_btn = this.document.querySelector('.btn_start')
 var start_page = this.document.querySelector('.start_page')
 var quiz_p = this.document.querySelectorAll('[class*="quiz_"]')
@@ -7,14 +8,19 @@ var next_btn = this.document.querySelector('.popup_container .nextBtn')
 var goodJop_popup = this.document.querySelector('.popup_container .goodJop_popup')
 var wrap = document.querySelector('#wrap');
 
+
+
+
+// 홈버튼
+// goHome_btn.addEventListener('mouseover', function () { hoverSound(); })
+
+
 // 스타트버튼 클릭시
 start_btn.addEventListener('click', function () {
     clickSound(); 
     quiz_p[0].classList.add('on')
     start_page.classList.add('off')
 })
-
-
 
 // 해당페이지가 마지막인지 구분
 function lastPage() {
@@ -37,6 +43,7 @@ if (document.querySelector('.popup_container .nextBtn') === null) {
         clickSound();
         setTimeout(() => { slideSound(); }, 700);
     })
+    // next_btn.addEventListener('mouseover', function () { hoverSound(); })
 }
 
 
@@ -195,3 +202,11 @@ function miniPopupSound() {
     audio.play();
     audio.volume = 0.3;
 }
+
+// 호버시 사운드
+function hoverSound() {
+    let audio = new Audio('../common/media/hoverSound.mp3')
+    audio.play();
+    audio.volume = 0.3;
+}
+

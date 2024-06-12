@@ -131,10 +131,10 @@ main .quizBox h2 {
 
 main h2 span.char_03 {
   position: relative;
-  top: -15px;
+  top: -5px;
   left: -10px;
-  width: 100px;
-  height: 115px;
+  width: 80px;
+  height: 85px;
 }
 
 
@@ -155,7 +155,7 @@ main h2 span.char_03 {
   margin-top: -6px;
   margin-right: 5px;
   margin-left: 5px;
-  padding: 5px 5px 2px;
+  padding: 4px 8px 0px;
   border-radius: 5px;
   background-color: #FF2858;
 }
