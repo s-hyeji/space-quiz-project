@@ -184,14 +184,14 @@
   <script src="./js/dragLine.js"></script>
   <script>
     const nextBtn = document.querySelector(".nextBtn");
-
     function clearCanvas() {
       context.clearRect(0, 0, canvas.width, canvas.height);
     }
+
     nextBtn.addEventListener("click", function () {
       setTimeout(() => {
         lines = [];
-
+        clearCanvas()
       }, 1000);
     });
   </script>

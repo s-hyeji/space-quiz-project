@@ -204,7 +204,7 @@ function last() {
     let linequiz = lineObj.parentNode.parentNode.getAttribute("quizCunt")
     if (completeCunt == linequiz) {
         goodJopPopup2();
-
+        completeCunt = 0;
     }
 }
 
@@ -236,7 +236,3 @@ function drawLine(x1, y1, x2, y2) {
 document.querySelectorAll(".dragLineObj").forEach(function (e) {
     e.addEventListener('mousedown', startDrag);
 })
-
-
-
-

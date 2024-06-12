@@ -20,6 +20,7 @@ start_btn.addEventListener('click', function () {
     clickSound();
     quiz_p[0].classList.add('on')
     start_page.classList.add('off')
+    popup.style.transition = ""
 })
 
 // 해당페이지가 마지막인지 구분
@@ -103,10 +104,13 @@ function goodJopPopup() {
 
 // 참잘했어요 공통 함수 -> 페이지에 complete 설정 안할 시  이거 사용. 
 function goodJopPopup2() {
+    let lastPage = quiz_p[quiz_p.length - 1];
+
     let goodPopup = document.createElement("div")
     let char01 = document.createElement("div")
     let goHome = document.createElement("button")
     let goReset = document.createElement("button")
+
 
     // 굿잡 팝업 태그 생성
     popup.classList.add('dim')
@@ -123,17 +127,44 @@ function goodJopPopup2() {
         goHome.classList.add('goHome', "goButton")
         goReset.classList.add('goReset', "goButton")
     }, 3000);
+    setTimeout(() => {
+        lastPage.classList.remove("on")
+        start_page.classList.remove("off")
+    }, 3100);
 
     goHome.addEventListener('click', function () {
         clickSound();
         setTimeout(() => { window.location.href = '../index.html' }, 500);
     })
     goReset.addEventListener("click", function () {
-        goReset()
+        resetMain()
     })
 }
 
+function resetMain() {
+    const goodJop_popup = document.querySelector(".goodJop_popup")
+    if (goodJop_popup.classList.contains("on")) {
+        popup.removeChild(goodJop_popup);
+        popup.classList.remove("dim")
+        popup.style.transition = "0s"
+    }
+    // 드래그라인일시
+    if (wrap.classList.contains("dragLine")) {
+        let quizAll = document.querySelectorAll(".lineQuiz div.complete");
 
+        lines = [];
+        clearCanvas()
+
+        quizAll.forEach(function (all) {
+            all.classList.remove("complete");
+            console.log(all);
+            all.style.top = "";
+            all.style.left = "";
+        })
+
+    };
+
+}
 
 // 전부 입력해! 미니팝업
 function miniPopup1() {
