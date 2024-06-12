@@ -17,7 +17,7 @@ hintBtn.addEventListener("click", function () {
   inputHintOpen();
   clickSound();
 
-  document.querySelectorAll('.btnBox').forEach(function(BTN){
+  document.querySelectorAll('.btnBox').forEach(function (BTN) {
     BTN.style.pointerEvents = 'none'
     setTimeout(() => { BTN.removeAttribute('style') }, 1000);
   })
@@ -102,12 +102,20 @@ userinput.forEach(function (INPUT) {
   INPUT.addEventListener("blur", function () {
     inputvalue = this.value;
     // console.log("혜지확인", inputvalue)
-    if (inputvalue) {
+    if (inputvalue) {this.value
       // console.log("값이 있다");
       INPUT.classList.add("hasText")
     } else {
       // console.log("값이 없다")
       INPUT.classList.remove("hasText")
+    }
+  })
+
+
+  // 한글자 제한 
+  INPUT.addEventListener('keyup', function () {
+    if (this.value.length > this.getAttribute('maxlength')) {
+      this.value = this.value.slice(0 , this.getAttribute('maxlength').length)
     }
   })
 })
@@ -263,3 +271,5 @@ function moveInput(direction) {
     return;
   }
 }
+
+
