@@ -128,6 +128,16 @@ main .quizBox h2 {
   font-size: 80px;
   padding-top: 30px;
 }
+main .quizBox .quizCnt {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+main .quizBox .quizCnt .thisQuiz {
+  color: #FF2858;
+  margin-left: 4px
+}
 
 main h2 span.char_03 {
   position: relative;

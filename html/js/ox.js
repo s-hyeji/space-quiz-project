@@ -58,7 +58,6 @@ window.addEventListener('load', function () {
       oxBox.forEach(function(oxBox){
         oxBox.classList.add('pointerOff')
         setTimeout(() => { oxBox.classList.remove('pointerOff') }, 1300);
-
       })
     })
   }))

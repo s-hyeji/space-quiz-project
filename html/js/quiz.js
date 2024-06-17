@@ -1,12 +1,12 @@
+var wrap = document.querySelector('#wrap');
 var goHome_btn = this.document.querySelector('.goHome')
-var start_btn = this.document.querySelector('.btn_start')
 var start_page = this.document.querySelector('.start_page')
+var start_btn = this.document.querySelector('.btn_start')
 var quiz_p = this.document.querySelectorAll('[class*="quiz_"]')
 var quizBox = document.querySelectorAll('.quizBox')
 var popup = document.querySelector('.popup_container')
 var next_btn = this.document.querySelector('.popup_container .nextBtn')
 var goodJop_popup = this.document.querySelector('.popup_container .goodJop_popup')
-var wrap = document.querySelector('#wrap');
 
 
 
@@ -75,6 +75,7 @@ function goodJopPopup() {
         let goodPopup = document.createElement("div")
         let char01 = document.createElement("div")
         let goHome = document.createElement("button")
+        let goReset = document.createElement("button")
 
         // 굿잡 팝업 html 생성
         popup.classList.add('dim')
@@ -97,7 +98,9 @@ function goodJopPopup() {
             setTimeout(() => { window.location.href = '../index.html' }, 500);
         })
         goReset.addEventListener("click", function () {
-            goReset()
+            clickSound();
+            setTimeout(() => { resetMain(); }, 500);
+            
         })
     }
 }
@@ -137,12 +140,14 @@ function goodJopPopup2() {
         setTimeout(() => { window.location.href = '../index.html' }, 500);
     })
     goReset.addEventListener("click", function () {
-        resetMain()
+        clickSound();
+        setTimeout(() => { resetMain(); }, 500);
     })
 }
 
 function resetMain() {
     const goodJop_popup = document.querySelector(".goodJop_popup")
+    
     // 공통 참잘했어요 팝업 없애기
     if (goodJop_popup.classList.contains("on")) {
         popup.removeChild(goodJop_popup);
@@ -162,8 +167,21 @@ function resetMain() {
             all.style.top = "";
             all.style.left = "";
         })
-
     };
+
+    //  OX퀴즈
+    if (wrap.classList.contains("ox")) {
+        let ox_container = document.querySelectorAll('[data-quiz="ox"]')
+        let quizBox = document.querySelectorAll('.quizBox')
+        let answerBox = document.querySelectorAll('.quizBox.answer')
+        let ox_btn = document.querySelectorAll('.quizBox [class*="btn_icon"]')
+
+        start_page.classList.remove("off")
+        ox_container.forEach(function(OX_QUIZ){ OX_QUIZ.classList.remove('on','complete') });
+        quizBox.forEach(function(OX_QUIZBOX){ OX_QUIZBOX.classList.remove('off') });
+        answerBox.forEach(function(OX_ANSWERBOX){ OX_ANSWERBOX.classList.remove('dim') });
+        ox_btn.forEach(function(OX_BTN){ OX_BTN.classList.remove('on') });
+    }
 
 }
 
