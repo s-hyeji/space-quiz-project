@@ -142,7 +142,6 @@ function checking() {
     droppedArea.classList.add('correct');
     document.querySelector('main').classList.add('pointerNon')
     setTimeout(function () {
-      // droppedArea.forEach(element => {
       if(droppedArea.closest('.quiz_1') ) {
         droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다."
       }else if(droppedArea.closest('.quiz_2')){
@@ -157,7 +156,7 @@ function checking() {
       }
       droppedArea.classList.add('correctStep_1');
       correctStep_2();
-    }, 1000);
+    }, 1300);
   }
   function correctStep_2() {
     setTimeout(function () {
@@ -165,14 +164,14 @@ function checking() {
       droppedArea.classList.add('correctStep_2');
       droppedArea.classList.add('correctStep_3');
       correctStep_3();
-    }, 3000);
+    }, 2000);
   }
   function correctStep_3() {
     setTimeout(function () {
       roketSound();
       droppedArea.classList.add('fly');
       correctStep_4();
-    }, 850);
+    }, 600);
   }
 
   function correctStep_4() {
@@ -187,7 +186,7 @@ function checking() {
     document.querySelector('main').classList.remove('pointerNon')
 
       }
-    }, 2500);
+    }, 600);
     return;
   }
 }

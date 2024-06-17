@@ -4,7 +4,7 @@ var quizPage = document.querySelector('.quiz_1')
 const answerBtn = document.querySelector(".answerBtn");
 const hintBtn = document.querySelector(".hintBtn");
 const userinput = document.querySelectorAll("input")
-let inputvalue
+let minPop2Check = 0;
 
 
 answerBtn.addEventListener("click", function () {
@@ -42,16 +42,24 @@ function inputvaluecheck() {
 // 정답시 팝업함수 오픈, 오답시 인풋 value 지우기
 function valueCompare() {
   console.log('정답을 모두 입력했음=================================');
-
+  minPop2Check = minPop2Check+1;
   for (let i = 0; i < userinput.length; i++) {
+    let answerSave = userinput[i].getAttribute('answer');
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
     } else {
-      userinput[i].value = ''
+      if (minPop2Check == 3) {
+        userinput[i].value = answerSave;
+      } else {
+        userinput[i].value = ''
       userinput[i].classList.remove('hasText')
-    }
-  }
+      miniPopup2(); 
+      }
+      
+      }
+      }
+    
 }
 
 // 힌트오픈 함수

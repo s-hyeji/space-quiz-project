@@ -46,7 +46,7 @@ main {
   left: 890px;
   width: 190px;
   height: 530px;
-  transition: 0.5s;
+  transition: 0.2s;
   -webkit-animation: upDown3 5s ease-in-out infinite;
   animation: upDown3 5s ease-in-out infinite;
   background: url("../images/dragdrop/spaceHuman.svg") center / 100% no-repeat;
@@ -55,6 +55,12 @@ main {
 
 span {
   font: 500px;
+}
+.wordRine {
+  margin: 0 0 0 8px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
 }
 
 @-webkit-keyframes upDown1 {
@@ -227,7 +233,7 @@ span {
 }
 
 [class*="quiz_"] .spaceShip.correctStep_3 {
-  transition: 0.5s;
+  transition: 0.3s;
 
 }
 

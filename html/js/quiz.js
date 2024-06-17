@@ -206,6 +206,29 @@ function miniPopup1() {
     setTimeout(() => { miniPopup.remove(); }, 1700);
 }
 
+// 다시한번 생각해봐! 미니팝업
+function miniPopup2() {
+    let miniPopup = document.createElement("div")
+    let char06 = document.createElement("div")
+    let notice = document.createElement("p")
+
+    popup.classList.add('dim')
+    popup.appendChild(miniPopup)
+    miniPopup.classList.add('miniPopup', 'notice')
+    miniPopup.prepend(char06)
+    miniPopup.appendChild(notice)
+    char06.classList.add('char_06')
+    notice.innerHTML = '오답이야<br>다시 생각해봐!'
+
+    setTimeout(() => { miniPopupSound(); }, 200);
+    setTimeout(() => { miniPopup.classList.add('on') }, 400);
+    setTimeout(() => { popup.classList.remove('dim') }, 1500);
+    setTimeout(() => { miniPopup.remove(); }, 1500);
+}
+
+
+
+
 
 
 
