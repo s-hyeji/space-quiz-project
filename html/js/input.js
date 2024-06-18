@@ -49,15 +49,16 @@ function valueCompare() {
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
     } else {
+      // 두번 오답일때 정답확인으로 버튼 바뀜
       if (minPop2Check == 2) {
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
         document.querySelector('.answerBtn').innerHTML= '정답 확인';
         miniPopup2(); 
       }
+      // 세번 오답일때 정답 나타남 + 팝업 뜸
       else if (minPop2Check == 3) {
         userinput[i].value = answerSave;
-        setTimeout(()=> popup.classList.add('dim'),2000);
       }
       else {
         userinput[i].value = ''
@@ -175,7 +176,6 @@ hoverObj.forEach(function (obj) {
       }
 
       targets.forEach(h => h.classList.add("active"));
-      // console.log("확인", targets);
     });
     obj.addEventListener('click', function () {
       targets[0].querySelector('input').focus()

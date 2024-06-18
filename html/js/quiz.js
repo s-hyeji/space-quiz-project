@@ -259,6 +259,16 @@ function miniPopup2() {
 }
 
 
+// 2번 오답일때 미니팝업 !!!!!!
+function miniPopup3() {
+    let miniPopup= document.createElement("div")
+    let char07 = document.createElement("div")
+    let notice = document.createElement("p")
+    popup.classList.add('dim')
+
+}
+
+
 
 
 
