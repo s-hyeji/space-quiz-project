@@ -168,6 +168,38 @@ function resetMain() {
             all.style.left = "";
         })
     };
+        // 드래그드롭일때 !!!!!!!
+    if (wrap.classList.contains("dragDrop")) {
+        let quizAll = document.querySelectorAll(".quizPage.complete");
+        
+        quizAll.forEach(function (all) {
+            let spaceShip = all.querySelector('.spaceShip');
+            let correctStep_1 = all.querySelector('.correctStep_1');
+            let draggable = all.querySelector('.spaceHuman[data-answer=""]');
+            let main = document.querySelector('main')
+            let start_page = document.querySelector('.start_page')
+
+            all.classList.remove("complete");
+            all.classList.remove("on");
+            main.classList.remove("pointerNon");
+            start_page.classList.remove("off");
+            spaceShip.classList.remove("correct");
+            spaceShip.classList.remove("correctStep_1");
+            correctStep_1.classList.remove("correctStep_2");
+            correctStep_1.classList.remove("correctStep_3");
+            correctStep_1.classList.remove("fly");
+            correctStep_1.classList.remove("on");
+            draggable.classList.remove("correct");
+            draggable.style.top = "";
+            draggable.style.left = "";
+        })
+    };
+
+
+
+
+    // spaceHuman.style.top = "";
+    // spaceHuman.style.left = "";
 
     //  OX퀴즈
     if (wrap.classList.contains("ox")) {

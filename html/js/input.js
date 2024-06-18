@@ -49,12 +49,20 @@ function valueCompare() {
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
     } else {
-      if (minPop2Check == 3) {
-        userinput[i].value = answerSave;
-      } else {
+      if (minPop2Check == 2) {
         userinput[i].value = ''
-      userinput[i].classList.remove('hasText')
-      miniPopup2(); 
+        userinput[i].classList.remove('hasText')
+        document.querySelector('.answerBtn').innerHTML= '정답 확인';
+        miniPopup2(); 
+      }
+      else if (minPop2Check == 3) {
+        userinput[i].value = answerSave;
+        setTimeout(()=> popup.classList.add('dim'),2000);
+      }
+      else {
+        userinput[i].value = ''
+        userinput[i].classList.remove('hasText')
+        miniPopup2(); 
       }
       
       }

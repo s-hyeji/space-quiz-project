@@ -10,6 +10,7 @@ let popup_container = document.querySelector('.popup_container');
 let nextBtn = document.querySelector('.nextBtn');
 let quizPages = document.querySelectorAll('.quizPage')
 let page_tg = document.querySelectorAll('.spaceShip');
+let goReset = document.querySelector('.goReset')
 
 
 
@@ -137,44 +138,41 @@ function checking() {
     wrongSound();
   }
 
+  let dragdrop_wrap = document.querySelector('[data-quiz="dragDrop"].on');
+  let corrStep_1 = dragdrop_wrap.querySelector('.correctStep_1');
+  let corrText = corrStep_1.innerHTML;
   function correctStep_1() {
-    draggable.classList.add('correct');
-    droppedArea.classList.add('correct');
     document.querySelector('main').classList.add('pointerNon')
+    draggable.classList.add('correct');
+    
     setTimeout(function () {
-      if(droppedArea.closest('.quiz_1') ) {
-        droppedArea.innerHTML = "토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다."
-      }else if(droppedArea.closest('.quiz_2')){
-        droppedArea.innerHTML = "장화, 구두, 운동화, 슬리퍼, 샌들은<br> <span class='blue'>신발</span>입니다."
-      }else if(droppedArea.closest('.quiz_3')){
-        droppedArea.innerHTML = "나는 오늘 학교에 <span class='blue'>갔다</span>."
-      }else if(droppedArea.closest('.quiz_4')){
-        droppedArea.innerHTML = "학교에서는 매일 책을 <span class='blue'>읽는다</span>."
-      }
-      else if(droppedArea.closest('.quiz_5')){
-        droppedArea.innerHTML = "친구들과 함께 숨바꼭질을 <span class='blue'>한다</span>."
-      }
-      droppedArea.classList.add('correctStep_1');
+      droppedArea.classList.add('correct');
+      corrStep_1.classList.add('on');
       correctStep_2();
     }, 1300);
   }
   function correctStep_2() {
     setTimeout(function () {
-      droppedArea.innerHTML = "";
-      droppedArea.classList.add('correctStep_2');
-      droppedArea.classList.add('correctStep_3');
+      corrStep_1.innerHTML = "";
+      corrStep_1.classList.add('correctStep_2');
+      corrStep_1.classList.add('correctStep_3');
       correctStep_3();
     }, 2000);
   }
   function correctStep_3() {
     setTimeout(function () {
       roketSound();
-      droppedArea.classList.add('fly');
+      corrStep_1.classList.add('fly');
+        setTimeout(function(){
+          corrStep_1.innerHTML = corrText;
+        },700);
       correctStep_4();
     }, 600);
   }
 
   function correctStep_4() {
+    
+
     let lastPage = quizPages[quizPages.length -1]
     let lastPageCom = lastPage.classList.contains('complete') 
     setTimeout(function () {
@@ -183,8 +181,7 @@ function checking() {
       }else {
         popup_container.classList.add('dim');
         nextBtn.classList.add('on');
-    document.querySelector('main').classList.remove('pointerNon')
-
+        document.querySelector('main').classList.remove('pointerNon')
       }
     }, 600);
     return;
@@ -204,6 +201,9 @@ function completeClass() {
 document.querySelectorAll(".draggable").forEach(function (e) {
   e.addEventListener('mousedown', startDrag);
 })
+
+
+
 
 
 

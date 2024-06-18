@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div id="wrap">
+  <div id="wrap" class="dragDrop">
     <header style="color:#8DFFDE">
       <div class="goHome"><a href="../index.html"></a></div>
       <div class="gameName">낱말 찾아 넣기</div>
@@ -31,14 +31,14 @@
         <!-- 1페이지 -->
         <li class="quiz_1  quizPage" data-quiz="dragDrop">
           <section class="quizBox">
+            <span class="quizCnt">총 <span class="thisQuiz">1</span> / 5문제</span>
             <div class="char_03"></div>
             <h2 class="quizText">공통점이 적힌 단어를 들고 있는 우주인을 로켓에 <span class="wordRine">끌어다 넣어주세요</span>.</h2>
             <div class="drag_objs">
-              <div class="spaceShip dropArea " data-drop="o1">
+              <div class="spaceShip dropArea" data-drop="o1">
                 토끼, 호랑이, 사슴, 무당벌레
-                <!-- 토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다. -->
-              </div>  
-
+              </div> 
+              <div class="correctStep_1">토끼, 호랑이, 사슴, 무당벌레는<br> <span class='blue'>동물</span>입니다.</div>
               <div class="humans">
                 <div class="spaceHuman draggable" drag-obj="o1" data-answer="">
                   <p>동물</p>
@@ -56,12 +56,15 @@
         </li>
         <li class="quiz_2 quizPage" data-quiz="dragDrop">
           <section class="quizBox">
+            <span class="quizCnt">총 <span class="thisQuiz">2</span> / 5문제</span>
             <div class="char_03"></div>
             <h2 class="quizText">공통점이 적힌 단어를 들고 있는 우주인을 로켓에 <span class="wordRine"> 끌어다 넣어주세요</span>.</h2>
             <div class="drag_objs">
               <div class="spaceShip dropArea" data-drop="o1">
                 장화, 구두, 운동화, 슬리퍼, 샌들
               </div>
+              <div class="correctStep_1">장화, 구두, 운동화, 슬리퍼, 샌들은<br> <span class='blue'>신발</span>입니다.</div>
+
               <div class="humans">
                 <div class="spaceHuman draggable" drag-obj="o1" data-answer="">
                   <p>신발</p>
@@ -79,6 +82,7 @@
         </li>
         <li class="quiz_3 quizPage" data-quiz="dragDrop">
           <section class="quizBox">
+            <span class="quizCnt">총 <span class="thisQuiz">3</span> / 5문제</span>
             <div class="char_03"></div>
             <h2 class="quizText">빈칸에 들어가야 할 단어를 들고 있는 우주인을 로켓에 <span class="wordRine">끌어다 넣어주세요</span>. </h2>
 
@@ -86,6 +90,8 @@
               <div class="spaceShip dropArea" data-drop="o3">
                 나는 오늘 학교에 <span class="space-grotesk"> _ _ .</span>
               </div>
+              <div class="correctStep_1">나는 오늘 학교에 <span class='blue'>갔다</span>.</div>
+
 
               <div class="humans">
                 <div class="spaceHuman draggable" drag-obj="o3" data-answer="">
@@ -106,12 +112,15 @@
 
         <li class="quiz_4 quizPage" data-quiz="dragDrop">
           <section class="quizBox">
+            <span class="quizCnt">총 <span class="thisQuiz">4</span> / 5문제</span>
             <div class="char_03"></div>
             <h2 class="quizText">빈칸에 들어가야 할 단어를 들고 있는 우주인을 로켓에 <span class="wordRine">끌어다 넣어주세요</span>. </h2>
             <div class="drag_objs">
               <div class="spaceShip dropArea" data-drop="o4">
                 학교에서는 매일 책을 <span class="space-grotesk">_ _ _ .</span>
               </div>
+              <div class="correctStep_1">학교에서는 매일 책을 <span class='blue'>읽는다</span>.</div>
+
               <div class="humans">
                 <div class="spaceHuman draggable" drag-obj="x1">
                   <p>나쁘다</p>
@@ -129,6 +138,7 @@
 
         <li class="quiz_5 quizPage" data-quiz="dragDrop">
           <section class="quizBox">
+            <span class="quizCnt">총 <span class="thisQuiz">5</span> / 5문제</span>
             <div class="char_03"></div>
             <h2 class="quizText">빈칸에 들어가야 할 단어를 들고 있는 우주인을 로켓에 <span class="wordRine">끌어다 넣어주세요</span>. </h2>
 
@@ -136,6 +146,7 @@
               <div class="spaceShip   dropArea" data-drop="o5">
                 친구들과 함께 숨바꼭질을<span class="space-grotesk">_ _ .</span>
               </div>
+              <div class="correctStep_1">친구들과 함께 숨바꼭질을 <span class='blue'>한다</span>.</div>
 
               <div class="humans">
                 <div class="spaceHuman draggable" drag-obj="x1">
