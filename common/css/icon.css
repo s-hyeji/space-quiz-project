@@ -88,3 +88,10 @@ button:hover,
   background: url(../images/char/char_06_2.svg) center / contain no-repeat;
 }
 
+/* 인풋 미니팝업2 우주인 */
+.char_07{
+  width: 119px;
+  height: 115px;
+  background: url(../images/char/char_07.svg) center / contain no-repeat;
+}
+

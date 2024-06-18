@@ -251,6 +251,7 @@
 
 
 
+.popup_container.dim .miniPopup2.notice,
 .popup_container.dim .miniPopup.notice {
   position: absolute;
   top: 50%;
@@ -269,12 +270,18 @@
 
 }
 
+.popup_container.dim .miniPopup2.notice.on,
 .popup_container.dim .miniPopup.notice.on {
   /* animation: leftRight 2s ease-in-out 1 forwards; */
   display: flex;
 }
 
+
 .popup_container.dim .miniPopup.notice .char_06 {
+  width: 200px;
+  height: 180px;
+}
+.popup_container.dim .miniPopup2.notice .char_07{
   width: 200px;
   height: 180px;
 }
@@ -297,4 +304,25 @@
 
 .popup_container.dim:has(>.miniPopup.notice) {
   transition: unset;
+}
+
+.miniPopup2 .mainGo,
+.miniPopup2 .inputReplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 194px;
+  height: 105px;
+  padding: 10px 0 15px 0;
+  border-radius: 20px;
+  font-size: 36px;
+  cursor: pointer;
+}
+.miniPopup2 .mainGo {
+  background: url(../images/icon/minipopup2_left.png) center / 100% no-repeat;
+
+}
+.miniPopup2 .inputReplay {
+  background: url(../images/icon/minipopup2_right.png) center / 100% no-repeat;
+
 }

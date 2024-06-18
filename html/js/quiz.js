@@ -194,6 +194,9 @@ function resetMain() {
             draggable.style.left = "";
         })
     };
+    // 인풋일때~
+    if (wrap.classList.contains("input")) {
+    }
 
 
 
@@ -259,12 +262,18 @@ function miniPopup2() {
 }
 
 
-// 2번 오답일때 미니팝업 !!!!!!
+// 인풋 3번 오답일때 미니팝업 !!!!!!
 function miniPopup3() {
-    let miniPopup= document.createElement("div")
+    let miniPopup2 = document.createElement("div")
     let char07 = document.createElement("div")
-    let notice = document.createElement("p")
+    let mainGo = document.createElement("mainGo")
+    let inputReplay = document.createElement("inputReplay")
     popup.classList.add('dim')
+    popup.appendChild(miniPopup2)
+    miniPopup2.classList.add('miniPopup2', 'notice')
+    miniPopup2.prepend(char07)
+    // miniPopup2.appendChild(notice)
+    // char06.classList.add('char_06')
 
 }
 

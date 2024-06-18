@@ -59,13 +59,14 @@ function valueCompare() {
       // 세번 오답일때 정답 나타남 + 팝업 뜸
       else if (minPop2Check == 3) {
         userinput[i].value = answerSave;
+        miniPopup2(); 
+
       }
       else {
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
         miniPopup2(); 
       }
-      
       }
       }
     
