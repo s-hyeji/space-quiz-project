@@ -51,6 +51,7 @@ function valueCompare() {
     } else {
       // 두번 오답일때 정답확인으로 버튼 바뀜
       if (minPop2Check == 2) {
+        console.log('2회 오답')
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
         document.querySelector('.answerBtn').innerHTML= '정답 확인';
@@ -59,8 +60,7 @@ function valueCompare() {
       // 세번 오답일때 정답 나타남 + 팝업 뜸
       else if (minPop2Check == 3) {
         userinput[i].value = answerSave;
-        miniPopup2(); 
-
+        userinput[i].classList.add('readOnly2');
       }
       else {
         userinput[i].value = ''
@@ -69,6 +69,13 @@ function valueCompare() {
       }
       }
       }
+      // 세번 오답일때 팝업 뜸
+      if (minPop2Check == 3) {
+        console.log('3회 오답')
+        minPop2Check = 0;
+        miniPopup3(); 
+      }
+
     
 }
 

@@ -194,10 +194,21 @@ function resetMain() {
             draggable.style.left = "";
         })
     };
+
     // 인풋일때~
     if (wrap.classList.contains("input")) {
-    }
+        let inputs = document.querySelectorAll("input");
+        let start_page = document.querySelector('.start_page')
+        let quizPg = document.querySelector('[class*="quiz_"]')
+        start_page.classList.remove("off");
+        quizPg.classList.remove("complete");
+        inputs.forEach(function(ii) {
+            ii.classList.remove('readOnly');
+            ii.value =""
+        })
 
+    }
+    
 
 
 
@@ -266,26 +277,26 @@ function miniPopup2() {
 function miniPopup3() {
     let miniPopup2 = document.createElement("div")
     let char07 = document.createElement("div")
-    let mainGo = document.createElement("mainGo")
-    let inputReplay = document.createElement("inputReplay")
-    popup.classList.add('dim')
-    popup.appendChild(miniPopup2)
-    miniPopup2.classList.add('miniPopup2', 'notice')
-    miniPopup2.prepend(char07)
-    // miniPopup2.appendChild(notice)
-    // char06.classList.add('char_06')
+    let mainGo = document.createElement("div")
+    let inputReplay = document.createElement("div")
+        popup.classList.add('cleardim') //팝업 컨테이너에 dim클래스 추가.
+setTimeout(function() {
+    popup.appendChild(miniPopup2) //팝업 컨테이너에 div추가
+    miniPopup2.classList.add('miniPopup2', 'notice','on') //div에 miniPopup2, notice클래스 추가
+    miniPopup2.prepend(char07) // miniPopup2에 div추가
+    char07.classList.add('char_07') //추가한 div에 char_07클래스 추가
+    miniPopup2.appendChild(mainGo) //miniPopup2에 div추가
+    mainGo.classList.add('mainGo')//추가한 div에 mainGo 클래스 추가
+    mainGo.innerHTML = '메인으로'
+    miniPopup2.appendChild(inputReplay) //miniPopup2에 div추가
+    inputReplay.classList.add('inputReplay')//추가한 div에 mainGo 클래스 추가
+    inputReplay.innerHTML = '다시하기'
+},3000)
 
+mainGo.addEventListener('click',function(){
+    window.location.href= "../index.html"
+    })
 }
-
-
-
-
-
-
-
-
-
-
 
 
 // =================================사운드 함수
@@ -297,6 +308,7 @@ function corretSound() {
     audio.play();
     audio.volume = 0.3;
     console.log('정답사운드 재생');
+
 }
 
 // 오답 사운드

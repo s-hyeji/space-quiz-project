@@ -142,6 +142,12 @@ table td input.readOnly {
   user-select: none;
 }
 
+table td input.readOnly2 {
+  color: rgb(27, 88, 255);
+  pointer-events: none;
+  user-select: none;
+}
+
 table td input.hintOn {
   color: #00801e;
   pointer-events: none;

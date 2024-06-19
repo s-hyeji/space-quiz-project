@@ -86,6 +86,12 @@
   opacity: 1;
   visibility: visible;
 }
+.popup_container.cleardim {
+  background:none;
+  opacity: 1;
+  visibility: visible;
+
+}
 
 
 
@@ -250,7 +256,8 @@
 }
 
 
-
+.popup_container.cleardim .miniPopup2.notice,
+.popup_container.cleardim .miniPopup.notice,
 .popup_container.dim .miniPopup2.notice,
 .popup_container.dim .miniPopup.notice {
   position: absolute;
@@ -269,7 +276,8 @@
   transition: 0.3s;
 
 }
-
+.popup_container.cleardim .miniPopup2.notice.on,
+.popup_container.cleardim .miniPopup.notice.on,
 .popup_container.dim .miniPopup2.notice.on,
 .popup_container.dim .miniPopup.notice.on {
   /* animation: leftRight 2s ease-in-out 1 forwards; */
@@ -277,10 +285,12 @@
 }
 
 
+.popup_container.cleardim .miniPopup.notice .char_06,
 .popup_container.dim .miniPopup.notice .char_06 {
   width: 200px;
   height: 180px;
 }
+.popup_container.cleardim .miniPopup2.notice .char_07,
 .popup_container.dim .miniPopup2.notice .char_07{
   width: 200px;
   height: 180px;
