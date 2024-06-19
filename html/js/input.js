@@ -4,7 +4,6 @@ var quizPage = document.querySelector('.quiz_1')
 const answerBtn = document.querySelector(".answerBtn");
 const hintBtn = document.querySelector(".hintBtn");
 const userinput = document.querySelectorAll("input")
-let minPop2Check = 0;
 
 
 answerBtn.addEventListener("click", function () {
@@ -61,10 +60,15 @@ function valueCompare() {
       else if (minPop2Check == 3) {
         userinput[i].value = answerSave;
         userinput[i].classList.add('readOnly2');
+        console.log(minPop2Check)
+        console.log('minPop2CheckminPop2CheckminPop2CheckminPop2CheckminPop2Check')
+        miniPopup3(); 
+
       }
       else {
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
+
         miniPopup2(); 
       }
       }

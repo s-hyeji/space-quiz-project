@@ -7,6 +7,8 @@ var quizBox = document.querySelectorAll('.quizBox')
 var popup = document.querySelector('.popup_container')
 var next_btn = this.document.querySelector('.popup_container .nextBtn')
 var goodJop_popup = this.document.querySelector('.popup_container .goodJop_popup')
+let minPop2Check = 0;
+
 
 
 
@@ -203,8 +205,11 @@ function resetMain() {
         start_page.classList.remove("off");
         quizPg.classList.remove("complete");
         inputs.forEach(function(ii) {
+            minPop2Check = 0;
             ii.classList.remove('readOnly');
             ii.value =""
+            console.log(minPop2Check)
+            console.log('minPop2CheckminPop2CheckminPop2CheckminPop2CheckminPop2Check')
         })
 
     }
