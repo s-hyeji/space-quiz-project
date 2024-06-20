@@ -41,12 +41,20 @@ function inputvaluecheck() {
 // 정답시 팝업함수 오픈, 오답시 인풋 value 지우기
 function valueCompare() {
   console.log('정답을 모두 입력했음=================================');
-  minPop2Check = minPop2Check+1;
+  // 오답 횟수 체크
+  for (let i = 0; i < userinput.length; i++) {
+    if (userinput[i].value && userinput[i].getAttribute('answer')) {
+      minPop2Check = minPop2Check+1;
+      break;
+    }
+  }
   for (let i = 0; i < userinput.length; i++) {
     let answerSave = userinput[i].getAttribute('answer');
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
+      // 정답일때
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
+  
     } else {
       // 두번 오답일때 정답확인으로 버튼 바뀜
       if (minPop2Check == 2) {
@@ -54,30 +62,29 @@ function valueCompare() {
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
         document.querySelector('.answerBtn').innerHTML= '정답 확인';
-        miniPopup2(); 
       }
-      // 세번 오답일때 정답 나타남 + 팝업 뜸
+      // 세번 오답일때 정답 나타남
       else if (minPop2Check == 3) {
+        console.log('3회 오답 ')
         userinput[i].value = answerSave;
         userinput[i].classList.add('readOnly2');
-        console.log(minPop2Check)
-        console.log('minPop2CheckminPop2CheckminPop2CheckminPop2CheckminPop2Check')
-        miniPopup3(); 
-
-      }
+      } 
+      // 첫번째 오답일때
       else {
+        console.log('1회 오답')
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
-
-        miniPopup2(); 
       }
       }
       }
-      // 세번 오답일때 팝업 뜸
-      if (minPop2Check == 3) {
-        console.log('3회 오답')
+      // 오답 팝업
+      if (minPop2Check == 3 && !quizPage.classList.contains('complete')) {
+        console.log('3회 오답 팝업')
         minPop2Check = 0;
         miniPopup3(); 
+      } else if (minPop2Check == 3) {
+        console.log('1,2회 팝업')
+        miniPopup2(); 
       }
 
     

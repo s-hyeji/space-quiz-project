@@ -159,10 +159,8 @@ function resetMain() {
     // 드래그라인일시
     if (wrap.classList.contains("dragLine")) {
         let quizAll = document.querySelectorAll(".lineQuiz div.complete");
-
         lines = [];
         clearCanvas()
-
         quizAll.forEach(function (all) {
             all.classList.remove("complete");
             // console.log(all);
@@ -196,30 +194,20 @@ function resetMain() {
             draggable.style.left = "";
         })
     };
-
     // 인풋일때~
     if (wrap.classList.contains("input")) {
-        let inputs = document.querySelectorAll("input");
-        let start_page = document.querySelector('.start_page')
-        let quizPg = document.querySelector('[class*="quiz_"]')
-        start_page.classList.remove("off");
-        quizPg.classList.remove("complete");
-        inputs.forEach(function(ii) {
-            minPop2Check = 0;
-            ii.classList.remove('readOnly');
-            ii.value =""
-            console.log(minPop2Check)
-            console.log('minPop2CheckminPop2CheckminPop2CheckminPop2CheckminPop2Check')
-        })
-
+        inputReset();
+        // let inputs = document.querySelectorAll("input");
+        // let start_page = document.querySelector('.start_page')
+        // let quizPg = document.querySelector('[class*="quiz_"]')
+        // start_page.classList.remove("off");
+        // quizPg.classList.remove("complete");
+        // inputs.forEach(function(ii) {
+        //     minPop2Check = 0;
+        //     ii.classList.remove('readOnly');
+        //     ii.value =""
+        // })
     }
-    
-
-
-
-    // spaceHuman.style.top = "";
-    // spaceHuman.style.left = "";
-
     //  OX퀴즈
     if (wrap.classList.contains("ox")) {
         let ox_container = document.querySelectorAll('[data-quiz="ox"]')
@@ -233,7 +221,6 @@ function resetMain() {
         answerBox.forEach(function(OX_ANSWERBOX){ OX_ANSWERBOX.classList.remove('dim') });
         ox_btn.forEach(function(OX_BTN){ OX_BTN.classList.remove('on') });
     }
-
 }
 
 // 전부 입력해! 미니팝업
@@ -277,6 +264,27 @@ function miniPopup2() {
     setTimeout(() => { miniPopup.remove(); }, 1500);
 }
 
+// 인풋 리셋
+function inputReset() {
+    let inputs = document.querySelectorAll("input");
+    let start_page = document.querySelector('.start_page')
+    let quizPg = document.querySelector('[class*="quiz_"]')
+    let popup_container = document.querySelector('.popup_container')
+    let miniPopup2 = document.querySelector('.miniPopup2');
+    start_page.classList.remove("off");
+    quizPg.classList.remove("complete");
+    quizPg.classList.remove("on");
+    popup_container.classList.remove('cleardim')
+    miniPopup2.remove();
+    inputs.forEach(function(ii) {
+        minPop2Check = 0;
+        ii.classList.remove('readOnly');
+        ii.classList.remove('readOnly2');
+        ii.value =""
+        })
+
+    console.log('인풋 리셋~~')
+} 
 
 // 인풋 3번 오답일때 미니팝업 !!!!!!
 function miniPopup3() {
@@ -301,7 +309,14 @@ setTimeout(function() {
 mainGo.addEventListener('click',function(){
     window.location.href= "../index.html"
     })
+inputReplay.addEventListener('click',function(){
+        inputReset() 
+    })
+    
 }
+
+
+
 
 
 // =================================사운드 함수
