@@ -79,7 +79,6 @@ function valueCompare() {
       }
       // 오답 팝업complete
       if (minPop2Check == 3 && quizPage.classList.contains('complete') ) {
-
           console.log(quizPage);
           console.log('3회 오답 팝업')
           miniPopup3(); 
