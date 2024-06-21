@@ -275,7 +275,7 @@ function inputReset() {
     quizPg.classList.remove("complete");
     quizPg.classList.remove("on");
     popup_container.classList.remove('cleardim')
-    miniPopup2.remove();
+    miniPopup2 && remove();
     inputs.forEach(function(ii) {
         minPop2Check = 0;
         ii.classList.remove('readOnly');

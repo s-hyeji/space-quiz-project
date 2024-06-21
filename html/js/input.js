@@ -52,43 +52,42 @@ function valueCompare() {
     let answerSave = userinput[i].getAttribute('answer');
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
       // 정답일때
+      // 정답일때
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
-  
     } else {
-      // 두번 오답일때 정답확인으로 버튼 바뀜
-      if (minPop2Check == 2) {
-        console.log('2회 오답')
-        userinput[i].value = ''
-        userinput[i].classList.remove('hasText')
-        document.querySelector('.answerBtn').innerHTML= '정답 확인';
+        // 두번 오답일때 정답확인으로 버튼 바뀜
+        if (minPop2Check == 2) {
+          console.log('2회 오답')
+          userinput[i].value = ''
+          userinput[i].classList.remove('hasText')
+          document.querySelector('.answerBtn').innerHTML= '정답 확인';
+        }
+        // 세번 오답일때 정답 나타남
+        else if (minPop2Check == 3) {
+          console.log('3회 오답 ')
+          userinput[i].value = answerSave;
+          userinput[i].classList.add('readOnly2');
+        } 
+        // 첫번째 오답일때
+        else {
+          console.log('1회 오답')
+          userinput[i].value = ''
+          userinput[i].classList.remove('hasText')
+        }
       }
-      // 세번 오답일때 정답 나타남
-      else if (minPop2Check == 3) {
-        console.log('3회 오답 ')
-        userinput[i].value = answerSave;
-        userinput[i].classList.add('readOnly2');
-      } 
-      // 첫번째 오답일때
-      else {
-        console.log('1회 오답')
-        userinput[i].value = ''
-        userinput[i].classList.remove('hasText')
-      }
-      }
-      }
+    }
       // 오답 팝업complete
       if (minPop2Check == 3 && quizPage.classList.contains('complete') ) {
-          console.log(quizPage);
-          console.log('3회 오답 팝업')
-          miniPopup3(); 
-        minPop2Check = 0;
-      } else if (minPop2Check < 3) {
-        console.log('1,2회 팝업')
-        miniPopup2(); 
-      }
-}
-
+            console.log(quizPage);
+            console.log('3회 오답 팝업')
+            miniPopup3(); 
+            minPop2Check = 0;
+          } else if (minPop2Check < 3 && !quizPage.classList.contains('complete')) {
+            console.log('1,2회 팝업')
+            miniPopup2(); 
+          }
+  }
 // 힌트오픈 함수
 function inputHintOpen() {
   userinput.forEach(function (inputHint) {
