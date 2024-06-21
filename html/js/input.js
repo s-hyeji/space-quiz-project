@@ -77,17 +77,18 @@ function valueCompare() {
       }
       }
       }
-      // 오답 팝업
+      // 오답 팝업complete
       if (minPop2Check == 3 && !quizPage.classList.contains('complete')) {
-        console.log('3회 오답 팝업')
+        if (!quizPage.classList.contains('complete')) {
+          console.log(quizPage);
+          console.log('3회 오답 팝업')
+          miniPopup3(); 
+        }
         minPop2Check = 0;
-        miniPopup3(); 
-      } else if (minPop2Check == 3) {
+      } else if (minPop2Check < 3) {
         console.log('1,2회 팝업')
         miniPopup2(); 
       }
-
-    
 }
 
 // 힌트오픈 함수
