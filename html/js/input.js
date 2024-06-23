@@ -54,6 +54,7 @@ function valueCompare() {
     let answerSave = userinput[i].getAttribute('answer');
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
       // 정답일때
+      // 정답일때
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
       goodJopPopup();
