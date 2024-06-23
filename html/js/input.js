@@ -48,44 +48,62 @@ function valueCompare() {
       break;
     }
   }
+  let executed = false;
+
   for (let i = 0; i < userinput.length; i++) {
     let answerSave = userinput[i].getAttribute('answer');
     if (userinput[i].value == userinput[i].getAttribute('answer')) {
       // 정답일때
       userinput[i].removeAttribute('hint')
       userinput[i].classList.add('readOnly')
+      goodJopPopup();
   
     } else {
       // 두번 오답일때 정답확인으로 버튼 바뀜
-      if (minPop2Check == 2) {
+      if (minPop2Check == 2 && !quizPage.classList.contains('complete')) {
         console.log('2회 오답')
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
         document.querySelector('.answerBtn').innerHTML= '정답 확인';
+        if (!executed) {
+          miniPopup2(); 
+          executed = true;
+        }
       }
       // 세번 오답일때 정답 나타남
       else if (minPop2Check == 3) {
         console.log('3회 오답 ')
         userinput[i].value = answerSave;
         userinput[i].classList.add('readOnly2');
+        if (!executed) {
+          miniPopup3(); 
+          executed = true;
+        }
       } 
       // 첫번째 오답일때
-      else {
+      else if(minPop2Check == 1 && !quizPage.classList.contains('complete')) {
         console.log('1회 오답')
         userinput[i].value = ''
         userinput[i].classList.remove('hasText')
+        if (!executed) {
+          miniPopup2(); 
+          executed = true;
+        }
       }
       }
       }
       // 오답 팝업
-      if (minPop2Check == 3 && !quizPage.classList.contains('complete')) {
-        console.log('3회 오답 팝업')
-        minPop2Check = 0;
-        miniPopup3(); 
-      } else if (minPop2Check == 3) {
-        console.log('1,2회 팝업')
-        miniPopup2(); 
-      }
+
+      // if(minPop2Check == 3 && quizPage.classList.contains('complete')) {
+      //   console.log('3회 오답 팝업')
+      //   console.log(quizPage)
+      //   minPop2Check = 0;
+      //   miniPopup3();
+      // } else if ((minPop2Check == 1 || minPop2Check == 2) && quizPage.classList.contains('complete')) {
+      //   console.log('1,2회 팝업')
+      //   console.log(quizPage)
+      //   miniPopup2(); 
+      // }
 
     
 }

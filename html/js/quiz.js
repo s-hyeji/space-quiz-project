@@ -244,12 +244,16 @@ function miniPopup1() {
     setTimeout(() => { miniPopup.remove(); }, 1700);
 }
 
+
+
+
+
 // 다시한번 생각해봐! 미니팝업
 function miniPopup2() {
     let miniPopup = document.createElement("div")
     let char06 = document.createElement("div")
     let notice = document.createElement("p")
-
+    // 미니팝업2 생성함수 실행
     popup.classList.add('dim')
     popup.appendChild(miniPopup)
     miniPopup.classList.add('miniPopup', 'notice')
@@ -260,31 +264,9 @@ function miniPopup2() {
 
     setTimeout(() => { miniPopupSound(); }, 200);
     setTimeout(() => { miniPopup.classList.add('on') }, 400);
-    setTimeout(() => { popup.classList.remove('dim') }, 1500);
-    setTimeout(() => { miniPopup.remove(); }, 1500);
+    setTimeout(() => { popup.classList.remove('dim') }, 1700);
+    setTimeout(() => { miniPopup.remove(); }, 1700);
 }
-
-// 인풋 리셋
-function inputReset() {
-    let inputs = document.querySelectorAll("input");
-    let start_page = document.querySelector('.start_page')
-    let quizPg = document.querySelector('[class*="quiz_"]')
-    let popup_container = document.querySelector('.popup_container')
-    let miniPopup2 = document.querySelector('.miniPopup2');
-    start_page.classList.remove("off");
-    quizPg.classList.remove("complete");
-    quizPg.classList.remove("on");
-    popup_container.classList.remove('cleardim')
-    miniPopup2.remove();
-    inputs.forEach(function(ii) {
-        minPop2Check = 0;
-        ii.classList.remove('readOnly');
-        ii.classList.remove('readOnly2');
-        ii.value =""
-        })
-
-    console.log('인풋 리셋~~')
-} 
 
 // 인풋 3번 오답일때 미니팝업 !!!!!!
 function miniPopup3() {
@@ -293,7 +275,8 @@ function miniPopup3() {
     let mainGo = document.createElement("div")
     let inputReplay = document.createElement("div")
         popup.classList.add('cleardim') //팝업 컨테이너에 dim클래스 추가.
-setTimeout(function() {
+    setTimeout(function() {
+    popup.classList.add('dim')
     popup.appendChild(miniPopup2) //팝업 컨테이너에 div추가
     miniPopup2.classList.add('miniPopup2', 'notice','on') //div에 miniPopup2, notice클래스 추가
     miniPopup2.prepend(char07) // miniPopup2에 div추가
@@ -314,6 +297,32 @@ inputReplay.addEventListener('click',function(){
     })
     
 }
+
+// 인풋 리셋
+function inputReset() {
+    let inputs = document.querySelectorAll("input");
+    let start_page = document.querySelector('.start_page')
+    let quizPg = document.querySelector('[class*="quiz_"]')
+    let popup_container = document.querySelector('.popup_container')
+    let miniPopup2 = document.querySelector('.miniPopup2');
+    document.querySelector('.answerBtn').innerHTML= '정답 제출';
+    start_page.classList.remove("off");
+    quizPg.classList.remove("complete");
+    quizPg.classList.remove("on");
+    popup_container.classList.remove('cleardim')
+    popup_container.classList.remove('dim')
+    minPop2Check = 0;
+    if(miniPopup2) {
+        miniPopup2.remove();
+    }
+    inputs.forEach(function(ii) {
+        ii.classList.remove('readOnly');
+        ii.classList.remove('readOnly2');
+        ii.value =""
+        })
+
+    console.log('인풋 리셋~~')
+} 
 
 
 
