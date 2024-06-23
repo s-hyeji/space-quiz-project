@@ -254,6 +254,7 @@ function miniPopup2() {
     let char06 = document.createElement("div")
     let notice = document.createElement("p")
     // 미니팝업2 생성함수 실행
+    console.log('미니팝업2 생성함수 실행');
     popup.classList.add('dim')
     popup.appendChild(miniPopup)
     miniPopup.classList.add('miniPopup', 'notice')
